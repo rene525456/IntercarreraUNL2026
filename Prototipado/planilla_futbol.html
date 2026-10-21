@@ -1,0 +1,1719 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#005d3e","primary-container":"#d3002d","secondary-container":"#dae2fd","error":"#ba1a1a","on-background":"#0b1c30","outline-variant":"#e6bdbb","tertiary-fixed-dim":"#4edea3","on-primary-container":"#ffe3e1","tertiary-container":"#007852","surface-variant":"#d3e4fe","inverse-primary":"#ffb3b1","on-secondary-fixed":"#131b2e","secondary-fixed-dim":"#bec6e0","primary-fixed-dim":"#ffb3b1","on-secondary":"#ffffff","on-error-container":"#93000a","on-surface":"#0b1c30","surface-container-high":"#dce9ff","primary-fixed":"#ffdad8","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","secondary":"#565e74","error-container":"#ffdad6","surface-tint":"#bf0028","surface":"#f8f9ff","surface-bright":"#f8f9ff","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-primary-fixed-variant":"#92001c","surface-container-lowest":"#ffffff","on-primary-fixed":"#410007","outline":"#916e6d","tertiary-fixed":"#6ffbbe","surface-container-low":"#eff4ff","on-tertiary-fixed-variant":"#005236","primary":"#a50021","on-secondary-container":"#5c647a","background":"#f8f9ff","inverse-on-surface":"#eaf1ff","secondary-fixed":"#dae2fd","on-tertiary":"#ffffff","on-tertiary-container":"#8fffc9","on-primary":"#ffffff","on-tertiary-fixed":"#002113","surface-dim":"#cbdbf5","on-surface-variant":"#5d3f3e","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","margin":"1rem","space-sm":"0.5rem","margin-md":"1.5rem","gutter":"1rem","gutter-md":"1.5rem","margin-lg":"3rem","space-xl":"2.5rem","space-md":"1rem","space-xs":"0.25rem","gutter-lg":"2rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","fontWeight":"800"}],"headline-xl":["40px",{"lineHeight":"48px","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-6 py-6"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-md text-headline-md font-bold">I</div><div><span class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest block leading-tight tracking-tight">Interfacultades</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim block tracking-wide uppercase">Torneo Deportivo 2025</span></div></div><div class="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/10 text-secondary-fixed text-label-sm font-label-sm"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>Administrador del Torneo</div></div><nav class="px-4 space-y-1.5"><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Resumen</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">schema</span>Grupos y Sorteo</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span>Calendario / Cruces</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-container text-on-primary font-bold shadow-md font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span>Clasificaciones / Tabla</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span>Disciplinas</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Configuración</a></nav></div><div class="p-4 m-4 rounded-xl bg-surface-container-high/10"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold">AG</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-lg text-label-lg text-surface-container-lowest font-bold truncate">Admin General</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim truncate">admin.deportes@ucuenca.edu.ec</span></div><a class="text-secondary-fixed-dim hover:text-surface-container-lowest transition-colors" href="#" title="Cerrar sesión"><span class="material-symbols-outlined text-[20px]">logout</span></a></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-full px-8 flex items-center justify-between gap-6"><div class="flex items-center gap-4 flex-1 max-w-lg"><div class="w-full flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-low text-on-surface-variant focus-within:ring-2 focus-within:ring-primary"><span class="material-symbols-outlined text-secondary text-[20px]">search</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder-secondary w-full" placeholder="Buscar facultad, atleta, acta, disciplina o cancha..." type="text"></div></div><div class="flex items-center gap-4"><div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"><span class="material-symbols-outlined text-primary text-[18px]">verified</span>Edición 2025 · Cuenca</div><button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-secondary hover:text-on-surface relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-3 pl-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-bold leading-none">Coordinación Central</span><span class="font-label-sm text-[10px] text-secondary leading-tight">Liga Universitaria</span></div></div></div></div></header><main class="w-full pt-16 bg-background px-8 py-6 min-h-screen relative"><div class="flex flex-col w-full space-y-6 pb-12">
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-wrapper"></div>
+<!-- BREADCRUMB & METADATA OVERVIEW -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span class="inline-flex items-center gap-1 font-bold text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">sports_soccer</span>
+        Fútbol 9 Serie Mayor
+      </span>
+<span class="">/</span>
+<span class="">Fase de Grupos</span>
+<span class="">/</span>
+<span class="text-primary font-bold">Planilla Arbitral Oficial #F9-2025-042</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>
+        Sincronización en la Nube FEDUP · Activa
+      </div>
+<div class="text-secondary font-label-sm text-label-sm">
+        Cod. Acta: <span class="font-mono font-bold text-on-surface">ACT-9041-C1</span>
+</div>
+</div>
+</div>
+<!-- HERO HEADER (Partido en Vivo + Marcador Prominente) -->
+<section class="w-full rounded-3xl bg-inverse-surface text-inverse-on-surface p-6 lg:p-8 relative overflow-hidden shadow-2xl">
+<!-- Atmospheric subtle glow -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-tertiary/15 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-6">
+<!-- Upper strip: Status & Quick Match Meta -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-surface-container-highest/15">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Live badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-extrabold tracking-wide uppercase shadow-lg shadow-primary-container/30">
+<span class="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+            En Juego · Segundo Tiempo
+          </div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-surface-container-highest/20 text-inverse-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-tertiary-fixed">location_on</span>
+            Cancha Sintética 1 · Campus Central
+          </div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-surface-container-highest/20 text-inverse-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-secondary-fixed">emoji_events</span>
+            Jornada 3 · Grupo A
+          </div>
+</div>
+<!-- Technical Control Buttons -->
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-highest/20 hover:bg-error/30 text-inverse-on-surface hover:text-white transition-all font-label-md text-label-md font-bold cursor-pointer border border-error/40 hover:border-error" id="btn-open-wo" type="button">
+<span class="material-symbols-outlined text-[18px] text-error">gavel</span>
+            Declarar W.O.
+          </button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary transition-all font-label-md text-label-md font-extrabold shadow-lg shadow-primary/40 cursor-pointer" id="btn-open-finalize" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+            Cerrar Planilla Oficial
+          </button>
+</div>
+</div>
+<!-- Main Scoreboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center py-2">
+<!-- Team Local -->
+<div class="md:col-span-4 flex items-center md:justify-end gap-4 text-left md:text-right order-1">
+<div class="min-w-0">
+<span class="text-xs uppercase tracking-widest font-extrabold text-secondary-fixed-dim block">Equipo Local · Rojo/Blanco</span>
+<h2 class="font-headline-md text-headline-md font-extrabold text-white truncate">Ingeniería Civil</h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim">Los Castores · 10 Pts</p>
+</div>
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-container to-primary flex items-center justify-center text-white font-headline-md text-headline-md font-black shadow-xl flex-shrink-0">
+            IC
+          </div>
+</div>
+<!-- Central Score & Timer -->
+<div class="md:col-span-4 flex flex-col items-center justify-center text-center order-3 md:order-2 bg-surface-container-highest/10 rounded-2xl p-4 backdrop-blur-sm border border-surface-container-highest/10">
+<div class="flex items-center justify-center gap-4 text-white">
+<span class="font-headline-xl text-headline-xl lg:text-[54px] font-black tracking-tight leading-none text-white" id="score-home">2</span>
+<span class="text-secondary-fixed-dim font-headline-md text-headline-md font-light">:</span>
+<span class="font-headline-xl text-headline-xl lg:text-[54px] font-black tracking-tight leading-none text-white" id="score-away">1</span>
+</div>
+<!-- Chrono Display -->
+<div class="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest/30 text-white font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">timer</span>
+<span class="font-mono tracking-wider" id="match-timer">62' (2T)</span>
+</div>
+<div class="mt-1 text-xs text-secondary-fixed-dim font-label-sm">
+            Tiempo reglamentario: 2 tiempos de 35 min
+          </div>
+</div>
+<!-- Team Away -->
+<div class="md:col-span-4 flex items-center gap-4 text-left order-2 md:order-3">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-container to-secondary flex items-center justify-center text-on-secondary-fixed font-headline-md text-headline-md font-black shadow-xl flex-shrink-0">
+            MD
+          </div>
+<div class="min-w-0">
+<span class="text-xs uppercase tracking-widest font-extrabold text-secondary-fixed-dim block">Equipo Visitante · Azul</span>
+<h2 class="font-headline-md text-headline-md font-extrabold text-white truncate">Ciencias Médicas</h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim">Los Galenos · 6 Pts</p>
+</div>
+</div>
+</div>
+<!-- Footer Match Crew Info -->
+<div class="pt-3 flex flex-wrap items-center justify-between text-secondary-fixed-dim font-label-sm text-label-sm border-t border-surface-container-highest/15 gap-4">
+<div class="flex flex-wrap items-center gap-6">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">sports</span>
+<strong>Árbitro Principal:</strong> Carlos Andrade (Col. de Árbitros Azuay)
+          </span>
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">assignment_ind</span>
+<strong>Juez de Mesa / Planillero:</strong> Juan Pablo Cobos (Tú)
+          </span>
+</div>
+<div class="inline-flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="">Reglamento FEDUP 2025 · F9</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ACTION BAR (Barra de Acciones Rápidas de Incidencias) -->
+<section class="w-full bg-surface-container-lowest rounded-2xl p-4 shadow-sm">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 self-start md:self-auto">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface">Registrar Incidencia Rápida</h3>
+<p class="text-xs text-secondary">Añadir eventos oficiales en tiempo real al acta del partido</p>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:flex items-center gap-2.5 w-full md:w-auto">
+<!-- Gol -->
+<button class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-tertiary-container text-on-tertiary font-label-md text-label-md font-bold hover:bg-tertiary transition-all shadow-sm active:scale-95 cursor-pointer" onclick="openIncidentModal('GOL')" type="button">
+<span class="text-[17px]">⚽</span>
+<span class="">Gol a Favor</span>
+</button>
+<!-- Autogol -->
+<button class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-bold transition-all shadow-sm active:scale-95 cursor-pointer" onclick="openIncidentModal('AUTOGOL')" type="button">
+<span class="text-[17px]">⚽</span>
+<span class="">Autogol (OG)</span>
+</button>
+<!-- Tarjeta Amarilla -->
+<button class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-amber-100 font-label-md text-label-md font-bold transition-all shadow-sm active:scale-95 cursor-pointer" onclick="openIncidentModal('AMARILLA')" type="button">
+<span class="inline-block w-3.5 h-4.5 bg-amber-400 rounded-sm shadow-inner"></span>
+<span class="">T. Amarilla</span>
+</button>
+<!-- Tarjeta Roja -->
+<button class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-error-container font-label-md text-label-md font-bold transition-all shadow-sm active:scale-95 cursor-pointer" onclick="openIncidentModal('ROJA')" type="button">
+<span class="inline-block w-3.5 h-4.5 bg-error rounded-sm shadow-inner"></span>
+<span class="">T. Roja Directa</span>
+</button>
+<!-- Cambio -->
+<button class="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-surface-variant font-label-md text-label-md font-bold transition-all shadow-sm active:scale-95 cursor-pointer" onclick="openIncidentModal('CAMBIO')" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span class="">Sustitución</span>
+</button>
+</div>
+</div>
+</section>
+<!-- MAIN PLAYERS ROSTER (LOCAL VS VISITANTE) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- LOCAL TEAM COLUMN (Ingeniería Civil) -->
+<section class="xl:col-span-6 bg-surface-container-lowest rounded-3xl p-5 lg:p-6 shadow-sm flex flex-col space-y-4">
+<!-- Team Header -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+            IC
+          </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Ingeniería Civil</h3>
+<span class="px-2 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed text-xs font-bold uppercase">Local</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">DT: Arq. Fernando Cordero · Uniforme: Rojo y Blanco</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-secondary uppercase block">Presentes</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary" id="ic-present-count">10 / 11</span>
+</div>
+</div>
+<!-- Quick Section Banner -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-xl bg-surface-container text-secondary text-xs font-bold uppercase tracking-wider">
+<span class="">Alineación Oficial Titular / Suplentes</span>
+<span class="">Asistencia / Ficha</span>
+</div>
+<!-- Players List Local -->
+<div class="flex flex-col space-y-2" id="roster-local">
+<!-- Player 1 (Titular - POR) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="IC-1" data-name="Esteban Orellana" data-team="IC">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">1</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Esteban Orellana</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">POR</span>
+<span class="text-[10px] font-bold text-tertiary">Capitán (C)</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 7mo Ciclo · Carnet #2019-3381</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'ic')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 2 (Titular - DEF) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="IC-4" data-name="Mateo Morales" data-team="IC">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">4</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Mateo Morales</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEF</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 5to Ciclo · Carnet #2021-0412</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'ic')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 3 (Titular - MED - Gol Doble) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-tertiary/5 hover:bg-tertiary/10 transition-all" data-id="IC-9" data-name="Mateo Cárdenas" data-team="IC">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-primary text-on-primary flex items-center justify-center font-mono font-extrabold text-label-md shadow-sm">9</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Mateo Cárdenas</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEL</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-extrabold text-tertiary bg-tertiary/15 px-2 py-0.5 rounded-full">
+                  ⚽ 2 Goles
+                </span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Goleador del Torneo (7 dianas acumuladas)</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'ic')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 4 (Titular - MED) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="IC-8" data-name="Mauricio Silva" data-team="IC">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">8</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Mauricio Silva</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">MED</span>
+<span class="text-[11px] text-secondary font-medium italic">Sustituido Min 53'</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 4to Ciclo · Carnet #2022-8819</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'ic')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 5 (Suplente ingresó) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="IC-14" data-name="Jonathan Ortiz" data-team="IC">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">14</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Jonathan Ortiz</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">MED</span>
+<span class="text-[11px] text-tertiary font-bold">Ingresó Min 53'</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 3er Ciclo · Carnet #2023-1102</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'ic')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 6 (SUSPENDIDO / INHABILITADO) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-error-container/20 opacity-60 cursor-not-allowed border-none">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-error-container text-on-error-container flex items-center justify-center font-mono font-extrabold text-label-md">3</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface line-through">Bryan Tacuri</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEF</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-extrabold text-error bg-error-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                  Suspendido (1 partido - Doble Amarilla)
+                </span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Inhabilitado por Comité de Disciplina FEDUP</span>
+</div>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-error text-[20px]" title="No habilitado">cancel</span>
+</div>
+</div>
+<!-- Player 7 (Suplente Asistente) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="IC-11" data-name="Kevin Guayasamín" data-team="IC">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">11</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Kevin Guayasamín</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEL</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 6to Ciclo · Suplente</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'ic')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- AWAY TEAM COLUMN (Ciencias Médicas) -->
+<section class="xl:col-span-6 bg-surface-container-lowest rounded-3xl p-5 lg:p-6 shadow-sm flex flex-col space-y-4">
+<!-- Team Header -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+            MD
+          </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Ciencias Médicas</h3>
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container text-xs font-bold uppercase">Visitante</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">DT: Dr. Marcelo Vintimilla · Uniforme: Azul Eléctrico</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-secondary uppercase block">Presentes</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-secondary" id="md-present-count">9 / 11</span>
+</div>
+</div>
+<!-- Quick Section Banner -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-xl bg-surface-container text-secondary text-xs font-bold uppercase tracking-wider">
+<span class="">Alineación Oficial Titular / Suplentes</span>
+<span class="">Asistencia / Ficha</span>
+</div>
+<!-- Players List Away -->
+<div class="flex flex-col space-y-2" id="roster-away">
+<!-- Player 1 (POR) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="MD-1" data-name="Pablo Carpio" data-team="MD">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">1</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Pablo Carpio</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">POR</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. Internado Rotativo · Carnet #2018-9102</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'md')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 2 (DEF - Tarjeta Amarilla) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-amber-50 hover:bg-amber-100/60 transition-all" data-id="MD-5" data-name="David Zambrano" data-team="MD">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">5</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">David Zambrano</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEF</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-extrabold text-amber-900 bg-amber-200 px-2 py-0.5 rounded-full">
+<span class="w-2.5 h-3.5 bg-amber-500 rounded-sm inline-block"></span>
+                  Amonestado Min 28'
+                </span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 8vo Ciclo Medicina · Capitán (C)</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'md')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 3 (DEL - Gol) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-tertiary/5 hover:bg-tertiary/10 transition-all" data-id="MD-10" data-name="Andrés Paredes" data-team="MD">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-secondary text-on-secondary flex items-center justify-center font-mono font-extrabold text-label-md shadow-sm">10</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Andrés Paredes</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEL</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-extrabold text-tertiary bg-tertiary/15 px-2 py-0.5 rounded-full">
+                  ⚽ Gol Min 41'
+                </span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 6to Ciclo Odontología</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'md')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 4 (MED) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="MD-8" data-name="Santiago Vega" data-team="MD">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">8</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Santiago Vega</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">MED</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 4to Ciclo Medicina</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'md')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+<!-- Player 5 (SUSPENDIDO - EXPULSIÓN ANTERIOR) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-error-container/20 opacity-60 cursor-not-allowed border-none">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-error-container text-on-error-container flex items-center justify-center font-mono font-extrabold text-label-md">6</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface line-through">Javier Encalada</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">MED</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-extrabold text-error bg-error-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                  Suspendido (1 partido - Roja Directa F2)
+                </span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Resolución Tribunal Arbitral #CD-08-2025</span>
+</div>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-error text-[20px]" title="No habilitado">cancel</span>
+</div>
+</div>
+<!-- Player 6 (Suplente Asistente) -->
+<div class="player-card flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all" data-id="MD-17" data-name="Emilio Dávila" data-team="MD">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container-highest flex items-center justify-center font-mono font-extrabold text-on-surface text-label-md">17</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Emilio Dávila</span>
+<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-surface-container text-secondary">DEF</span>
+</div>
+<span class="font-body-sm text-xs text-secondary">Est. 5to Ciclo Fisioterapia</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" onchange="togglePlayerPresence(this, 'md')" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- MATCH TIMELINE / CRONOLOGÍA MINUTO A MINUTO -->
+
+<!-- MODAL: REGISTRAR INCIDENCIA RÁPIDA -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4 hidden" id="modal-incident">
+<div class="bg-surface-container-lowest rounded-3xl w-full max-w-lg shadow-2xl p-6 lg:p-8 space-y-6 animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold text-lg" id="incident-modal-icon">⚽</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="incident-modal-title">Registrar Gol a Favor</h3>
+<p class="font-body-sm text-body-sm text-secondary">Ingresa los datos para asentar en el acta</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-secondary" onclick="closeIncidentModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="space-y-4" id="incident-form" onsubmit="handleIncidentSubmit(event)">
+<input id="incident-type-input" type="hidden" value="GOL">
+<!-- Selector Equipo -->
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface mb-1.5 uppercase tracking-wide">Equipo Implicado</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container cursor-pointer has-[:checked]:bg-primary-container has-[:checked]:text-on-primary transition-all">
+<input checked="" class="hidden" name="incident-team" onchange="populateIncidentPlayers('IC')" type="radio" value="IC">
+<span class="font-bold font-label-md">Ingeniería Civil</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container cursor-pointer has-[:checked]:bg-secondary has-[:checked]:text-on-secondary transition-all">
+<input class="hidden" name="incident-team" onchange="populateIncidentPlayers('MD')" type="radio" value="MD">
+<span class="font-bold font-label-md">Ciencias Médicas</span>
+</label>
+</div>
+</div>
+<!-- Selector Jugador -->
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface mb-1.5 uppercase tracking-wide" for="incident-player-select">Jugador</label>
+<select class="w-full px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-md border-none focus:ring-2 focus:ring-primary outline-none" id="incident-player-select"><option value="1 - Esteban Orellana">#1 Esteban Orellana (POR)</option><option value="4 - Mateo Morales">#4 Mateo Morales (DEF)</option><option value="9 - Mateo Cárdenas">#9 Mateo Cárdenas (DEL)</option><option value="8 - Mauricio Silva">#8 Mauricio Silva (MED)</option><option value="14 - Jonathan Ortiz">#14 Jonathan Ortiz (MED)</option><option value="11 - Kevin Guayasamín">#11 Kevin Guayasamín (DEL)</option></select>
+</div>
+<!-- Minuto de la incidencia -->
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface mb-1.5 uppercase tracking-wide" for="incident-minute-input">Minuto del Encuentro</label>
+<div class="relative">
+<input class="w-full px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-headline-sm font-bold border-none focus:ring-2 focus:ring-primary outline-none" id="incident-minute-input" max="95" min="1" required="" type="number" value="63">
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-secondary font-bold font-mono">' min</span>
+</div>
+</div>
+<!-- Observaciones complementarias -->
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface mb-1.5 uppercase tracking-wide" for="incident-notes-input">Observación Arbitral (Opcional)</label>
+<input class="w-full px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm border-none focus:ring-2 focus:ring-primary outline-none" id="incident-notes-input" placeholder="Ej. Tiro libre directo, falta desmedida..." type="text">
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-surface-container">
+<button class="px-5 py-2.5 rounded-xl text-secondary hover:bg-surface-container font-label-md text-label-md font-bold transition-all" onclick="closeIncidentModal()" type="button">
+            Cancelar
+          </button>
+<button class="px-6 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-extrabold transition-all shadow-md" type="submit">
+            Registrar Incidencia
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL: DECLARAR WALKOVER (W.O.) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="modal-wo">
+<div class="bg-surface-container-lowest rounded-3xl w-full max-w-lg shadow-2xl p-6 lg:p-8 space-y-6 animate-in fade-in zoom-in-95 duration-200 border-none">
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-error-container text-on-error-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[28px]">gavel</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Declarar Walkover (W.O.)</h3>
+<p class="font-body-sm text-body-sm text-secondary">Art. 38 Reglamento Oficial FEDUP 2025</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-secondary" onclick="closeWOModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-4 rounded-2xl bg-error-container/20 space-y-2">
+<div class="flex items-center gap-2 text-error font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+          Tolerancia Reglamentaria Excedida
+        </div>
+<p class="font-body-sm text-body-sm text-on-surface">
+          Han transcurrido los <strong>10 minutos de tolerancia reglamentaria</strong> sin la presencia del mínimo de jugadores requeridos (mínimo 6 atletas en cancha para Fútbol 9).
+        </p>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block font-label-sm text-label-sm font-bold text-on-surface mb-2 uppercase tracking-wide">Seleccionar Equipo Ausente / Infractor</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex flex-col p-3 rounded-2xl bg-surface-container cursor-pointer has-[:checked]:bg-primary-container has-[:checked]:text-on-primary transition-all">
+<input class="hidden" name="wo-absent-team" type="radio" value="IC">
+<span class="font-bold text-label-lg">Ingeniería Civil</span>
+<span class="text-xs opacity-80">Se otorgará triunfo a Médicas</span>
+</label>
+<label class="flex flex-col p-3 rounded-2xl bg-surface-container cursor-pointer has-[:checked]:bg-secondary has-[:checked]:text-on-secondary transition-all">
+<input checked="" class="hidden" name="wo-absent-team" type="radio" value="MD">
+<span class="font-bold text-label-lg">Ciencias Médicas</span>
+<span class="text-xs opacity-80">Se otorgará triunfo a Civil</span>
+</label>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface-container text-xs text-secondary space-y-1">
+<p class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+            Efectos reglamentarios inmediatos:
+          </p>
+<p class="">• Marcador fijado de manera automática en <strong>3 – 0</strong> a favor del equipo presente.</p>
+<p class="">• Adjudicación de los <strong>3 puntos oficiales</strong> en la tabla de clasificación.</p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-surface-container">
+<button class="px-5 py-2.5 rounded-xl text-secondary hover:bg-surface-container font-label-md text-label-md font-bold transition-all" onclick="closeWOModal()" type="button">
+          Cancelar
+        </button>
+<button class="px-6 py-2.5 rounded-xl bg-error hover:bg-error/90 text-on-error font-label-md text-label-md font-extrabold transition-all shadow-lg shadow-error/30" onclick="confirmWalkover()" type="button">
+          Confirmar Walkover (3 - 0)
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL: CERRAR PLANILLA OFICIAL -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="modal-finalize">
+<div class="bg-surface-container-lowest rounded-3xl w-full max-w-xl shadow-2xl p-6 lg:p-8 space-y-6 animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[28px]">lock</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Cierre y Firma de Planilla</h3>
+<p class="font-body-sm text-body-sm text-secondary">Bloqueo irreversible del acta para auditoría</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center text-secondary" onclick="closeFinalizeModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Resumen del marcador final -->
+<div class="p-5 rounded-2xl bg-surface-container-low flex items-center justify-between">
+<div class="text-center flex-1">
+<span class="text-xs text-secondary font-bold uppercase block">Local</span>
+<span class="font-headline-md text-headline-md font-black text-primary">Ingeniería Civil</span>
+</div>
+<div class="px-6 py-2 rounded-xl bg-surface-container text-center">
+<span class="font-headline-xl text-headline-xl font-extrabold text-on-surface tracking-tight" id="modal-final-score">2 - 1</span>
+<span class="text-xs text-tertiary font-bold block">Marcador Oficial</span>
+</div>
+<div class="text-center flex-1">
+<span class="text-xs text-secondary font-bold uppercase block">Visitante</span>
+<span class="font-headline-md text-headline-md font-black text-secondary">Ciencias Médicas</span>
+</div>
+</div>
+<!-- Validaciones de firmas -->
+<div class="space-y-3">
+<h4 class="font-label-md text-label-md font-bold uppercase tracking-wider text-secondary">Verificación y Conformidad de Firmas Digitales</h4>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="text-left">
+<span class="font-label-md text-label-md font-bold text-on-surface block">Capitán IC · #1 Esteban Orellana</span>
+<span class="text-xs text-secondary">Conforme con el marcador y amonestaciones registradas</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="text-left">
+<span class="font-label-md text-label-md font-bold text-on-surface block">Capitán MD · #5 David Zambrano</span>
+<span class="text-xs text-secondary">Conforme con el resultado final</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox">
+<div class="text-left">
+<span class="font-label-md text-label-md font-bold text-on-surface block">Árbitro Principal · Carlos Andrade</span>
+<span class="text-xs text-secondary">Firma electrónica autenticada con token arbitral</span>
+</div>
+</label>
+</div>
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-surface-container">
+<button class="px-5 py-2.5 rounded-xl text-secondary hover:bg-surface-container font-label-md text-label-md font-bold transition-all" onclick="closeFinalizeModal()" type="button">
+          Revisar Más Tarde
+        </button>
+<button class="px-6 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-extrabold transition-all shadow-lg shadow-primary/30" onclick="confirmFinalizeMatch()" type="button">
+          Confirmar y Enviar Acta Final
+        </button>
+</div>
+</div>
+</div>
+<script>
+    // State management
+    const matchData = {
+      homeScore: 2,
+      awayScore: 1,
+      rosters: {
+        IC: [
+          { id: 'IC-1', name: 'Esteban Orellana', pos: 'POR', dorsal: 1 },
+          { id: 'IC-4', name: 'Mateo Morales', pos: 'DEF', dorsal: 4 },
+          { id: 'IC-9', name: 'Mateo Cárdenas', pos: 'DEL', dorsal: 9 },
+          { id: 'IC-8', name: 'Mauricio Silva', pos: 'MED', dorsal: 8 },
+          { id: 'IC-14', name: 'Jonathan Ortiz', pos: 'MED', dorsal: 14 },
+          { id: 'IC-11', name: 'Kevin Guayasamín', pos: 'DEL', dorsal: 11 }
+        ],
+        MD: [
+          { id: 'MD-1', name: 'Pablo Carpio', pos: 'POR', dorsal: 1 },
+          { id: 'MD-5', name: 'David Zambrano', pos: 'DEF', dorsal: 5 },
+          { id: 'MD-10', name: 'Andrés Paredes', pos: 'DEL', dorsal: 10 },
+          { id: 'MD-8', name: 'Santiago Vega', pos: 'MED', dorsal: 8 },
+          { id: 'MD-17', name: 'Emilio Dávila', pos: 'DEF', dorsal: 17 }
+        ]
+      }
+    };
+
+    // Toast feedback helper
+    function showScoreToast(message, icon = 'check_circle', bg = 'bg-inverse-surface') {
+      const container = document.getElementById('toast-wrapper');
+      const toast = document.createElement('div');
+      toast.className = `flex items-center gap-3 px-5 py-3 rounded-2xl ${bg} text-inverse-on-surface shadow-2xl border border-surface-container-highest/20 text-body-sm font-semibold transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto max-w-md`;
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">${icon}</span>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Toggle player presence
+    function togglePlayerPresence(checkbox, team) {
+      const countEl = document.getElementById(`${team}-present-count`);
+      const container = document.getElementById(team === 'ic' ? 'roster-local' : 'roster-away');
+      const totalCheckboxes = container.querySelectorAll('input[type="checkbox"]');
+      const checkedCount = Array.from(totalCheckboxes).filter(cb => cb.checked).length;
+      
+      countEl.innerText = `${checkedCount} / 11`;
+      showScoreToast(`Asistencia de jugador actualizada (${team.toUpperCase()})`, 'how_to_reg');
+    }
+
+    // Incident Modal logic
+    function openIncidentModal(type) {
+      const modal = document.getElementById('modal-incident');
+      const title = document.getElementById('incident-modal-title');
+      const icon = document.getElementById('incident-modal-icon');
+      const typeInput = document.getElementById('incident-type-input');
+      typeInput.value = type;
+
+      if (type === 'GOL') {
+        title.innerText = 'Registrar Gol a Favor';
+        icon.innerText = '⚽';
+        icon.className = 'w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold text-lg';
+      } else if (type === 'AUTOGOL') {
+        title.innerText = 'Registrar Autogol (En Contra)';
+        icon.innerText = '⚽';
+        icon.className = 'w-10 h-10 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-lg';
+      } else if (type === 'AMARILLA') {
+        title.innerText = 'Registrar Tarjeta Amarilla';
+        icon.innerHTML = '<span class="w-3.5 h-4.5 bg-amber-400 rounded-sm inline-block shadow-inner"></span>';
+        icon.className = 'w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-lg';
+      } else if (type === 'ROJA') {
+        title.innerText = 'Registrar Tarjeta Roja Directa';
+        icon.innerHTML = '<span class="w-3.5 h-4.5 bg-error rounded-sm inline-block shadow-inner"></span>';
+        icon.className = 'w-10 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center font-bold text-lg';
+      } else if (type === 'CAMBIO') {
+        title.innerText = 'Registrar Sustitución';
+        icon.innerHTML = '<span class="material-symbols-outlined text-[20px]">sync_alt</span>';
+        icon.className = 'w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-lg';
+      }
+
+      populateIncidentPlayers('IC');
+      modal.classList.remove('hidden');
+    }
+
+    function closeIncidentModal() {
+      document.getElementById('modal-incident').classList.add('hidden');
+    }
+
+    function populateIncidentPlayers(teamKey) {
+      const select = document.getElementById('incident-player-select');
+      select.innerHTML = '';
+      const list = matchData.rosters[teamKey];
+
+      list.forEach(player => {
+        const opt = document.createElement('option');
+        opt.value = `${player.dorsal} - ${player.name}`;
+        opt.innerText = `#${player.dorsal} ${player.name} (${player.pos})`;
+        select.appendChild(opt);
+      });
+    }
+
+    function handleIncidentSubmit(e) {
+      e.preventDefault();
+      const type = document.getElementById('incident-type-input').value;
+      const team = document.querySelector('input[name="incident-team"]:checked').value;
+      const player = document.getElementById('incident-player-select').value;
+      const minute = document.getElementById('incident-minute-input').value;
+      const notes = document.getElementById('incident-notes-input').value;
+
+      // Update score if goal
+      if (type === 'GOL') {
+        if (team === 'IC') matchData.homeScore++;
+        else matchData.awayScore++;
+      } else if (type === 'AUTOGOL') {
+        // Autogol gives point to opponent
+        if (team === 'IC') matchData.awayScore++;
+        else matchData.homeScore++;
+      }
+
+      document.getElementById('score-home').innerText = matchData.homeScore;
+      document.getElementById('score-away').innerText = matchData.awayScore;
+
+      // Add to timeline
+      const timeline = document.getElementById('events-timeline');
+      const newEvent = document.createElement('div');
+      const evId = `ev-${Date.now()}`;
+      newEvent.className = 'timeline-item relative flex items-start gap-4 pl-2 animate-in fade-in slide-in-from-top-2 duration-300';
+      newEvent.setAttribute('data-id', evId);
+      newEvent.setAttribute('data-type', type);
+      newEvent.setAttribute('data-team', team);
+
+      let iconHtml = '⚽';
+      let iconBg = 'bg-tertiary-container text-on-tertiary';
+      let label = type === 'GOL' ? 'Gol' : type;
+
+      if (type === 'AMARILLA') {
+        iconHtml = '<span class="w-2.5 h-3.5 bg-amber-500 rounded-xs inline-block"></span>';
+        iconBg = 'bg-amber-100 text-amber-900';
+        label = 'Tarjeta Amarilla';
+      } else if (type === 'ROJA') {
+        iconHtml = '<span class="w-2.5 h-3.5 bg-error rounded-xs inline-block"></span>';
+        iconBg = 'bg-error-container text-on-error-container';
+        label = 'Tarjeta Roja';
+      } else if (type === 'CAMBIO') {
+        iconHtml = '<span class="material-symbols-outlined text-[16px]">swap_horiz</span>';
+        iconBg = 'bg-secondary-container text-on-secondary-container';
+        label = 'Sustitución';
+      }
+
+      const teamName = team === 'IC' ? 'Ingeniería Civil' : 'Ciencias Médicas';
+
+      newEvent.innerHTML = `
+        <div class="w-8 h-8 rounded-full ${iconBg} flex items-center justify-center font-bold text-xs shadow-md z-10 flex-shrink-0">
+          ${iconHtml}
+        </div>
+        <div class="flex-1 bg-surface-container-low hover:bg-surface-container transition-all p-4 rounded-2xl flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="font-mono font-extrabold ${team === 'IC' ? 'text-primary' : 'text-secondary'} text-label-lg">${minute}'</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-label-lg text-label-lg font-extrabold text-on-surface">${label} · ${teamName}</span>
+                ${type === 'GOL' ? `<span class="text-xs px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary font-bold">${matchData.homeScore} - ${matchData.awayScore}</span>` : ''}
+              </div>
+              <p class="font-body-sm text-body-sm text-secondary">${player} ${notes ? `(${notes})` : ''}</p>
+            </div>
+          </div>
+          <button type="button" onclick="undoEvent('${evId}', '${type}', '${team}')" class="p-2 rounded-xl text-secondary hover:text-error hover:bg-error-container/40 transition-colors cursor-pointer" title="Deshacer incidencia">
+            <span class="material-symbols-outlined text-[20px]">delete</span>
+          </button>
+        </div>
+      `;
+
+      timeline.insertBefore(newEvent, timeline.firstChild);
+      closeIncidentModal();
+      showScoreToast(`${label} asentado en el acta arbitral oficial con éxito.`, 'sports_soccer');
+    }
+
+    // Undo action
+    function undoEvent(eventId, type, team) {
+      const item = document.querySelector(`[data-id="${eventId}"]`);
+      if (!item) return;
+
+      if (type === 'GOL') {
+        if (team === 'IC' && matchData.homeScore > 0) matchData.homeScore--;
+        else if (team === 'MD' && matchData.awayScore > 0) matchData.awayScore--;
+      }
+
+      document.getElementById('score-home').innerText = matchData.homeScore;
+      document.getElementById('score-away').innerText = matchData.awayScore;
+      
+      item.remove();
+      showScoreToast('Incidencia anulada y marcador corregido.', 'undo', 'bg-error-container text-on-error-container');
+    }
+
+    // W.O. Modal logic
+    document.getElementById('btn-open-wo').addEventListener('click', () => {
+      document.getElementById('modal-wo').classList.remove('hidden');
+    });
+
+    function closeWOModal() {
+      document.getElementById('modal-wo').classList.add('hidden');
+    }
+
+    function confirmWalkover() {
+      const absent = document.querySelector('input[name="wo-absent-team"]:checked').value;
+      if (absent === 'MD') {
+        matchData.homeScore = 3;
+        matchData.awayScore = 0;
+      } else {
+        matchData.homeScore = 0;
+        matchData.awayScore = 3;
+      }
+
+      document.getElementById('score-home').innerText = matchData.homeScore;
+      document.getElementById('score-away').innerText = matchData.awayScore;
+      document.getElementById('match-timer').innerText = 'FINALIZADO (W.O.)';
+
+      closeWOModal();
+      showScoreToast('Walkover declarado: 3 – 0 oficial registrado.', 'gavel', 'bg-primary text-on-primary');
+    }
+
+    // Finalize Modal logic
+    document.getElementById('btn-open-finalize').addEventListener('click', () => {
+      document.getElementById('modal-final-score').innerText = `${matchData.homeScore} - ${matchData.awayScore}`;
+      document.getElementById('modal-finalize').classList.remove('hidden');
+    });
+
+    function closeFinalizeModal() {
+      document.getElementById('modal-finalize').classList.add('hidden');
+    }
+
+    function confirmFinalizeMatch() {
+      closeFinalizeModal();
+      showScoreToast('Planilla bloqueada y transmitida a auditoría FEDUP.', 'verified', 'bg-tertiary-container text-on-tertiary');
+    }
+  </script>
+</div></main></div>
+<script>
+  // Complete Interactive Database
+  const tournamentDB = {
+    disciplines: {
+      futbol: {
+        name: 'Fútbol 9 Serie Mayor',
+        statLabels: { gf: 'GF', gc: 'GC', gd: 'GD' },
+        groups: {
+          'A': {
+            title: 'Grupo A · Fútbol 9 Serie Mayor',
+            venue: 'Cancha Central de Ingenierías · 5ta Fecha pendiente',
+            spotlight: {
+              badge: 'Definición Fecha 5',
+              teamA: { code: 'IC', name: 'Ingeniería Civil', desc: '10 pts · Asegura primer puesto' },
+              teamB: { code: 'AR', name: 'Arquitectura y Urbanismo', desc: '8 pts · Clasificación directa' },
+              time: 'Jueves 16:00',
+              place: 'Cancha Sintética 1'
+            },
+            teams: [
+              { id: 'CIV', code: 'IC', name: 'Ingeniería Civil', campus: 'Campus Central · Los Castores', pj: 4, pg: 3, pe: 1, pp: 0, gf: 11, gc: 3, gd: '+8', pts: 10, form: ['V','V','E','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Arquitectura', result: '1 - 1 (Empate)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '3 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Facultad de Artes', result: '5 - 1 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'ARQ', code: 'AQ', name: 'Arquitectura y Urbanismo', campus: 'Campus Yanuncay · T-Square', pj: 4, pg: 2, pe: 2, pp: 0, gf: 8, gc: 4, gd: '+4', pts: 8, form: ['E','V','E','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ingeniería Civil', result: '1 - 1 (Empate)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Químicas', result: '3 - 1 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '2 - 2 (Empate)', date: 'Fecha 3' },
+                { opponent: 'Facultad de Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'FIL', code: 'FL', name: 'Filosofía y Letras', campus: 'Campus Central · Los Cronistas', pj: 4, pg: 1, pe: 2, pp: 1, gf: 5, gc: 6, gd: '-1', pts: 5, form: ['D','E','E','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ingeniería Civil', result: '0 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Facultad de Artes', result: '2 - 1 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '2 - 2 (Empate)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '1 - 1 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'QUI', code: 'CQ', name: 'Ciencias Químicas', campus: 'Campus Central · Matraces', pj: 4, pg: 1, pe: 1, pp: 2, gf: 5, gc: 7, gd: '-2', pts: 4, form: ['V','D','D','E'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Facultad de Artes', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Arquitectura', result: '1 - 3 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ingeniería Civil', result: '1 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Filosofía', result: '1 - 1 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'ART', code: 'AT', name: 'Facultad de Artes', campus: 'Campus Yanuncay · Creativos', pj: 4, pg: 0, pe: 0, pp: 4, gf: 3, gc: 12, gd: '-9', pts: 1, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias Químicas', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '1 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ingeniería Civil', result: '1 - 5 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'B': {
+            title: 'Grupo B · Fútbol 9 Serie Mayor',
+            venue: 'Estadio Universitario de Cuenca · 4ta Fecha culminada',
+            spotlight: {
+              badge: 'Clásico Universitario',
+              teamA: { code: 'EC', name: 'Ciencias Económicas', desc: '12 pts · Líder invicto del grupo' },
+              teamB: { code: 'JP', name: 'Jurisprudencia', desc: '9 pts · Disputa primer sembrado' },
+              time: 'Sábado 11:00',
+              place: 'Estadio Universitario'
+            },
+            teams: [
+              { id: 'ECO', code: 'EC', name: 'Ciencias Económicas', campus: 'Campus Central · Los Economistas', pj: 4, pg: 4, pe: 0, pp: 0, gf: 14, gc: 2, gd: '+12', pts: 12, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Médicas', result: '4 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Jurisprudencia', result: '3 - 1 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '5 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'JUR', code: 'JP', name: 'Jurisprudencia', campus: 'Campus Central · Ius FC', pj: 4, pg: 3, pe: 0, pp: 1, gf: 9, gc: 4, gd: '+5', pts: 9, form: ['V','D','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Hospitalidad', result: '3 - 0 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Económicas', result: '1 - 3 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Médicas', result: '3 - 1 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'MED', code: 'MD', name: 'Ciencias Médicas', campus: 'Campus Paraíso · Los Galenos', pj: 4, pg: 2, pe: 0, pp: 2, gf: 6, gc: 7, gd: '-1', pts: 6, form: ['D','V','V','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ciencias Económicas', result: '1 - 4 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Jurisprudencia', result: '1 - 3 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'PSI', code: 'PS', name: 'Facultad de Psicología', campus: 'Campus Paraíso · Mentes FC', pj: 4, pg: 1, pe: 1, pp: 2, gf: 4, gc: 6, gd: '-2', pts: 4, form: ['V','E','D','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'HOS_B', code: 'HT', name: 'Hospitalidad', campus: 'Campus Yanuncay · Guías', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 12, gd: '-11', pts: 0, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Jurisprudencia', result: '0 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Psicología', result: '1 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Médicas', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Económicas', result: '0 - 5 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'C': {
+            title: 'Grupo C · Fútbol 9 Serie Mayor',
+            venue: 'Cancha Huayna Cápac · Jornada Vespertina',
+            spotlight: {
+              badge: 'Definición Fecha 5',
+              teamA: { code: 'CS', name: 'Ciencias de la Salud', desc: '5 pts · Busca cupo directo' },
+              teamB: { code: 'EF', name: 'Cultura Física y Deporte', desc: '8 pts · Asegura clasificación' },
+              time: 'Viernes 15:30',
+              place: 'Cancha Huayna Cápac'
+            },
+            teams: [
+              { id: 'AGR', code: 'AG', name: 'Ciencias Agropecuarias', campus: 'Campus Monay · Agrónomos', pj: 4, pg: 3, pe: 0, pp: 1, gf: 9, gc: 3, gd: '+6', pts: 9, form: ['V','V','D','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Hospitalidad y Turismo', result: '3 - 0 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Cultura Física', result: '1 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '3 - 1 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'EDF', code: 'EF', name: 'Cultura Física y Deporte', campus: 'Campus Central · Atletas', pj: 4, pg: 2, pe: 2, pp: 0, gf: 8, gc: 4, gd: '+4', pts: 8, form: ['V','E','V','E'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Escuela de Idiomas', result: '3 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad y Turismo', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Agropecuarias', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 2 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'CSL', code: 'CS', name: 'Ciencias de la Salud', campus: 'Campus Paraíso · Vital FC', pj: 4, pg: 1, pe: 2, pp: 1, gf: 5, gc: 6, gd: '-1', pts: 5, form: ['E','D','V','E'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad y Turismo', result: '1 - 1 (Empate)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Cultura Física', result: '2 - 2 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'HOS', code: 'HT', name: 'Hospitalidad y Turismo', campus: 'Campus Yanuncay · Guías', pj: 4, pg: 0, pe: 3, pp: 1, gf: 3, gc: 6, gd: '-3', pts: 3, form: ['D','E','E','E'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Cultura Física', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '1 - 1 (Empate)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '1 - 1 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'IDI', code: 'ID', name: 'Escuela de Idiomas', campus: 'Campus Central · Políglotas', pj: 4, pg: 0, pe: 1, pp: 3, gf: 4, gc: 10, gd: '-6', pts: 1, form: ['D','D','D','E'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Cultura Física', result: '1 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad y Turismo', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '1 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Agropecuarias', result: '1 - 3 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          }
+        }
+      },
+      baloncesto: {
+        name: 'Baloncesto Superior',
+        statLabels: { gf: 'PF', gc: 'PC', gd: 'DIF' },
+        groups: {
+          'A': {
+            title: 'Grupo A · Baloncesto Superior',
+            venue: 'Coliseo Universitario Central · Cancha 1',
+            spotlight: {
+              badge: 'Jornada Nocturna',
+              teamA: { code: 'IC', name: 'Ingeniería Civil', desc: '8 pts · Puntero con récord 4-0' },
+              teamB: { code: 'FL', name: 'Filosofía y Letras', desc: '6 pts · En busca de semifinales' },
+              time: 'Viernes 19:30',
+              place: 'Coliseo Universitario'
+            },
+            teams: [
+              { id: 'B_CIV', code: 'IC', name: 'Ingeniería Civil', campus: 'Campus Central · Triples', pj: 4, pg: 4, pe: 0, pp: 0, gf: 248, gc: 190, gd: '+58', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Arquitectura', result: '62 - 50 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '58 - 44 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '60 - 48 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '68 - 48 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_ARQ', code: 'AQ', name: 'Arquitectura y Urbanismo', campus: 'Campus Yanuncay', pj: 4, pg: 3, pe: 0, pp: 1, gf: 220, gc: 195, gd: '+25', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ingeniería Civil', result: '50 - 62 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Químicas', result: '56 - 45 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '54 - 48 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '60 - 40 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_FIL', code: 'FL', name: 'Filosofía y Letras', campus: 'Campus Central', pj: 4, pg: 2, pe: 0, pp: 2, gf: 198, gc: 205, gd: '-7', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Artes', result: '52 - 42 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '44 - 58 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '48 - 54 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '54 - 51 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_QUI', code: 'CQ', name: 'Ciencias Químicas', campus: 'Campus Central', pj: 4, pg: 1, pe: 0, pp: 3, gf: 188, gc: 215, gd: '-27', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Arquitectura', result: '45 - 56 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '48 - 60 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '51 - 54 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '44 - 45 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_ART', code: 'AT', name: 'Facultad de Artes', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 165, gc: 214, gd: '-49', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Filosofía', result: '42 - 52 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '48 - 68 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '40 - 60 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '35 - 34 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'B': {
+            title: 'Grupo B · Baloncesto Superior',
+            venue: 'Coliseo Universitario Central · Cancha 2',
+            spotlight: {
+              badge: 'Duelo Estelar',
+              teamA: { code: 'EC', name: 'Ciencias Económicas', desc: '8 pts · Máximo encestador' },
+              teamB: { code: 'MD', name: 'Ciencias Médicas', desc: '7 pts · Puesto de clasificación' },
+              time: 'Sábado 18:00',
+              place: 'Coliseo Cancha 2'
+            },
+            teams: [
+              { id: 'B_ECO', code: 'EC', name: 'Ciencias Económicas', campus: 'Campus Central', pj: 4, pg: 4, pe: 0, pp: 0, gf: 260, gc: 185, gd: '+75', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Médicas', result: '65 - 52 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Jurisprudencia', result: '68 - 45 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '60 - 44 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '67 - 44 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_MED', code: 'MD', name: 'Ciencias Médicas', campus: 'Campus Paraíso', pj: 4, pg: 3, pe: 0, pp: 1, gf: 230, gc: 200, gd: '+30', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Económicas', result: '52 - 65 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Jurisprudencia', result: '59 - 50 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '61 - 47 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '58 - 38 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_JUR', code: 'JP', name: 'Jurisprudencia', campus: 'Campus Central', pj: 4, pg: 2, pe: 0, pp: 2, gf: 195, gc: 210, gd: '-15', pts: 6, form: ['V','D','V','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad', result: '54 - 40 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '50 - 59 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '52 - 48 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Económicas', result: '45 - 68 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_PSI', code: 'PS', name: 'Facultad de Psicología', campus: 'Campus Paraíso', pj: 4, pg: 1, pe: 0, pp: 3, gf: 182, gc: 215, gd: '-33', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ciencias Médicas', result: '47 - 61 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Económicas', result: '44 - 60 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Jurisprudencia', result: '48 - 52 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '43 - 42 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_HOS', code: 'HT', name: 'Hospitalidad', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 164, gc: 221, gd: '-57', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Jurisprudencia', result: '40 - 54 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '38 - 58 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Económicas', result: '44 - 67 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Psicología', result: '42 - 43 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'C': {
+            title: 'Grupo C · Baloncesto Superior',
+            venue: 'Coliseo Mayor Yanuncay · Rueda Clasificatoria',
+            spotlight: {
+              badge: 'Jornada Decisiva',
+              teamA: { code: 'EF', name: 'Cultura Física y Deporte', desc: '8 pts · Campeón defensor' },
+              teamB: { code: 'AG', name: 'Ciencias Agropecuarias', desc: '7 pts · Segunda posición' },
+              time: 'Viernes 17:00',
+              place: 'Coliseo Yanuncay'
+            },
+            teams: [
+              { id: 'B_EDF', code: 'EF', name: 'Cultura Física y Deporte', campus: 'Campus Central · Atletas', pj: 4, pg: 4, pe: 0, pp: 0, gf: 275, gc: 170, gd: '+105', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Agropecuarias', result: '66 - 54 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '72 - 45 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad', result: '69 - 38 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Idiomas', result: '68 - 33 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_AGR', code: 'AG', name: 'Ciencias Agropecuarias', campus: 'Campus Monay · Agrónomos', pj: 4, pg: 3, pe: 0, pp: 1, gf: 232, gc: 198, gd: '+34', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Cultura Física', result: '54 - 66 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '58 - 48 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad', result: '62 - 44 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Idiomas', result: '58 - 40 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_CSL', code: 'CS', name: 'Ciencias de la Salud', campus: 'Campus Paraíso · Vital FC', pj: 4, pg: 2, pe: 0, pp: 2, gf: 204, gc: 215, gd: '-11', pts: 6, form: ['D','D','V','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Cultura Física', result: '45 - 72 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '48 - 58 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Idiomas', result: '55 - 42 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '56 - 43 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_HOSC', code: 'HT', name: 'Hospitalidad y Turismo', campus: 'Campus Yanuncay', pj: 4, pg: 1, pe: 0, pp: 3, gf: 175, gc: 228, gd: '-53', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Cultura Física', result: '38 - 69 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '44 - 62 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '43 - 56 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Idiomas', result: '50 - 41 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_IDI', code: 'ID', name: 'Escuela de Idiomas', campus: 'Campus Central', pj: 4, pg: 0, pe: 0, pp: 4, gf: 156, gc: 231, gd: '-75', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias de la Salud', result: '42 - 55 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Cultura Física', result: '33 - 68 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Agropecuarias', result: '40 - 58 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '41 - 50 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          }
+        }
+      },
+      ecuavoley: {
+        name: 'Ecuavoley de Tríos',
+        statLabels: { gf: 'SF', gc: 'SC', gd: 'DS' },
+        groups: {
+          'A': {
+            title: 'Grupo A · Ecuavoley de Tríos',
+            venue: 'Canchas Polideportivas Huayna Cápac',
+            spotlight: {
+              badge: 'Fecha 5 Final',
+              teamA: { code: 'IC', name: 'Ingeniería Civil', desc: '8 pts · Invicto en sets' },
+              teamB: { code: 'AQ', name: 'Arquitectura y Urbanismo', desc: '7 pts · Boleto a semifinales' },
+              time: 'Sábado 10:00',
+              place: 'Cancha Polideportiva 1'
+            },
+            teams: [
+              { id: 'E_CIV', code: 'IC', name: 'Ingeniería Civil', campus: 'Campus Central · Los Ponchadores', pj: 4, pg: 4, pe: 0, pp: 0, gf: 8, gc: 1, gd: '+7', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Arquitectura', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_ARQ', code: 'AQ', name: 'Arquitectura y Urbanismo', campus: 'Campus Yanuncay', pj: 4, pg: 3, pe: 0, pp: 1, gf: 7, gc: 2, gd: '+5', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ingeniería Civil', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_FIL', code: 'FL', name: 'Filosofía y Letras', campus: 'Campus Central', pj: 4, pg: 2, pe: 0, pp: 2, gf: 4, gc: 5, gd: '-1', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Artes', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_QUI', code: 'CQ', name: 'Ciencias Químicas', campus: 'Campus Central', pj: 4, pg: 1, pe: 0, pp: 3, gf: 2, gc: 6, gd: '-4', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ingeniería Civil', result: '0 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_ART', code: 'AT', name: 'Facultad de Artes', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 8, gd: '-7', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Filosofía', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'B': {
+            title: 'Grupo B · Ecuavoley de Tríos',
+            venue: 'Canchas Centrales Universitarias',
+            spotlight: {
+              badge: 'Duelo Clave',
+              teamA: { code: 'EC', name: 'Ciencias Económicas', desc: '8 pts · Colocadores estrella' },
+              teamB: { code: 'JP', name: 'Jurisprudencia', desc: '7 pts · Puesto 2 asegurado' },
+              time: 'Viernes 16:30',
+              place: 'Cancha 2 Central'
+            },
+            teams: [
+              { id: 'E_ECO', code: 'EC', name: 'Ciencias Económicas', campus: 'Campus Central', pj: 4, pg: 4, pe: 0, pp: 0, gf: 8, gc: 1, gd: '+7', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Jurisprudencia', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_JUR', code: 'JP', name: 'Jurisprudencia', campus: 'Campus Central', pj: 4, pg: 3, pe: 0, pp: 1, gf: 7, gc: 2, gd: '+5', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Económicas', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_MED', code: 'MD', name: 'Ciencias Médicas', campus: 'Campus Paraíso', pj: 4, pg: 2, pe: 0, pp: 2, gf: 4, gc: 5, gd: '-1', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_PSI', code: 'PS', name: 'Facultad de Psicología', campus: 'Campus Paraíso', pj: 4, pg: 1, pe: 0, pp: 3, gf: 2, gc: 6, gd: '-4', pts: 5, form: ['D','V','D','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Médicas', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_HOSB', code: 'HT', name: 'Hospitalidad', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 8, gd: '-7', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias Médicas', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Psicología', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'C': {
+            title: 'Grupo C · Ecuavoley de Tríos',
+            venue: 'Canchas Polideportivas Huayna Cápac',
+            spotlight: {
+              badge: 'Partidazo Decisivo',
+              teamA: { code: 'AG', name: 'Ciencias Agropecuarias', desc: '8 pts · Punteros invictos' },
+              teamB: { code: 'EF', name: 'Cultura Física y Deporte', desc: '7 pts · Buscan revancha' },
+              time: 'Viernes 17:30',
+              place: 'Cancha Central Huayna Cápac'
+            },
+            teams: [
+              { id: 'E_AGR', code: 'AG', name: 'Ciencias Agropecuarias', campus: 'Campus Monay · Agrónomos', pj: 4, pg: 4, pe: 0, pp: 0, gf: 8, gc: 1, gd: '+7', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Cultura Física', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad y Turismo', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_EDF', code: 'EF', name: 'Cultura Física y Deporte', campus: 'Campus Central · Atletas', pj: 4, pg: 3, pe: 0, pp: 1, gf: 7, gc: 2, gd: '+5', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Agropecuarias', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad y Turismo', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_CSL', code: 'CS', name: 'Ciencias de la Salud', campus: 'Campus Paraíso · Vital FC', pj: 4, pg: 2, pe: 0, pp: 2, gf: 4, gc: 5, gd: '-1', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Escuela de Idiomas', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Cultura Física', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad y Turismo', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_HOS', code: 'HT', name: 'Hospitalidad y Turismo', campus: 'Campus Yanuncay', pj: 4, pg: 1, pe: 0, pp: 3, gf: 2, gc: 6, gd: '-4', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Cultura Física', result: '0 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_IDI', code: 'ID', name: 'Escuela de Idiomas', campus: 'Campus Central', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 8, gd: '-7', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias de la Salud', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Cultura Física', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad y Turismo', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          }
+        }
+      }
+    }
+  };
+
+  // State
+  let currentDiscipline = 'futbol';
+  let currentGroup = 'C';
+
+  // Helper Toast Notification
+  function showNotification(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'flex items-center gap-3 px-4 py-3 rounded-2xl bg-inverse-surface text-inverse-on-surface shadow-2xl border border-surface-container/20 text-body-sm font-medium transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto max-w-md';
+    
+    let icon = 'info';
+    let iconColor = 'text-tertiary-fixed';
+    if (type === 'success') {
+      icon = 'check_circle';
+      iconColor = 'text-tertiary-fixed-dim';
+    } else if (type === 'sync') {
+      icon = 'sync';
+      iconColor = 'text-primary-fixed-dim';
+    }
+
+    toast.innerHTML = `
+      <span class="material-symbols-outlined ${iconColor} text-[20px] flex-shrink-0">${icon}</span>
+      <span class="flex-1">${message}</span>
+    `;
+
+    container.appendChild(toast);
+    
+    // Animate in
+    setTimeout(() => {
+      toast.classList.remove('translate-y-4', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+    }, 10);
+
+    // Auto dismiss
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(() => toast.remove(), 300);
+    }, 3800);
+  }
+
+  // Update Group Cards Preview Metrics
+  function updateGroupCardsMetrics() {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    ['A', 'B', 'C'].forEach(gKey => {
+      const gData = disc.groups[gKey];
+      const card = document.querySelector(`.group-tab[data-group="${gKey}"]`);
+      if (card && gData && gData.teams.length > 0) {
+        const leader = gData.teams[0];
+        const nameEl = card.querySelector('.leader-name');
+        const ptsEl = card.querySelector('.leader-pts');
+        if (nameEl) nameEl.textContent = leader.name;
+        if (ptsEl) ptsEl.textContent = `${leader.pts} Pts`;
+      }
+    });
+  }
+
+  // Render Table Function
+  function renderTable(groupKey, filterText = '') {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    const tableBody = document.getElementById('table-body');
+    const titleEl = document.getElementById('current-group-title');
+    const subtitleEl = document.getElementById('current-group-subtitle');
+    
+    // Column header labels for discipline
+    document.getElementById('col-gf').textContent = disc.statLabels.gf;
+    document.getElementById('col-gc').textContent = disc.statLabels.gc;
+    document.getElementById('col-gd').textContent = disc.statLabels.gd;
+
+    let teamsToRender = [];
+    
+    if (groupKey === 'ALL') {
+      titleEl.innerText = `Tabla Acumulada General · ${disc.name}`;
+      subtitleEl.innerText = `Consolidado de todas las facultades en fase de clasificación · 15 Facultades`;
+      
+      // Combine all teams
+      ['A', 'B', 'C'].forEach(k => {
+        disc.groups[k].teams.forEach(t => teamsToRender.push({ ...t, groupOrigin: `Grupo ${k}` }));
+      });
+      // Sort by PTS desc, GD desc, GF desc
+      teamsToRender.sort((a, b) => b.pts - a.pts || parseInt(b.gd) - parseInt(a.gd) || b.gf - a.gf);
+    } else {
+      const gData = disc.groups[groupKey];
+      if (!gData) return;
+      titleEl.innerText = gData.title;
+      subtitleEl.innerText = gData.venue;
+      teamsToRender = gData.teams;
+    }
+
+    // Apply Filter
+    const query = filterText.trim().toLowerCase();
+    const filtered = teamsToRender.filter(t => 
+      t.name.toLowerCase().includes(query) || 
+      t.code.toLowerCase().includes(query) ||
+      (t.campus && t.campus.toLowerCase().includes(query))
+    );
+
+    tableBody.innerHTML = '';
+
+    if (filtered.length === 0) {
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="12" class="py-12 text-center text-secondary font-body-md bg-surface-container-low/20">
+            <span class="material-symbols-outlined text-secondary text-4xl block mb-2 opacity-50">search_off</span>
+            No se encontraron facultades con el criterio "<strong>${filterText}</strong>".
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
+    filtered.forEach((team, index) => {
+      const pos = index + 1;
+      const isTopTwo = pos <= 2;
+      const tr = document.createElement('tr');
+      
+      let rowBgClass = 'hover:bg-surface-container-low transition-colors group cursor-pointer';
+      if (isTopTwo) {
+        rowBgClass = pos === 1 
+          ? 'bg-tertiary-container/10 transition-colors group cursor-pointer hover:bg-tertiary-container/15'
+          : 'bg-tertiary-container/5 transition-colors group cursor-pointer hover:bg-tertiary-container/10';
+      }
+
+      tr.className = rowBgClass;
+      tr.onclick = () => showTeamModal(team.id);
+
+      // Pos badge
+      let posBadge = `<span class="font-label-md text-label-md font-bold text-secondary">${pos}</span>`;
+      let indicator = '';
+      if (isTopTwo) {
+        indicator = `<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-10 rounded-r-full bg-tertiary"></div>`;
+        posBadge = `<span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center justify-center font-extrabold shadow-sm">${pos}</span>`;
+      }
+
+      // Status pill
+      let statusPill = `<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">${team.statusText}</span>`;
+      if (team.status === 'q' || isTopTwo) {
+        statusPill = `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/15 text-tertiary font-label-sm text-label-sm font-bold shadow-sm"><span class="material-symbols-outlined text-[14px]">stars</span> Clasificado Cuartos</span>`;
+      } else if (team.status === 'e') {
+        statusPill = `<span class="inline-flex items-center px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Eliminado</span>`;
+      }
+
+      // Difference styling
+      let gdColor = 'text-on-surface';
+      if (String(team.gd).startsWith('+')) gdColor = 'text-tertiary';
+      else if (String(team.gd).startsWith('-')) gdColor = 'text-error';
+
+      // Form badges
+      const formBadges = team.form.map(f => {
+        if (f === 'V') return `<span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[11px] font-bold flex items-center justify-center">V</span>`;
+        if (f === 'E') return `<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-label-sm text-[11px] font-bold flex items-center justify-center">E</span>`;
+        return `<span class="w-6 h-6 rounded-full bg-error text-on-error font-label-sm text-[11px] font-bold flex items-center justify-center">D</span>`;
+      }).join('');
+
+      tr.innerHTML = `
+        <td class="py-4 px-3 text-center relative">
+          ${indicator}
+          <div class="flex items-center justify-center">${posBadge}</div>
+        </td>
+        <td class="py-4 px-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm font-black ${isTopTwo ? 'text-primary' : 'text-on-surface'} shadow-inner flex-shrink-0">
+              ${team.code}
+            </div>
+            <div>
+              <div class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors flex items-center gap-1.5">
+                <span>${team.name}</span>
+                ${pos === 1 ? `<span class="material-symbols-outlined text-[16px] text-tertiary" title="Líder Invicto">verified</span>` : ''}
+                ${team.groupOrigin ? `<span class="text-xs px-2 py-0.5 rounded-full bg-surface-container text-secondary">${team.groupOrigin}</span>` : ''}
+              </div>
+              <div class="font-body-sm text-body-sm text-secondary">${team.campus || 'Campus Central'}</div>
+            </div>
+          </div>
+        </td>
+        <td class="py-4 px-2 text-center font-semibold text-on-surface">${team.pj}</td>
+        <td class="py-4 px-2 text-center text-on-surface">${team.pg}</td>
+        <td class="py-4 px-2 text-center text-on-surface">${team.pe}</td>
+        <td class="py-4 px-2 text-center text-on-surface">${team.pp}</td>
+        <td class="py-4 px-2 text-center font-medium text-on-surface">${team.gf}</td>
+        <td class="py-4 px-2 text-center font-medium text-on-surface">${team.gc}</td>
+        <td class="py-4 px-2 text-center font-bold ${gdColor}">${team.gd}</td>
+        <td class="py-4 px-3 text-center font-headline-sm text-headline-sm font-extrabold text-on-surface">${team.pts}</td>
+        <td class="py-4 px-3 text-center">
+          <div class="flex items-center justify-center gap-1">${formBadges}</div>
+        </td>
+        <td class="py-4 px-4 text-right">${statusPill}</td>
+      `;
+      tableBody.appendChild(tr);
+    });
+
+    // Update Spotlight Match Card
+    updateSpotlightCard(groupKey);
+  }
+
+  // Update Spotlight Card
+  function updateSpotlightCard(groupKey) {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    const targetGroup = groupKey === 'ALL' ? 'C' : groupKey;
+    const gData = disc.groups[targetGroup];
+    if (!gData || !gData.spotlight) return;
+
+    const sp = gData.spotlight;
+    document.getElementById('spotlight-badge').textContent = sp.badge;
+    document.getElementById('spotlight-teamA-badge').textContent = sp.teamA.code;
+    document.getElementById('spotlight-teamA-name').textContent = sp.teamA.name;
+    document.getElementById('spotlight-teamA-desc').textContent = sp.teamA.desc;
+
+    document.getElementById('spotlight-teamB-badge').textContent = sp.teamB.code;
+    document.getElementById('spotlight-teamB-name').textContent = sp.teamB.name;
+    document.getElementById('spotlight-teamB-desc').textContent = sp.teamB.desc;
+
+    document.getElementById('spotlight-time').textContent = sp.time;
+    document.getElementById('spotlight-place').textContent = sp.place;
+  }
+
+  // Group Tabs Switching
+  document.querySelectorAll('.group-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetGrp = tab.getAttribute('data-group');
+      currentGroup = targetGrp;
+
+      // Update active card styling
+      document.querySelectorAll('.group-tab').forEach(t => {
+        t.classList.remove('active-group', 'border-primary');
+        t.classList.add('border-transparent');
+        const titleSpan = t.querySelector('.group-title');
+        if (titleSpan) {
+          titleSpan.classList.remove('text-primary');
+          titleSpan.classList.add('text-on-surface');
+        }
+      });
+
+      tab.classList.add('active-group', 'border-primary');
+      tab.classList.remove('border-transparent');
+      const curTitle = tab.querySelector('.group-title');
+      if (curTitle) {
+        curTitle.classList.remove('text-on-surface');
+        curTitle.classList.add('text-primary');
+      }
+
+      const searchVal = document.getElementById('faculty-search').value;
+      renderTable(currentGroup, searchVal);
+    });
+  });
+
+  // Discipline Tabs Switching
+  document.querySelectorAll('.discipline-tab').forEach(tabBtn => {
+    tabBtn.addEventListener('click', () => {
+      currentDiscipline = tabBtn.getAttribute('data-discipline');
+      
+      // Update styling
+      document.querySelectorAll('.discipline-tab').forEach(b => {
+        b.className = 'discipline-tab px-5 py-2.5 rounded-xl bg-transparent text-secondary hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 transition-all cursor-pointer';
+        const tag = b.querySelector('.tag-masc');
+        if (tag) tag.remove();
+      });
+
+      tabBtn.className = 'discipline-tab px-5 py-2.5 rounded-xl bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 shadow-sm transition-all cursor-pointer';
+      
+      // Add masculine tag badge if football
+      if (currentDiscipline === 'futbol' && !tabBtn.querySelector('.tag-masc')) {
+        const badge = document.createElement('span');
+        badge.className = 'text-xs px-2 py-0.5 rounded-full bg-primary text-on-primary ml-1 tag-masc';
+        badge.textContent = 'Masculino';
+        tabBtn.appendChild(badge);
+      }
+
+      updateGroupCardsMetrics();
+      const searchVal = document.getElementById('faculty-search').value;
+      renderTable(currentGroup, searchVal);
+
+      showNotification(`Disciplina cambiada a ${tournamentDB.disciplines[currentDiscipline].name}`, 'info');
+    });
+  });
+
+  // Real-time Search Filter
+  const searchInput = document.getElementById('faculty-search');
+  const clearBtn = document.getElementById('clear-search');
+
+  searchInput.addEventListener('input', (e) => {
+    const val = e.target.value;
+    if (val.length > 0) clearBtn.classList.remove('hidden');
+    else clearBtn.classList.add('hidden');
+    renderTable(currentGroup, val);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.classList.add('hidden');
+    renderTable(currentGroup, '');
+    searchInput.focus();
+  });
+
+  // Recalculate Button Action
+  const recalcBtn = document.getElementById('btn-recalculate');
+  const syncIcon = document.getElementById('sync-icon');
+
+  recalcBtn.addEventListener('click', () => {
+    syncIcon.classList.add('animate-spin');
+    recalcBtn.disabled = true;
+
+    setTimeout(() => {
+      syncIcon.classList.remove('animate-spin');
+      recalcBtn.disabled = false;
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('sync-time').textContent = `Sincronizado: ${timeStr}`;
+      
+      showNotification('Puntos y goles recalculados con las actas arbitrales oficiales.', 'success');
+    }, 750);
+  });
+
+  // Export Menu Toggle
+  const exportBtn = document.getElementById('btn-export');
+  const exportMenu = document.getElementById('export-menu');
+
+  exportBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    exportMenu.classList.toggle('hidden');
+  });
+
+  window.addEventListener('click', () => {
+    if (!exportMenu.classList.contains('hidden')) exportMenu.classList.add('hidden');
+  });
+
+  function handleExportClick(format) {
+    exportMenu.classList.add('hidden');
+    const groupName = currentGroup === 'ALL' ? 'General' : `Grupo ${currentGroup}`;
+    showNotification(`Tabla de Posiciones (${groupName}) descargada con éxito en ${format}.`, 'success');
+  }
+
+  // Modal Functions
+  function showTeamModal(teamId) {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    let selected = null;
+
+    ['A', 'B', 'C'].forEach(g => {
+      const match = disc.groups[g].teams.find(t => t.id === teamId);
+      if (match) selected = match;
+    });
+
+    if (!selected) return;
+
+    document.getElementById('modal-team-badge').innerText = selected.code;
+    document.getElementById('modal-team-name').innerText = selected.name;
+    document.getElementById('modal-team-status').innerText = `${selected.statusText} · ${selected.pts} Puntos · GD: ${selected.gd}`;
+
+    const matchesContainer = document.getElementById('modal-matches');
+    matchesContainer.innerHTML = '';
+    
+    if (selected.matches && selected.matches.length > 0) {
+      selected.matches.forEach(m => {
+        const div = document.createElement('div');
+        div.className = 'p-3 rounded-xl bg-surface-container flex items-center justify-between';
+        div.innerHTML = `
+          <div>
+            <span class="text-xs text-secondary font-bold uppercase">${m.date}</span>
+            <span class="block text-on-surface font-bold">vs. ${m.opponent}</span>
+          </div>
+          <span class="font-bold text-on-surface bg-surface-container-lowest px-3 py-1 rounded-lg shadow-sm">${m.result}</span>
+        `;
+        matchesContainer.appendChild(div);
+      });
+    } else {
+      matchesContainer.innerHTML = '<p class="text-secondary text-sm">No hay registros de partidos anteriores disponibles.</p>';
+    }
+
+    document.getElementById('team-modal').classList.remove('hidden');
+  }
+
+  function closeTeamModal() {
+    document.getElementById('team-modal').classList.add('hidden');
+  }
+
+  // Close modal on escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTeamModal();
+  });
+
+  // Initial render (starts at Grupo C as in screenshot)
+  updateGroupCardsMetrics();
+  renderTable('C');
+</script>
+
+</body></html>
