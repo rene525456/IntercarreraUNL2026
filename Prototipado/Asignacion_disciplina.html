@@ -1,0 +1,776 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Asignación a disciplinas y pruebas - Torneo Interfacultades</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#d3002d',
+              redHover: '#b80026',
+              redLight: '#fee2e2',
+              redSoft: '#fff1f2',
+              dark: '#0b1329',
+              darkSidebar: '#0d1527',
+              darkCard: '#151e36',
+              bgMain: '#f0f4fa',
+              borderLight: '#e2e8f0',
+              accentGreen: '#10b981',
+              accentGreenSoft: '#ecfdf5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="custom-scrollbars-and-transitions">
+    /* Custom scrollbar for list containers */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .custom-transition {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .checkbox-custom:checked {
+      background-color: #10b981;
+      border-color: #10b981;
+    }
+  </style>
+</head>
+<body class="bg-[#f2f5fb] text-slate-800 font-sans min-h-screen flex antialiased selection:bg-brand-red selection:text-white">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-[#0d1527] text-white flex flex-col flex-shrink-0 min-h-screen z-20 shadow-xl" data-purpose="main-sidebar">
+<!-- Brand / Tournament Header -->
+<div class="p-5 flex items-center gap-3 border-b border-slate-800/80">
+<div class="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center text-white shadow-md shadow-brand-red/30">
+<i class="fa-solid fa-trophy text-lg"></i>
+</div>
+<div>
+<h1 class="font-bold text-base tracking-wide text-white leading-tight">Torneo</h1>
+<p class="text-xs text-slate-400 font-medium">Interfacultades</p>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="flex-1 px-3 py-6 space-y-6 overflow-y-auto" data-purpose="sidebar-navigation">
+<div>
+<p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase px-3 mb-2">Menú Principal</p>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium text-sm custom-transition" href="#">
+<i class="fa-solid fa-table-cells-large text-slate-400 text-sm w-5 text-center"></i>
+<span>Resumen</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium text-sm custom-transition" href="#">
+<i class="fa-solid fa-id-card-clip text-slate-400 text-sm w-5 text-center"></i>
+<span>Mis deportistas</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-red text-white font-semibold text-sm shadow-md shadow-brand-red/20 custom-transition" href="#">
+<i class="fa-solid fa-heart-pulse text-white text-sm w-5 text-center"></i>
+<span>Disciplinas y pruebas</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium text-sm custom-transition" href="#">
+<i class="fa-regular fa-calendar-days text-slate-400 text-sm w-5 text-center"></i>
+<span>Calendario</span>
+</a>
+</li>
+</ul>
+</div>
+<div>
+<p class="text-[11px] font-bold text-slate-400 tracking-wider uppercase px-3 mb-2">Información</p>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-slate-800/80 text-white font-medium text-sm border border-slate-700/50 custom-transition" href="#">
+<i class="fa-regular fa-newspaper text-slate-300 text-sm w-5 text-center"></i>
+<span>Reglamento</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium text-sm custom-transition" href="#">
+<i class="fa-solid fa-gear text-slate-400 text-sm w-5 text-center"></i>
+<span>Configuración</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Support Help Card -->
+<div class="p-3 mx-3 mb-4 rounded-xl bg-slate-800/50 border border-slate-700/40 text-xs">
+<div class="flex items-center gap-2 text-slate-300 font-semibold mb-1">
+<i class="fa-regular fa-circle-question text-brand-red"></i>
+<span>¿Necesitas ayuda?</span>
+</div>
+<p class="text-[11px] text-slate-400">Consulta la guía del torneo o contacta al administrador.</p>
+</div>
+<!-- User Profile Footer in Sidebar -->
+<div class="p-3 border-t border-slate-800/80 bg-[#0a1120] flex items-center justify-between" data-purpose="sidebar-user-footer">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-amber-600/90 text-white font-bold text-xs flex items-center justify-center ring-2 ring-slate-700">
+          JP
+        </div>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold text-white truncate">Juan P.</p>
+<p class="text-[10px] text-slate-400 truncate">Delegado de carrera</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-white p-1 text-xs" title="Opciones de perfil">
+<i class="fa-solid fa-ellipsis"></i>
+</button>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: Main App Content -->
+<main class="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto" data-purpose="app-main-layout">
+<!-- Top System Alert (Read-Only Warning Banner - Hidden by default) -->
+<div class="hidden bg-amber-500 text-slate-900 px-6 py-2.5 text-xs font-semibold flex items-center justify-between shadow-sm" id="readOnlyBanner">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-triangle-exclamation text-sm"></i>
+<span>Modo de visualización: Solo Lectura activado. Las modificaciones están deshabilitadas temporalmente.</span>
+</div>
+<button class="text-slate-900 font-bold hover:text-black text-xs px-2 py-0.5 rounded border border-slate-900/30" id="closeBannerBtn">
+        Desactivar
+      </button>
+</div>
+<div class="p-6 md:p-8 max-w-7xl w-full mx-auto flex-1 flex flex-col justify-between">
+<div>
+<!-- BEGIN: Page Header -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6" data-purpose="page-header">
+<div>
+<div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1.5">
+<span>DELEGADO DE CARRERA</span>
+<span class="text-slate-300">•</span>
+<span>INGENIERÍA CIVIL</span>
+</div>
+<h1 class="text-2xl md:text-[26px] font-extrabold text-slate-900 tracking-tight">Asignación a disciplinas y pruebas</h1>
+<p class="text-xs md:text-sm text-slate-500 mt-0.5">Selecciona las competencias en las que participará cada deportista.</p>
+</div>
+<!-- Quick Action Buttons Top-Right -->
+<div class="flex items-center gap-3">
+<button class="bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2 custom-transition" id="toggleReadOnlyBtn">
+<i class="fa-regular fa-eye text-slate-500"></i>
+<span id="readOnlyBtnText">Simular solo lectura</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-600 hover:text-brand-red relative custom-transition" title="Notificaciones">
+<i class="fa-regular fa-bell text-sm"></i>
+<span class="absolute top-2 right-2 w-2 h-2 bg-brand-red rounded-full ring-2 ring-white"></span>
+</button>
+<div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center ring-2 ring-white shadow-sm cursor-pointer" title="Juan P.">
+              JP
+            </div>
+</div>
+</header>
+<!-- END: Page Header -->
+<!-- BEGIN: Content Grid (Athletes List + Competition Card) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: Athletes Directory (4 cols) -->
+<section class="lg:col-span-4 bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm" data-purpose="athletes-selection-panel">
+<div class="flex items-center justify-between mb-1">
+<h2 class="text-base font-bold text-slate-900">Deportistas</h2>
+<span class="bg-brand-red/10 text-brand-red text-xs font-extrabold px-2 py-0.5 rounded-full" id="athletesCountBadge">4</span>
+</div>
+<p class="text-xs text-slate-400 mb-4">registrados en tu carrera</p>
+<!-- Search Bar -->
+<div class="relative mb-4">
+<i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+<input class="w-full pl-9 pr-3 py-2 text-xs rounded-xl border-slate-200 focus:border-brand-red focus:ring-1 focus:ring-brand-red placeholder:text-slate-400 transition" id="searchAthleteInput" placeholder="Buscar por nombre o cédula..." type="text">
+</div>
+<!-- Athletes List Container -->
+<div class="space-y-2.5 max-h-[500px] overflow-y-auto pr-1" data-purpose="athletes-list" id="athletesListContainer">
+<!-- Cards rendered dynamically by JS -->
+</div>
+<!-- Left Panel Footer -->
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+<div class="flex items-center gap-1.5 text-emerald-600 font-semibold">
+<i class="fa-solid fa-check text-xs"></i>
+<span>Asignación por deportista</span>
+</div>
+<span>Actualizado hoy</span>
+</div>
+</section>
+<!-- RIGHT COLUMN: Competition Card (8 cols) -->
+<section class="lg:col-span-8 bg-white rounded-2xl p-6 md:p-7 border border-slate-200/80 shadow-sm relative" data-purpose="competition-detail-card">
+<!-- Competition File Top Badge -->
+<div class="flex items-start justify-between mb-2">
+<div>
+<span class="text-[10px] font-extrabold text-brand-red tracking-wider uppercase">FICHA DE COMPETENCIA</span>
+<h2 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5" id="currentAthleteName">Juan Valverde</h2>
+<p class="text-xs text-slate-400 font-medium mt-0.5" id="currentAthleteMeta">1106072570 · Masculino · Ingeniería Civil</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-red-50 text-brand-red flex items-center justify-center border border-red-100 shadow-sm">
+<i class="fa-solid fa-trophy text-sm"></i>
+</div>
+</div>
+<hr class="my-4 border-slate-100">
+<!-- Progress Indicator -->
+<div class="mb-6">
+<div class="flex items-center justify-between text-xs font-semibold mb-1.5">
+<span class="text-slate-600">Disciplinas asignadas</span>
+<span class="text-slate-900 font-bold"><span id="assignedDisciplinesCount">2</span> <span class="text-slate-400 font-normal">de 6</span></span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+<div class="bg-emerald-500 h-2 rounded-full transition-all duration-300" id="assignedProgressBar" style="width: 33.3%;"></div>
+</div>
+</div>
+<!-- Available Disciplines Title -->
+<h3 class="text-[11px] font-bold text-slate-400 tracking-wider uppercase mb-3">Disciplinas Disponibles</h3>
+<!-- Grid of Disciplines -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6" data-purpose="disciplines-selector" id="disciplinesGrid">
+<!-- Item: Ajedrez -->
+<label class="discipline-card relative flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer select-none custom-transition">
+<div class="flex items-center gap-2.5">
+<input class="discipline-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-4 w-4" data-discipline="ajedrez" type="checkbox">
+<i class="fa-solid fa-chess-knight text-slate-400 text-sm"></i>
+<span class="text-xs font-bold text-slate-800">Ajedrez</span>
+</div>
+<span class="status-badge hidden text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Asignada</span>
+</label>
+<!-- Item: Baloncesto -->
+<label class="discipline-card relative flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer select-none custom-transition">
+<div class="flex items-center gap-2.5">
+<input class="discipline-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-4 w-4" data-discipline="baloncesto" type="checkbox">
+<i class="fa-solid fa-basketball text-slate-400 text-sm"></i>
+<span class="text-xs font-bold text-slate-800">Baloncesto</span>
+</div>
+<span class="status-badge hidden text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Asignada</span>
+</label>
+<!-- Item: Ecuavoley -->
+<label class="discipline-card relative flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer select-none custom-transition">
+<div class="flex items-center gap-2.5">
+<input class="discipline-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-4 w-4" data-discipline="ecuavoley" type="checkbox">
+<i class="fa-solid fa-volleyball text-slate-400 text-sm"></i>
+<span class="text-xs font-bold text-slate-800">Ecuavoley</span>
+</div>
+<span class="status-badge hidden text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Asignada</span>
+</label>
+<!-- Item: Fútbol 9 -->
+<label class="discipline-card relative flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer select-none custom-transition">
+<div class="flex items-center gap-2.5">
+<input class="discipline-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-4 w-4" data-discipline="futbol" type="checkbox">
+<i class="fa-regular fa-futbol text-slate-400 text-sm"></i>
+<span class="text-xs font-bold text-slate-800">Fútbol 9</span>
+</div>
+<span class="status-badge hidden text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Asignada</span>
+</label>
+<!-- Item: Tenis de Mesa -->
+<label class="discipline-card relative flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer select-none custom-transition">
+<div class="flex items-center gap-2.5">
+<input class="discipline-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-4 w-4" data-discipline="tenis" type="checkbox">
+<i class="fa-solid fa-table-tennis-paddle-ball text-slate-400 text-sm"></i>
+<span class="text-xs font-bold text-slate-800">Tenis de Mesa</span>
+</div>
+<span class="status-badge hidden text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Asignada</span>
+</label>
+<!-- Item: Atletismo -->
+<label class="discipline-card relative flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer select-none custom-transition">
+<div class="flex items-center gap-2.5">
+<input class="discipline-checkbox rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 h-4 w-4" data-discipline="atletismo" id="atletismoCheckbox" type="checkbox">
+<i class="fa-solid fa-person-running text-slate-400 text-sm"></i>
+<span class="text-xs font-bold text-slate-800">Atletismo</span>
+</div>
+<span class="status-badge hidden text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">Asignada</span>
+</label>
+</div>
+<!-- BEGIN: Collapsible Athletics Section -->
+<div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 mb-6 custom-transition" id="athleticsSubSection">
+<!-- Individual Events Header -->
+<div class="flex items-center justify-between mb-1.5">
+<div>
+<h4 class="text-xs font-extrabold text-slate-900 uppercase tracking-wide">Pruebas de atletismo</h4>
+<p class="text-[11px] text-slate-500">Selecciona las pruebas individuales.</p>
+</div>
+<span class="text-[10px] font-extrabold text-brand-red bg-red-100/70 border border-brand-red/20 px-2.5 py-0.5 rounded-md uppercase">ATLETISMO</span>
+</div>
+<!-- Athletics Individual Events Checkboxes -->
+<div class="flex flex-wrap gap-2.5 mt-3 mb-5" data-purpose="individual-events-list">
+<label class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-50 cursor-pointer shadow-2xs">
+<input class="rounded border-slate-300 text-brand-red focus:ring-brand-red h-3.5 w-3.5" type="checkbox" value="80m">
+<span>80 m</span>
+</label>
+<label class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-50 cursor-pointer shadow-2xs">
+<input class="rounded border-slate-300 text-brand-red focus:ring-brand-red h-3.5 w-3.5" type="checkbox" value="3000m-damas">
+<span>3000 m damas</span>
+</label>
+<label class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-50 cursor-pointer shadow-2xs">
+<input class="rounded border-slate-300 text-brand-red focus:ring-brand-red h-3.5 w-3.5" type="checkbox" value="5000m-varones">
+<span>5000 m varones</span>
+</label>
+<label class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-50 cursor-pointer shadow-2xs">
+<input class="rounded border-slate-300 text-brand-red focus:ring-brand-red h-3.5 w-3.5" type="checkbox" value="800m">
+<span>800 m</span>
+</label>
+<label class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-50 cursor-pointer shadow-2xs">
+<input class="rounded border-slate-300 text-brand-red focus:ring-brand-red h-3.5 w-3.5" type="checkbox" value="jabalina">
+<span>Jabalina</span>
+</label>
+</div>
+<hr class="border-slate-200/80 my-4">
+<!-- Relay Team Builder Section -->
+<div class="flex items-center justify-between mb-2">
+<div>
+<h4 class="text-xs font-extrabold text-slate-900 uppercase tracking-wide">Armador de relevos</h4>
+<p class="text-[11px] text-slate-500">El equipo debe tener exactamente 4 atletas de la misma carrera.</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-brand-red" id="relayAthletesCount">2/4</span>
+<span class="text-[10px] text-slate-400 block font-normal">atletas</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-3">
+<!-- Dropdown selector: Relay distance -->
+<div class="w-full sm:w-44">
+<label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Prueba</label>
+<select class="w-full text-xs font-bold text-slate-800 bg-white border border-slate-200 rounded-lg py-2 px-2.5 focus:border-brand-red focus:ring-brand-red" id="relayTypeSelect">
+<option value="4x100">4x100 m</option>
+<option value="4x400">4x400 m</option>
+</select>
+</div>
+<!-- Team members display container -->
+<div class="flex-1">
+<label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Integrantes inscritos</label>
+<div class="flex flex-wrap items-center gap-2 min-h-[38px] p-1.5 bg-white rounded-lg border border-slate-200" id="relayMembersContainer">
+<!-- Members tags inserted via JS -->
+</div>
+</div>
+<!-- Add athlete button -->
+<div class="self-end pt-5">
+<button class="whitespace-nowrap px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 flex items-center gap-1.5 custom-transition" id="addAthleteRelayBtn">
+<i class="fa-solid fa-user-plus text-[11px]"></i>
+<span>Armar equipo</span>
+</button>
+</div>
+</div>
+</div>
+<!-- END: Collapsible Athletics Section -->
+<!-- Bottom Actions Bar -->
+<div class="flex items-center justify-end pt-3" data-purpose="form-actions">
+<button class="px-5 py-2.5 bg-brand-red hover:bg-brand-redHover text-white text-xs font-bold rounded-xl shadow-md shadow-brand-red/20 flex items-center gap-2 custom-transition transform active:scale-95" id="saveAssignmentsBtn">
+<i class="fa-solid fa-floppy-disk text-sm"></i>
+<span>Guardar asignaciones</span>
+</button>
+</div>
+</section>
+</div>
+<!-- END: Content Grid -->
+</div>
+<!-- BEGIN: Application Footer -->
+<footer class="mt-8 pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2" data-purpose="app-footer">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-shield-halved text-slate-400"></i>
+<span>Sistema protegido · Última sincronización hace 2 minutos</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-slate-600 transition" href="#">Soporte</a>
+<span>·</span>
+<a class="hover:text-slate-600 transition" href="#">Reglamento del torneo</a>
+</div>
+</footer>
+<!-- END: Application Footer -->
+</div>
+</main>
+<!-- END: Main App Content -->
+<!-- BEGIN: Interactive Toast Notification -->
+<div class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 z-50" id="toastNotification">
+<div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs">
+<i class="fa-solid fa-check"></i>
+</div>
+<div>
+<p class="text-xs font-bold" id="toastTitle">¡Cambios guardados!</p>
+<p class="text-[11px] text-slate-300" id="toastMessage">Asignaciones guardadas con éxito.</p>
+</div>
+</div>
+<!-- END: Interactive Toast Notification -->
+<!-- BEGIN: Application Logic JavaScript -->
+<script data-purpose="data-and-state-management">
+    // Mock database of registered athletes
+    const athletesData = [
+      {
+        id: 1,
+        name: "Juan Valverde",
+        initials: "JV",
+        cedula: "1106072570",
+        code: "11060/25/D",
+        gender: "Masculino",
+        career: "Ingeniería Civil",
+        disciplines: ["ajedrez", "atletismo"],
+        athleticsEvents: ["80m", "5000m-varones"],
+        relayTeam: true
+      },
+      {
+        id: 2,
+        name: "Camila Paredes",
+        initials: "CP",
+        cedula: "1723940182",
+        code: "17239/21/F",
+        gender: "Femenino",
+        career: "Ingeniería Civil",
+        disciplines: [],
+        athleticsEvents: [],
+        relayTeam: false
+      },
+      {
+        id: 3,
+        name: "David Alarcón",
+        initials: "DA",
+        cedula: "0938472619",
+        code: "09384/22/M",
+        gender: "Masculino",
+        career: "Ingeniería Civil",
+        disciplines: ["futbol"],
+        athleticsEvents: [],
+        relayTeam: true
+      },
+      {
+        id: 4,
+        name: "Valentina Morales",
+        initials: "VM",
+        cedula: "1804928173",
+        code: "18049/23/F",
+        gender: "Femenino",
+        career: "Ingeniería Civil",
+        disciplines: ["tenis"],
+        athleticsEvents: [],
+        relayTeam: false
+      }
+    ];
+
+    // Shared relay pool
+    let relayMembers = [
+      { id: 1, name: "Juan Valverde", initials: "JV" },
+      { id: 3, name: "David Alarcón", initials: "DA" }
+    ];
+
+    // Current state
+    let selectedAthleteId = 1;
+    let isReadOnlyMode = false;
+
+    // DOM Elements Cache
+    const athletesListContainer = document.getElementById("athletesListContainer");
+    const currentAthleteNameEl = document.getElementById("currentAthleteName");
+    const currentAthleteMetaEl = document.getElementById("currentAthleteMeta");
+    const assignedDisciplinesCountEl = document.getElementById("assignedDisciplinesCount");
+    const assignedProgressBarEl = document.getElementById("assignedProgressBar");
+    const athleticsSubSection = document.getElementById("athleticsSubSection");
+    const atletismoCheckbox = document.getElementById("atletismoCheckbox");
+    const relayMembersContainer = document.getElementById("relayMembersContainer");
+    const relayAthletesCountEl = document.getElementById("relayAthletesCount");
+    const searchAthleteInput = document.getElementById("searchAthleteInput");
+    const toggleReadOnlyBtn = document.getElementById("toggleReadOnlyBtn");
+    const readOnlyBanner = document.getElementById("readOnlyBanner");
+    const closeBannerBtn = document.getElementById("closeBannerBtn");
+    const saveAssignmentsBtn = document.getElementById("saveAssignmentsBtn");
+    const toastNotification = document.getElementById("toastNotification");
+    const toastTitle = document.getElementById("toastTitle");
+    const toastMessage = document.getElementById("toastMessage");
+
+    // Initialize View
+    function init() {
+      renderAthletesList();
+      loadAthleteData(selectedAthleteId);
+      renderRelayMembers();
+      setupEvents();
+    }
+
+    // Render list of athletes on the left panel
+    function renderAthletesList(filter = "") {
+      athletesListContainer.innerHTML = "";
+      const filtered = athletesData.filter(a => 
+        a.name.toLowerCase().includes(filter.toLowerCase()) || 
+        a.cedula.includes(filter)
+      );
+
+      filtered.forEach(athlete => {
+        const isSelected = athlete.id === selectedAthleteId;
+        const card = document.createElement("div");
+        card.className = `p-3 rounded-xl border flex items-center justify-between cursor-pointer custom-transition ${
+          isSelected 
+            ? "bg-rose-50/70 border-brand-red/60 shadow-sm" 
+            : "bg-white border-slate-200/80 hover:border-slate-300"
+        }`;
+        
+        card.onclick = () => selectAthlete(athlete.id);
+
+        card.innerHTML = `
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="w-9 h-9 rounded-lg ${isSelected ? 'bg-brand-red text-white' : 'bg-slate-100 text-slate-700 font-bold'} text-xs font-extrabold flex items-center justify-center flex-shrink-0">
+              ${athlete.initials}
+            </div>
+            <div class="truncate">
+              <p class="text-xs font-bold text-slate-800 truncate">${athlete.name}</p>
+              <p class="text-[10px] text-slate-400 font-medium">${athlete.code}</p>
+            </div>
+          </div>
+          <div class="text-right flex-shrink-0 ml-2">
+            <span class="text-xs font-extrabold ${athlete.disciplines.length > 0 ? 'text-brand-red' : 'text-slate-400'}">${athlete.disciplines.length}</span>
+            <span class="text-[10px] text-slate-400 block -mt-1 font-medium">disc.</span>
+          </div>
+        `;
+        athletesListContainer.appendChild(card);
+      });
+    }
+
+    // Select and load specific athlete into the form
+    function selectAthlete(id) {
+      selectedAthleteId = id;
+      renderAthletesList(searchAthleteInput.value);
+      loadAthleteData(id);
+    }
+
+    // Load Athlete details into right panel
+    function loadAthleteData(id) {
+      const athlete = athletesData.find(a => a.id === id);
+      if (!athlete) return;
+
+      currentAthleteNameEl.textContent = athlete.name;
+      currentAthleteMetaEl.textContent = `${athlete.cedula} · ${athlete.gender} · ${athlete.career}`;
+
+      // Update disciplines checkboxes
+      const checkboxes = document.querySelectorAll(".discipline-checkbox");
+      checkboxes.forEach(cb => {
+        const discKey = cb.getAttribute("data-discipline");
+        const isChecked = athlete.disciplines.includes(discKey);
+        cb.checked = isChecked;
+        updateCardVisual(cb, isChecked);
+      });
+
+      // Update athletics specific events
+      const individualCbs = athleticsSubSection.querySelectorAll("input[type='checkbox']");
+      individualCbs.forEach(cb => {
+        cb.checked = athlete.athleticsEvents.includes(cb.value);
+      });
+
+      // Update visibility of athletics detail panel
+      toggleAthleticsSection(athlete.disciplines.includes("atletismo"));
+
+      // Update progress bar
+      updateProgress();
+    }
+
+    // Update Card visual styling when checked
+    function updateCardVisual(checkbox, isChecked) {
+      const card = checkbox.closest(".discipline-card");
+      const badge = card.querySelector(".status-badge");
+      if (isChecked) {
+        card.classList.add("border-emerald-500", "bg-emerald-50/20");
+        card.classList.remove("border-slate-200");
+        badge.classList.remove("hidden");
+      } else {
+        card.classList.remove("border-emerald-500", "bg-emerald-50/20");
+        card.classList.add("border-slate-200");
+        badge.classList.add("hidden");
+      }
+    }
+
+    // Show/Hide Athletics Section
+    function toggleAthleticsSection(show) {
+      if (show) {
+        athleticsSubSection.classList.remove("hidden");
+      } else {
+        athleticsSubSection.classList.add("hidden");
+      }
+    }
+
+    // Update Progress Indicator
+    function updateProgress() {
+      const currentAthlete = athletesData.find(a => a.id === selectedAthleteId);
+      const count = currentAthlete ? currentAthlete.disciplines.length : 0;
+      assignedDisciplinesCountEl.textContent = count;
+      const percentage = (count / 6) * 100;
+      assignedProgressBarEl.style.width = `${percentage}%`;
+    }
+
+    // Render Relay Team Members
+    function renderRelayMembers() {
+      relayMembersContainer.innerHTML = "";
+      relayMembers.forEach(member => {
+        const pill = document.createElement("div");
+        pill.className = "inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 border border-slate-200 rounded-md text-xs font-bold text-slate-700";
+        pill.innerHTML = `
+          <span class="w-4 h-4 rounded bg-slate-300 text-[10px] flex items-center justify-center font-bold text-slate-700">${member.initials}</span>
+          <span>${member.name}</span>
+          <button type="button" class="text-slate-400 hover:text-brand-red ml-1" onclick="removeRelayMember(${member.id})">
+            <i class="fa-solid fa-xmark text-[10px]"></i>
+          </button>
+        `;
+        relayMembersContainer.appendChild(pill);
+      });
+
+      relayAthletesCountEl.textContent = `${relayMembers.length}/4`;
+    }
+
+    // Remove athlete from relay
+    window.removeRelayMember = function(memberId) {
+      if (isReadOnlyMode) {
+        showToast("Modo solo lectura", "No puedes editar en este modo.");
+        return;
+      }
+      relayMembers = relayMembers.filter(m => m.id !== memberId);
+      renderRelayMembers();
+    };
+
+    // Show Toast Notification
+    function showToast(title, message) {
+      toastTitle.textContent = title;
+      toastMessage.textContent = message;
+      toastNotification.classList.remove("translate-y-24", "opacity-0", "pointer-events-none");
+      setTimeout(() => {
+        toastNotification.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+      }, 3500);
+    }
+
+    // Setup Event Listeners
+    function setupEvents() {
+      // Search input
+      searchAthleteInput.addEventListener("input", (e) => {
+        renderAthletesList(e.target.value);
+      });
+
+      // Disciplines checkboxes listener
+      const disciplinesGrid = document.getElementById("disciplinesGrid");
+      disciplinesGrid.addEventListener("change", (e) => {
+        if (isReadOnlyMode) {
+          e.preventDefault();
+          e.target.checked = !e.target.checked;
+          showToast("Aviso", "No se puede editar en modo solo lectura.");
+          return;
+        }
+
+        if (e.target.classList.contains("discipline-checkbox")) {
+          const disc = e.target.getAttribute("data-discipline");
+          const currentAthlete = athletesData.find(a => a.id === selectedAthleteId);
+          if (!currentAthlete) return;
+
+          if (e.target.checked) {
+            if (!currentAthlete.disciplines.includes(disc)) {
+              currentAthlete.disciplines.push(disc);
+            }
+          } else {
+            currentAthlete.disciplines = currentAthlete.disciplines.filter(d => d !== disc);
+          }
+
+          updateCardVisual(e.target, e.target.checked);
+
+          if (disc === "atletismo") {
+            toggleAthleticsSection(e.target.checked);
+          }
+
+          updateProgress();
+          renderAthletesList(searchAthleteInput.value);
+        }
+      });
+
+      // Individual Athletics events listener
+      athleticsSubSection.addEventListener("change", (e) => {
+        if (isReadOnlyMode) {
+          e.preventDefault();
+          e.target.checked = !e.target.checked;
+          return;
+        }
+        if (e.target.type === "checkbox") {
+          const athlete = athletesData.find(a => a.id === selectedAthleteId);
+          if (!athlete) return;
+          if (e.target.checked) {
+            if (!athlete.athleticsEvents.includes(e.target.value)) {
+              athlete.athleticsEvents.push(e.target.value);
+            }
+          } else {
+            athlete.athleticsEvents = athlete.athleticsEvents.filter(ev => ev !== e.target.value);
+          }
+        }
+      });
+
+      // Relay team add athlete button
+      document.getElementById("addAthleteRelayBtn").addEventListener("click", () => {
+        if (isReadOnlyMode) {
+          showToast("Modo solo lectura", "La modificación está deshabilitada.");
+          return;
+        }
+        if (relayMembers.length >= 4) {
+          showToast("Límite alcanzado", "El equipo ya tiene los 4 atletas requeridos.");
+          return;
+        }
+        const currentAthlete = athletesData.find(a => a.id === selectedAthleteId);
+        const alreadyIn = relayMembers.some(m => m.id === currentAthlete.id);
+        if (alreadyIn) {
+          showToast("Atleta ya en relevo", `${currentAthlete.name} ya está en la lista.`);
+        } else {
+          relayMembers.push({
+            id: currentAthlete.id,
+            name: currentAthlete.name,
+            initials: currentAthlete.initials
+          });
+          renderRelayMembers();
+          showToast("Agregado al relevo", `${currentAthlete.name} incorporado al relevo.`);
+        }
+      });
+
+      // Toggle Read Only Mode
+      toggleReadOnlyBtn.addEventListener("click", () => {
+        isReadOnlyMode = !isReadOnlyMode;
+        if (isReadOnlyMode) {
+          readOnlyBanner.classList.remove("hidden");
+          toggleReadOnlyBtn.classList.add("bg-amber-100", "border-amber-300", "text-amber-800");
+          document.getElementById("readOnlyBtnText").textContent = "Modo solo lectura (Activo)";
+        } else {
+          readOnlyBanner.classList.add("hidden");
+          toggleReadOnlyBtn.classList.remove("bg-amber-100", "border-amber-300", "text-amber-800");
+          document.getElementById("readOnlyBtnText").textContent = "Simular solo lectura";
+        }
+      });
+
+      closeBannerBtn.addEventListener("click", () => {
+        isReadOnlyMode = false;
+        readOnlyBanner.classList.add("hidden");
+        toggleReadOnlyBtn.classList.remove("bg-amber-100", "border-amber-300", "text-amber-800");
+        document.getElementById("readOnlyBtnText").textContent = "Simular solo lectura";
+      });
+
+      // Save assignments button
+      saveAssignmentsBtn.addEventListener("click", () => {
+        if (isReadOnlyMode) {
+          showToast("Acción bloqueada", "No se puede guardar en modo solo lectura.");
+          return;
+        }
+        const athlete = athletesData.find(a => a.id === selectedAthleteId);
+        showToast(
+          "Asignaciones guardadas", 
+          `Las pruebas de ${athlete.name} fueron registradas satisfactoriamente.`
+        );
+      });
+    }
+
+    // Run on load
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+<!-- END: Application Logic JavaScript -->
+</body></html>

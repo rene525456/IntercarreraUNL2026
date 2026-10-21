@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#005d3e","primary-container":"#d3002d","secondary-container":"#dae2fd","error":"#ba1a1a","on-background":"#0b1c30","outline-variant":"#e6bdbb","tertiary-fixed-dim":"#4edea3","on-primary-container":"#ffe3e1","tertiary-container":"#007852","surface-variant":"#d3e4fe","inverse-primary":"#ffb3b1","on-secondary-fixed":"#131b2e","secondary-fixed-dim":"#bec6e0","primary-fixed-dim":"#ffb3b1","on-secondary":"#ffffff","on-error-container":"#93000a","on-surface":"#0b1c30","surface-container-high":"#dce9ff","primary-fixed":"#ffdad8","surface-container-highest":"#d3e4fe","inverse-surface":"#213145","secondary":"#565e74","error-container":"#ffdad6","surface-tint":"#bf0028","surface":"#f8f9ff","surface-bright":"#f8f9ff","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-primary-fixed-variant":"#92001c","surface-container-lowest":"#ffffff","on-primary-fixed":"#410007","outline":"#916e6d","tertiary-fixed":"#6ffbbe","surface-container-low":"#eff4ff","on-tertiary-fixed-variant":"#005236","primary":"#a50021","on-secondary-container":"#5c647a","background":"#f8f9ff","inverse-on-surface":"#eaf1ff","secondary-fixed":"#dae2fd","on-tertiary":"#ffffff","on-tertiary-container":"#8fffc9","on-primary":"#ffffff","on-tertiary-fixed":"#002113","surface-dim":"#cbdbf5","on-surface-variant":"#5d3f3e","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","margin":"1rem","space-sm":"0.5rem","margin-md":"1.5rem","gutter":"1rem","gutter-md":"1.5rem","margin-lg":"3rem","space-xl":"2.5rem","space-md":"1rem","space-xs":"0.25rem","gutter-lg":"2rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","fontWeight":"800"}],"headline-xl":["40px",{"lineHeight":"48px","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-6 py-6"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-md text-headline-md font-bold">I</div><div><span class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest block leading-tight tracking-tight">Interfacultades</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim block tracking-wide uppercase">Torneo Deportivo 2025</span></div></div><div class="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/10 text-secondary-fixed text-label-sm font-label-sm"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>Administrador del Torneo</div></div><nav class="px-4 space-y-1.5"><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Resumen</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">schema</span>Grupos y Sorteo</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span>Calendario / Cruces</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-container text-on-primary font-bold shadow-md font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span>Clasificaciones / Tabla</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span>Disciplinas</a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-inverse-on-surface/80 hover:bg-surface-container-high/15 hover:text-surface-container-lowest transition-colors font-label-lg text-label-lg" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Configuración</a></nav></div><div class="p-4 m-4 rounded-xl bg-surface-container-high/10"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold">AG</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-lg text-label-lg text-surface-container-lowest font-bold truncate">Admin General</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim truncate">admin.deportes@ucuenca.edu.ec</span></div><a class="text-secondary-fixed-dim hover:text-surface-container-lowest transition-colors" href="#" title="Cerrar sesión"><span class="material-symbols-outlined text-[20px]">logout</span></a></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-full px-8 flex items-center justify-between gap-6"><div class="flex items-center gap-4 flex-1 max-w-lg"><div class="w-full flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-low text-on-surface-variant focus-within:ring-2 focus-within:ring-primary"><span class="material-symbols-outlined text-secondary text-[20px]">search</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder-secondary w-full" placeholder="Buscar facultad, atleta, acta, disciplina o cancha..." type="text"/></div></div><div class="flex items-center gap-4"><div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm"><span class="material-symbols-outlined text-primary text-[18px]">verified</span>Edición 2025 · Cuenca</div><button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-secondary hover:text-on-surface relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-3 pl-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-bold leading-none">Coordinación Central</span><span class="font-label-sm text-[10px] text-secondary leading-tight">Liga Universitaria</span></div></div></div></div></header><main class="w-full pt-16 bg-background px-8 py-6 min-h-screen relative"><div class="flex flex-col w-full space-y-8">
+<!-- Top Bar / Breadcrumb & Actions Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="hover:text-primary transition-colors cursor-pointer">ADMINISTRADOR DEL TORNEO</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">CLASIFICACIONES Y ESTADÍSTICAS</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold">
+        Tabla de Posiciones por Grupo
+      </h1>
+<p class="font-body-md text-body-md text-secondary">
+        Monitoreo oficial de rendimientos, desempates automáticos y definición de boletos a cuartos de final.
+      </p>
+</div>
+<!-- Live indicator + Main Actions -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-bold text-tertiary">En vivo</span>
+<span class="text-secondary opacity-40">|</span>
+<span class="text-secondary font-medium" id="sync-time">Actualizado en tiempo real</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-variant/80 transition-all font-label-lg text-label-lg shadow-sm" id="btn-recalculate">
+<span class="material-symbols-outlined text-[18px] text-primary transition-transform duration-700" id="sync-icon">sync</span>
+<span>Recalcular Puntos / Auditoría</span>
+</button>
+<div class="relative">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-all font-label-lg text-label-lg shadow-md" id="btn-export">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar Clasificación</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-52 bg-surface-container-lowest rounded-xl shadow-xl border border-surface-variant/50 z-30 py-1.5 font-label-md text-label-md" id="export-menu">
+<a class="flex items-center gap-2.5 px-4 py-2.5 hover:bg-surface-container text-on-surface transition-colors" href="#" onclick="handleExportClick('PDF'); return false;">
+<span class="material-symbols-outlined text-[18px] text-primary">picture_as_pdf</span> PDF Oficial (Firmado)
+          </a>
+<a class="flex items-center gap-2.5 px-4 py-2.5 hover:bg-surface-container text-on-surface transition-colors" href="#" onclick="handleExportClick('Excel'); return false;">
+<span class="material-symbols-outlined text-[18px] text-tertiary">table_chart</span> Planilla Excel (.xlsx)
+          </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Disciplines Pill Selector & Quick Search -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-2 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none" id="discipline-selector">
+<button class="discipline-tab px-5 py-2.5 rounded-xl bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 shadow-sm transition-all" data-discipline="futbol">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span>Fútbol 9</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-primary text-on-primary ml-1 tag-masc">Masculino</span>
+</button>
+<button class="discipline-tab px-5 py-2.5 rounded-xl bg-transparent text-secondary hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 transition-all" data-discipline="baloncesto">
+<span class="material-symbols-outlined text-[18px]">sports_basketball</span>
+<span>Baloncesto</span>
+</button>
+<button class="discipline-tab px-5 py-2.5 rounded-xl bg-transparent text-secondary hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 transition-all" data-discipline="ecuavoley">
+<span class="material-symbols-outlined text-[18px]">sports_volleyball</span>
+<span>Ecuavoley</span>
+</button>
+</div>
+<!-- Search Input -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-low max-w-sm w-full">
+<span class="material-symbols-outlined text-secondary text-[18px]">search</span>
+<input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder-secondary w-full" id="faculty-search" placeholder="Filtrar por facultad o sigla..." type="text"/>
+<button class="hidden text-secondary hover:text-on-surface" id="clear-search"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</div>
+</div>
+<!-- Group Navigation Tabs (Neo-Card style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4" id="group-tabs-container">
+<!-- Group A Tab -->
+<button class="group-tab text-left p-4 rounded-2xl bg-surface-container-lowest border-2 shadow-sm hover:shadow-md transition-all relative overflow-hidden border-transparent cursor-pointer" data-group="A">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-extrabold group-title text-on-surface">Grupo A</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Activo
+        </span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary">Líder Provisional:</div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold truncate leader-name">Fac. de Ingeniería Civil</div>
+<div class="mt-2 text-xs text-secondary flex items-center justify-between">
+<span class="status-match">4 Fechas jugadas</span>
+<span class="font-bold text-on-surface leader-pts">10 Pts</span>
+</div>
+</button>
+<!-- Group B Tab -->
+<button class="group-tab text-left p-4 rounded-2xl bg-surface-container-lowest border-2 shadow-sm hover:shadow-md transition-all relative overflow-hidden border-transparent cursor-pointer" data-group="B">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-extrabold group-title text-on-surface">Grupo B</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">En curso</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary">Líder Provisional:</div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold truncate leader-name">Fac. Ciencias Económicas</div>
+<div class="mt-2 text-xs text-secondary flex items-center justify-between">
+<span class="status-match">4 Fechas jugadas</span>
+<span class="font-bold text-on-surface leader-pts">12 Pts</span>
+</div>
+</button>
+<!-- Group C Tab (Initially Active to match screenshot) -->
+<button class="group-tab text-left p-4 rounded-2xl bg-surface-container-lowest border-2 shadow-sm hover:shadow-md transition-all relative overflow-hidden active-group border-primary cursor-pointer" data-group="C">
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm font-extrabold group-title text-primary">Grupo C</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">En curso</span>
+</div>
+<div class="font-label-sm text-label-sm text-secondary">Líder Provisional:</div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold truncate leader-name">Fac. Ciencias Agropecuarias</div>
+<div class="mt-2 text-xs text-secondary flex items-center justify-between">
+<span class="status-match">4 Fechas jugadas</span>
+<span class="font-bold text-on-surface leader-pts">9 Pts</span>
+</div>
+</button>
+<!-- Ver Todos Tab -->
+<button class="group-tab text-left p-4 rounded-2xl bg-surface-container-low border-2 border-transparent shadow-sm hover:border-secondary/30 transition-all flex flex-col justify-between cursor-pointer" data-group="ALL">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface group-title">Ver Todos</span>
+<span class="material-symbols-outlined text-secondary">grid_view</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">Consolidado General</p>
+<div class="font-label-lg text-label-lg text-primary font-bold flex items-center gap-1">
+<span>15 Facultades</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</button>
+</div>
+<!-- Main Content Layout: Table Full-Width without metrics panel as requested -->
+<div class="w-full space-y-6">
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm overflow-hidden border border-surface-container">
+<!-- Table Top Subhead -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-2 border-b border-surface-container/60 mb-4">
+<div class="flex items-center gap-3">
+<span class="w-3 h-8 rounded-full bg-primary flex-shrink-0"></span>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="current-group-title">Grupo C · Fútbol 9 Serie Mayor</h2>
+<span class="font-body-sm text-body-sm text-secondary" id="current-group-subtitle">Cancha Central de Ingenierías · 5ta Fecha pendiente</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Clasifican los 2 primeros
+</span>
+</div>
+</div>
+<!-- Official Classification Table -->
+<div class="overflow-x-auto -mx-6 px-6">
+<table class="w-full text-left border-collapse" id="standings-table">
+<thead>
+<tr class="text-secondary font-label-sm text-label-sm uppercase tracking-wider bg-surface-container-low/60 rounded-xl" id="table-header-row">
+<th class="py-3 px-3 rounded-l-xl w-14 text-center">Pos</th>
+<th class="py-3 px-4 min-w-[220px]">Equipo / Facultad</th>
+<th class="py-3 px-2 text-center" title="Partidos Jugados">PJ</th>
+<th class="py-3 px-2 text-center" title="Partidos Ganados">PG</th>
+<th class="py-3 px-2 text-center" title="Partidos Empatados">PE</th>
+<th class="py-3 px-2 text-center" title="Partidos Perdidos">PP</th>
+<th class="py-3 px-2 text-center" id="col-gf" title="Goles a Favor">GF</th>
+<th class="py-3 px-2 text-center" id="col-gc" title="Goles en Contra">GC</th>
+<th class="py-3 px-2 text-center font-bold" id="col-gd" title="Diferencia de Gol (GF - GC)">GD</th>
+<th class="py-3 px-3 text-center font-black text-on-surface" title="Puntos Totales">Pts</th>
+<th class="py-3 px-3 text-center min-w-[140px]">Últimos 5</th>
+<th class="py-3 px-4 rounded-r-xl text-right">Fase Final</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/30" id="table-body">
+<!-- Populated dynamically via JS -->
+</tbody>
+</table>
+</div>
+<!-- Table Legend / Footnotes -->
+<div class="mt-6 pt-4 border-t border-surface-container flex flex-wrap items-center justify-between gap-4 font-body-sm text-body-sm text-secondary">
+<div class="flex flex-wrap items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<strong class="text-on-surface">Puestos 1 y 2:</strong> Cuartos de Final Directo
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<strong class="text-on-surface">Puesto 3 y 4:</strong> Fase preliminar / Repechaje
+</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold">Convenciones:</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary text-on-tertiary font-bold text-xs">V</span> Victoria (3 pts)
+<span class="px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-bold text-xs">E</span> Empate (1 pt)
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-bold text-xs">D</span> Derrota (0 pts)
+</div>
+</div>
+</div>
+<!-- Live Match Spotlight for the Active Group (Dynamic) -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm relative overflow-hidden border border-surface-container" id="match-spotlight-card">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">event_upcoming</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Próximo Duelo Clave de la Serie</h3>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold" id="spotlight-badge">
+Definición Fecha 5
+</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-7 gap-4 items-center bg-surface-container-low rounded-2xl p-5" id="spotlight-content">
+<!-- Team A -->
+<div class="md:col-span-3 flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center font-headline-md text-headline-md font-black text-on-surface" id="spotlight-teamA-badge">
+CS
+</div>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface block" id="spotlight-teamA-name">Ciencias de la Salud</span>
+<span class="font-body-sm text-body-sm text-secondary block" id="spotlight-teamA-desc">5 pts · Busca cupo directo</span>
+</div>
+</div>
+<!-- VS / Match info -->
+<div class="md:col-span-1 flex flex-col items-center justify-center text-center">
+<span class="px-3 py-1 rounded-full bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm font-extrabold">VS</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1" id="spotlight-time">Viernes 15:30</span>
+<span class="font-body-sm text-[11px] text-secondary" id="spotlight-place">Cancha Huayna Cápac</span>
+</div>
+<!-- Team B -->
+<div class="md:col-span-3 flex items-center justify-end gap-3 text-right">
+<div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface block" id="spotlight-teamB-name">Cultura Física y Deporte</span>
+<span class="font-body-sm text-body-sm text-secondary block" id="spotlight-teamB-desc">8 pts · Asegura clasificación</span>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center font-headline-md text-headline-md font-black text-secondary" id="spotlight-teamB-badge">
+EF
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Modal: Team Head-to-Head & Match Detail -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity" id="team-modal">
+<div class="bg-surface-container-lowest rounded-3xl max-w-xl w-full p-6 shadow-2xl space-y-6">
+<div class="flex items-center justify-between border-b border-surface-container pb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-primary text-on-primary flex items-center justify-center font-headline-md text-headline-md font-black" id="modal-team-badge">
+IC
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="modal-team-name">Facultad de Ingeniería Civil</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-bold" id="modal-team-status">1° Lugar · Clasificado Directo</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface cursor-pointer" onclick="closeTeamModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Historical series -->
+<div class="space-y-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Enfrentamientos en este Torneo:</h4>
+<div class="space-y-2 font-body-sm text-body-sm" id="modal-matches"></div>
+</div>
+<!-- Fair play breakdown in modal -->
+<div class="bg-surface-container-low rounded-2xl p-4 flex items-center justify-between text-body-sm">
+<div>
+<span class="font-bold text-on-surface block">Puntuación Fair Play:</span>
+<span class="text-secondary text-xs">Penalización acumulada: -4 pts</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-amber-400 text-stone-900 font-bold text-xs">4 Amarillas</span>
+<span class="px-2.5 py-1 rounded-md bg-error text-white font-bold text-xs">0 Rojas</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-5 py-2.5 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg font-bold hover:bg-surface-variant transition-colors cursor-pointer" onclick="closeTeamModal()">
+Cerrar
+</button>
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center gap-1.5 shadow-sm hover:bg-primary-container transition-colors cursor-pointer" onclick="showNotification('Descargando nómina oficial de atletas...', 'success'); closeTeamModal();">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Ver Nómina de Atletas</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-container"></div>
+</div></main></div>
+<script>
+  // Complete Interactive Database
+  const tournamentDB = {
+    disciplines: {
+      futbol: {
+        name: 'Fútbol 9 Serie Mayor',
+        statLabels: { gf: 'GF', gc: 'GC', gd: 'GD' },
+        groups: {
+          'A': {
+            title: 'Grupo A · Fútbol 9 Serie Mayor',
+            venue: 'Cancha Central de Ingenierías · 5ta Fecha pendiente',
+            spotlight: {
+              badge: 'Definición Fecha 5',
+              teamA: { code: 'IC', name: 'Ingeniería Civil', desc: '10 pts · Asegura primer puesto' },
+              teamB: { code: 'AR', name: 'Arquitectura y Urbanismo', desc: '8 pts · Clasificación directa' },
+              time: 'Jueves 16:00',
+              place: 'Cancha Sintética 1'
+            },
+            teams: [
+              { id: 'CIV', code: 'IC', name: 'Ingeniería Civil', campus: 'Campus Central · Los Castores', pj: 4, pg: 3, pe: 1, pp: 0, gf: 11, gc: 3, gd: '+8', pts: 10, form: ['V','V','E','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Arquitectura', result: '1 - 1 (Empate)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '3 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Facultad de Artes', result: '5 - 1 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'ARQ', code: 'AQ', name: 'Arquitectura y Urbanismo', campus: 'Campus Yanuncay · T-Square', pj: 4, pg: 2, pe: 2, pp: 0, gf: 8, gc: 4, gd: '+4', pts: 8, form: ['E','V','E','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ingeniería Civil', result: '1 - 1 (Empate)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Químicas', result: '3 - 1 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '2 - 2 (Empate)', date: 'Fecha 3' },
+                { opponent: 'Facultad de Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'FIL', code: 'FL', name: 'Filosofía y Letras', campus: 'Campus Central · Los Cronistas', pj: 4, pg: 1, pe: 2, pp: 1, gf: 5, gc: 6, gd: '-1', pts: 5, form: ['D','E','E','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ingeniería Civil', result: '0 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Facultad de Artes', result: '2 - 1 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '2 - 2 (Empate)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '1 - 1 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'QUI', code: 'CQ', name: 'Ciencias Químicas', campus: 'Campus Central · Matraces', pj: 4, pg: 1, pe: 1, pp: 2, gf: 5, gc: 7, gd: '-2', pts: 4, form: ['V','D','D','E'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Facultad de Artes', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Arquitectura', result: '1 - 3 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ingeniería Civil', result: '1 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Filosofía', result: '1 - 1 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'ART', code: 'AT', name: 'Facultad de Artes', campus: 'Campus Yanuncay · Creativos', pj: 4, pg: 0, pe: 0, pp: 4, gf: 3, gc: 12, gd: '-9', pts: 1, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias Químicas', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '1 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ingeniería Civil', result: '1 - 5 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'B': {
+            title: 'Grupo B · Fútbol 9 Serie Mayor',
+            venue: 'Estadio Universitario de Cuenca · 4ta Fecha culminada',
+            spotlight: {
+              badge: 'Clásico Universitario',
+              teamA: { code: 'EC', name: 'Ciencias Económicas', desc: '12 pts · Líder invicto del grupo' },
+              teamB: { code: 'JP', name: 'Jurisprudencia', desc: '9 pts · Disputa primer sembrado' },
+              time: 'Sábado 11:00',
+              place: 'Estadio Universitario'
+            },
+            teams: [
+              { id: 'ECO', code: 'EC', name: 'Ciencias Económicas', campus: 'Campus Central · Los Economistas', pj: 4, pg: 4, pe: 0, pp: 0, gf: 14, gc: 2, gd: '+12', pts: 12, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Médicas', result: '4 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Jurisprudencia', result: '3 - 1 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '5 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'JUR', code: 'JP', name: 'Jurisprudencia', campus: 'Campus Central · Ius FC', pj: 4, pg: 3, pe: 0, pp: 1, gf: 9, gc: 4, gd: '+5', pts: 9, form: ['V','D','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Hospitalidad', result: '3 - 0 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Económicas', result: '1 - 3 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Médicas', result: '3 - 1 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'MED', code: 'MD', name: 'Ciencias Médicas', campus: 'Campus Paraíso · Los Galenos', pj: 4, pg: 2, pe: 0, pp: 2, gf: 6, gc: 7, gd: '-1', pts: 6, form: ['D','V','V','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ciencias Económicas', result: '1 - 4 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Jurisprudencia', result: '1 - 3 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'PSI', code: 'PS', name: 'Facultad de Psicología', campus: 'Campus Paraíso · Mentes FC', pj: 4, pg: 1, pe: 1, pp: 2, gf: 4, gc: 6, gd: '-2', pts: 4, form: ['V','E','D','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'HOS_B', code: 'HT', name: 'Hospitalidad', campus: 'Campus Yanuncay · Guías', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 12, gd: '-11', pts: 0, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Jurisprudencia', result: '0 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Psicología', result: '1 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Médicas', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Económicas', result: '0 - 5 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'C': {
+            title: 'Grupo C · Fútbol 9 Serie Mayor',
+            venue: 'Cancha Huayna Cápac · Jornada Vespertina',
+            spotlight: {
+              badge: 'Definición Fecha 5',
+              teamA: { code: 'CS', name: 'Ciencias de la Salud', desc: '5 pts · Busca cupo directo' },
+              teamB: { code: 'EF', name: 'Cultura Física y Deporte', desc: '8 pts · Asegura clasificación' },
+              time: 'Viernes 15:30',
+              place: 'Cancha Huayna Cápac'
+            },
+            teams: [
+              { id: 'AGR', code: 'AG', name: 'Ciencias Agropecuarias', campus: 'Campus Monay · Agrónomos', pj: 4, pg: 3, pe: 0, pp: 1, gf: 9, gc: 3, gd: '+6', pts: 9, form: ['V','V','D','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Hospitalidad y Turismo', result: '3 - 0 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Cultura Física', result: '1 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '3 - 1 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'EDF', code: 'EF', name: 'Cultura Física y Deporte', campus: 'Campus Central · Atletas', pj: 4, pg: 2, pe: 2, pp: 0, gf: 8, gc: 4, gd: '+4', pts: 8, form: ['V','E','V','E'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Escuela de Idiomas', result: '3 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad y Turismo', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Agropecuarias', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 2 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'CSL', code: 'CS', name: 'Ciencias de la Salud', campus: 'Campus Paraíso · Vital FC', pj: 4, pg: 1, pe: 2, pp: 1, gf: 5, gc: 6, gd: '-1', pts: 5, form: ['E','D','V','E'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad y Turismo', result: '1 - 1 (Empate)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 1 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Cultura Física', result: '2 - 2 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'HOS', code: 'HT', name: 'Hospitalidad y Turismo', campus: 'Campus Yanuncay · Guías', pj: 4, pg: 0, pe: 3, pp: 1, gf: 3, gc: 6, gd: '-3', pts: 3, form: ['D','E','E','E'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Cultura Física', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '1 - 1 (Empate)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '1 - 1 (Empate)', date: 'Fecha 4' }
+              ]},
+              { id: 'IDI', code: 'ID', name: 'Escuela de Idiomas', campus: 'Campus Central · Políglotas', pj: 4, pg: 0, pe: 1, pp: 3, gf: 4, gc: 10, gd: '-6', pts: 1, form: ['D','D','D','E'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Cultura Física', result: '1 - 3 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad y Turismo', result: '1 - 1 (Empate)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '1 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Agropecuarias', result: '1 - 3 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          }
+        }
+      },
+      baloncesto: {
+        name: 'Baloncesto Superior',
+        statLabels: { gf: 'PF', gc: 'PC', gd: 'DIF' },
+        groups: {
+          'A': {
+            title: 'Grupo A · Baloncesto Superior',
+            venue: 'Coliseo Universitario Central · Cancha 1',
+            spotlight: {
+              badge: 'Jornada Nocturna',
+              teamA: { code: 'IC', name: 'Ingeniería Civil', desc: '8 pts · Puntero con récord 4-0' },
+              teamB: { code: 'FL', name: 'Filosofía y Letras', desc: '6 pts · En busca de semifinales' },
+              time: 'Viernes 19:30',
+              place: 'Coliseo Universitario'
+            },
+            teams: [
+              { id: 'B_CIV', code: 'IC', name: 'Ingeniería Civil', campus: 'Campus Central · Triples', pj: 4, pg: 4, pe: 0, pp: 0, gf: 248, gc: 190, gd: '+58', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Arquitectura', result: '62 - 50 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '58 - 44 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '60 - 48 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '68 - 48 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_ARQ', code: 'AQ', name: 'Arquitectura y Urbanismo', campus: 'Campus Yanuncay', pj: 4, pg: 3, pe: 0, pp: 1, gf: 220, gc: 195, gd: '+25', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ingeniería Civil', result: '50 - 62 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Químicas', result: '56 - 45 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '54 - 48 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '60 - 40 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_FIL', code: 'FL', name: 'Filosofía y Letras', campus: 'Campus Central', pj: 4, pg: 2, pe: 0, pp: 2, gf: 198, gc: 205, gd: '-7', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Artes', result: '52 - 42 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '44 - 58 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '48 - 54 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '54 - 51 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_QUI', code: 'CQ', name: 'Ciencias Químicas', campus: 'Campus Central', pj: 4, pg: 1, pe: 0, pp: 3, gf: 188, gc: 215, gd: '-27', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Arquitectura', result: '45 - 56 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '48 - 60 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '51 - 54 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '44 - 45 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_ART', code: 'AT', name: 'Facultad de Artes', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 165, gc: 214, gd: '-49', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Filosofía', result: '42 - 52 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '48 - 68 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '40 - 60 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '35 - 34 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'B': {
+            title: 'Grupo B · Baloncesto Superior',
+            venue: 'Coliseo Universitario Central · Cancha 2',
+            spotlight: {
+              badge: 'Duelo Estelar',
+              teamA: { code: 'EC', name: 'Ciencias Económicas', desc: '8 pts · Máximo encestador' },
+              teamB: { code: 'MD', name: 'Ciencias Médicas', desc: '7 pts · Puesto de clasificación' },
+              time: 'Sábado 18:00',
+              place: 'Coliseo Cancha 2'
+            },
+            teams: [
+              { id: 'B_ECO', code: 'EC', name: 'Ciencias Económicas', campus: 'Campus Central', pj: 4, pg: 4, pe: 0, pp: 0, gf: 260, gc: 185, gd: '+75', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Médicas', result: '65 - 52 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Jurisprudencia', result: '68 - 45 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '60 - 44 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '67 - 44 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_MED', code: 'MD', name: 'Ciencias Médicas', campus: 'Campus Paraíso', pj: 4, pg: 3, pe: 0, pp: 1, gf: 230, gc: 200, gd: '+30', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Económicas', result: '52 - 65 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Jurisprudencia', result: '59 - 50 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '61 - 47 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '58 - 38 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_JUR', code: 'JP', name: 'Jurisprudencia', campus: 'Campus Central', pj: 4, pg: 2, pe: 0, pp: 2, gf: 195, gc: 210, gd: '-15', pts: 6, form: ['V','D','V','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad', result: '54 - 40 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '50 - 59 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '52 - 48 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Económicas', result: '45 - 68 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_PSI', code: 'PS', name: 'Facultad de Psicología', campus: 'Campus Paraíso', pj: 4, pg: 1, pe: 0, pp: 3, gf: 182, gc: 215, gd: '-33', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ciencias Médicas', result: '47 - 61 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Económicas', result: '44 - 60 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Jurisprudencia', result: '48 - 52 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '43 - 42 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_HOS', code: 'HT', name: 'Hospitalidad', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 164, gc: 221, gd: '-57', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Jurisprudencia', result: '40 - 54 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '38 - 58 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Económicas', result: '44 - 67 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Psicología', result: '42 - 43 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'C': {
+            title: 'Grupo C · Baloncesto Superior',
+            venue: 'Coliseo Mayor Yanuncay · Rueda Clasificatoria',
+            spotlight: {
+              badge: 'Jornada Decisiva',
+              teamA: { code: 'EF', name: 'Cultura Física y Deporte', desc: '8 pts · Campeón defensor' },
+              teamB: { code: 'AG', name: 'Ciencias Agropecuarias', desc: '7 pts · Segunda posición' },
+              time: 'Viernes 17:00',
+              place: 'Coliseo Yanuncay'
+            },
+            teams: [
+              { id: 'B_EDF', code: 'EF', name: 'Cultura Física y Deporte', campus: 'Campus Central · Atletas', pj: 4, pg: 4, pe: 0, pp: 0, gf: 275, gc: 170, gd: '+105', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Agropecuarias', result: '66 - 54 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '72 - 45 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad', result: '69 - 38 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Idiomas', result: '68 - 33 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_AGR', code: 'AG', name: 'Ciencias Agropecuarias', campus: 'Campus Monay · Agrónomos', pj: 4, pg: 3, pe: 0, pp: 1, gf: 232, gc: 198, gd: '+34', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Cultura Física', result: '54 - 66 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '58 - 48 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad', result: '62 - 44 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Idiomas', result: '58 - 40 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_CSL', code: 'CS', name: 'Ciencias de la Salud', campus: 'Campus Paraíso · Vital FC', pj: 4, pg: 2, pe: 0, pp: 2, gf: 204, gc: 215, gd: '-11', pts: 6, form: ['D','D','V','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Cultura Física', result: '45 - 72 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '48 - 58 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Idiomas', result: '55 - 42 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '56 - 43 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_HOSC', code: 'HT', name: 'Hospitalidad y Turismo', campus: 'Campus Yanuncay', pj: 4, pg: 1, pe: 0, pp: 3, gf: 175, gc: 228, gd: '-53', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Cultura Física', result: '38 - 69 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '44 - 62 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '43 - 56 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Idiomas', result: '50 - 41 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'B_IDI', code: 'ID', name: 'Escuela de Idiomas', campus: 'Campus Central', pj: 4, pg: 0, pe: 0, pp: 4, gf: 156, gc: 231, gd: '-75', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias de la Salud', result: '42 - 55 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Cultura Física', result: '33 - 68 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Agropecuarias', result: '40 - 58 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '41 - 50 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          }
+        }
+      },
+      ecuavoley: {
+        name: 'Ecuavoley de Tríos',
+        statLabels: { gf: 'SF', gc: 'SC', gd: 'DS' },
+        groups: {
+          'A': {
+            title: 'Grupo A · Ecuavoley de Tríos',
+            venue: 'Canchas Polideportivas Huayna Cápac',
+            spotlight: {
+              badge: 'Fecha 5 Final',
+              teamA: { code: 'IC', name: 'Ingeniería Civil', desc: '8 pts · Invicto en sets' },
+              teamB: { code: 'AQ', name: 'Arquitectura y Urbanismo', desc: '7 pts · Boleto a semifinales' },
+              time: 'Sábado 10:00',
+              place: 'Cancha Polideportiva 1'
+            },
+            teams: [
+              { id: 'E_CIV', code: 'IC', name: 'Ingeniería Civil', campus: 'Campus Central · Los Ponchadores', pj: 4, pg: 4, pe: 0, pp: 0, gf: 8, gc: 1, gd: '+7', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Arquitectura', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_ARQ', code: 'AQ', name: 'Arquitectura y Urbanismo', campus: 'Campus Yanuncay', pj: 4, pg: 3, pe: 0, pp: 1, gf: 7, gc: 2, gd: '+5', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ingeniería Civil', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Filosofía', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Químicas', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_FIL', code: 'FL', name: 'Filosofía y Letras', campus: 'Campus Central', pj: 4, pg: 2, pe: 0, pp: 2, gf: 4, gc: 5, gd: '-1', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Artes', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_QUI', code: 'CQ', name: 'Ciencias Químicas', campus: 'Campus Central', pj: 4, pg: 1, pe: 0, pp: 3, gf: 2, gc: 6, gd: '-4', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Ingeniería Civil', result: '0 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Filosofía', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Artes', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_ART', code: 'AT', name: 'Facultad de Artes', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 8, gd: '-7', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Filosofía', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ingeniería Civil', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Arquitectura', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Químicas', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'B': {
+            title: 'Grupo B · Ecuavoley de Tríos',
+            venue: 'Canchas Centrales Universitarias',
+            spotlight: {
+              badge: 'Duelo Clave',
+              teamA: { code: 'EC', name: 'Ciencias Económicas', desc: '8 pts · Colocadores estrella' },
+              teamB: { code: 'JP', name: 'Jurisprudencia', desc: '7 pts · Puesto 2 asegurado' },
+              time: 'Viernes 16:30',
+              place: 'Cancha 2 Central'
+            },
+            teams: [
+              { id: 'E_ECO', code: 'EC', name: 'Ciencias Económicas', campus: 'Campus Central', pj: 4, pg: 4, pe: 0, pp: 0, gf: 8, gc: 1, gd: '+7', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Jurisprudencia', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_JUR', code: 'JP', name: 'Jurisprudencia', campus: 'Campus Central', pj: 4, pg: 3, pe: 0, pp: 1, gf: 7, gc: 2, gd: '+5', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Económicas', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Médicas', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_MED', code: 'MD', name: 'Ciencias Médicas', campus: 'Campus Paraíso', pj: 4, pg: 2, pe: 0, pp: 2, gf: 4, gc: 5, gd: '-1', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Hospitalidad', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Psicología', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_PSI', code: 'PS', name: 'Facultad de Psicología', campus: 'Campus Paraíso', pj: 4, pg: 1, pe: 0, pp: 3, gf: 2, gc: 6, gd: '-4', pts: 5, form: ['D','V','D','D'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Hospitalidad', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Ciencias Médicas', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_HOSB', code: 'HT', name: 'Hospitalidad', campus: 'Campus Yanuncay', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 8, gd: '-7', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias Médicas', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Psicología', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Económicas', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Jurisprudencia', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          },
+          'C': {
+            title: 'Grupo C · Ecuavoley de Tríos',
+            venue: 'Canchas Polideportivas Huayna Cápac',
+            spotlight: {
+              badge: 'Partidazo Decisivo',
+              teamA: { code: 'AG', name: 'Ciencias Agropecuarias', desc: '8 pts · Punteros invictos' },
+              teamB: { code: 'EF', name: 'Cultura Física y Deporte', desc: '7 pts · Buscan revancha' },
+              time: 'Viernes 17:30',
+              place: 'Cancha Central Huayna Cápac'
+            },
+            teams: [
+              { id: 'E_AGR', code: 'AG', name: 'Ciencias Agropecuarias', campus: 'Campus Monay · Agrónomos', pj: 4, pg: 4, pe: 0, pp: 0, gf: 8, gc: 1, gd: '+7', pts: 8, form: ['V','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Cultura Física', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad y Turismo', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_EDF', code: 'EF', name: 'Cultura Física y Deporte', campus: 'Campus Central · Atletas', pj: 4, pg: 3, pe: 0, pp: 1, gf: 7, gc: 2, gd: '+5', pts: 7, form: ['D','V','V','V'], status: 'q', statusText: 'Clasificado Cuartos', matches: [
+                { opponent: 'Ciencias Agropecuarias', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias de la Salud', result: '2 - 0 (Victoria)', date: 'Fecha 2' },
+                { opponent: 'Hospitalidad y Turismo', result: '2 - 0 (Victoria)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_CSL', code: 'CS', name: 'Ciencias de la Salud', campus: 'Campus Paraíso · Vital FC', pj: 4, pg: 2, pe: 0, pp: 2, gf: 4, gc: 5, gd: '-1', pts: 6, form: ['V','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Escuela de Idiomas', result: '2 - 1 (Victoria)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Cultura Física', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad y Turismo', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_HOS', code: 'HT', name: 'Hospitalidad y Turismo', campus: 'Campus Yanuncay', pj: 4, pg: 1, pe: 0, pp: 3, gf: 2, gc: 6, gd: '-4', pts: 5, form: ['D','D','D','V'], status: 'd', statusText: 'En Disputa', matches: [
+                { opponent: 'Cultura Física', result: '0 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias de la Salud', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Escuela de Idiomas', result: '2 - 0 (Victoria)', date: 'Fecha 4' }
+              ]},
+              { id: 'E_IDI', code: 'ID', name: 'Escuela de Idiomas', campus: 'Campus Central', pj: 4, pg: 0, pe: 0, pp: 4, gf: 1, gc: 8, gd: '-7', pts: 4, form: ['D','D','D','D'], status: 'e', statusText: 'Eliminado', matches: [
+                { opponent: 'Ciencias de la Salud', result: '1 - 2 (Derrota)', date: 'Fecha 1' },
+                { opponent: 'Cultura Física', result: '0 - 2 (Derrota)', date: 'Fecha 2' },
+                { opponent: 'Ciencias Agropecuarias', result: '0 - 2 (Derrota)', date: 'Fecha 3' },
+                { opponent: 'Hospitalidad y Turismo', result: '0 - 2 (Derrota)', date: 'Fecha 4' }
+              ]}
+            ]
+          }
+        }
+      }
+    }
+  };
+
+  // State
+  let currentDiscipline = 'futbol';
+  let currentGroup = 'C';
+
+  // Helper Toast Notification
+  function showNotification(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'flex items-center gap-3 px-4 py-3 rounded-2xl bg-inverse-surface text-inverse-on-surface shadow-2xl border border-surface-container/20 text-body-sm font-medium transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto max-w-md';
+    
+    let icon = 'info';
+    let iconColor = 'text-tertiary-fixed';
+    if (type === 'success') {
+      icon = 'check_circle';
+      iconColor = 'text-tertiary-fixed-dim';
+    } else if (type === 'sync') {
+      icon = 'sync';
+      iconColor = 'text-primary-fixed-dim';
+    }
+
+    toast.innerHTML = `
+      <span class="material-symbols-outlined ${iconColor} text-[20px] flex-shrink-0">${icon}</span>
+      <span class="flex-1">${message}</span>
+    `;
+
+    container.appendChild(toast);
+    
+    // Animate in
+    setTimeout(() => {
+      toast.classList.remove('translate-y-4', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+    }, 10);
+
+    // Auto dismiss
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(() => toast.remove(), 300);
+    }, 3800);
+  }
+
+  // Update Group Cards Preview Metrics
+  function updateGroupCardsMetrics() {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    ['A', 'B', 'C'].forEach(gKey => {
+      const gData = disc.groups[gKey];
+      const card = document.querySelector(`.group-tab[data-group="${gKey}"]`);
+      if (card && gData && gData.teams.length > 0) {
+        const leader = gData.teams[0];
+        const nameEl = card.querySelector('.leader-name');
+        const ptsEl = card.querySelector('.leader-pts');
+        if (nameEl) nameEl.textContent = leader.name;
+        if (ptsEl) ptsEl.textContent = `${leader.pts} Pts`;
+      }
+    });
+  }
+
+  // Render Table Function
+  function renderTable(groupKey, filterText = '') {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    const tableBody = document.getElementById('table-body');
+    const titleEl = document.getElementById('current-group-title');
+    const subtitleEl = document.getElementById('current-group-subtitle');
+    
+    // Column header labels for discipline
+    document.getElementById('col-gf').textContent = disc.statLabels.gf;
+    document.getElementById('col-gc').textContent = disc.statLabels.gc;
+    document.getElementById('col-gd').textContent = disc.statLabels.gd;
+
+    let teamsToRender = [];
+    
+    if (groupKey === 'ALL') {
+      titleEl.innerText = `Tabla Acumulada General · ${disc.name}`;
+      subtitleEl.innerText = `Consolidado de todas las facultades en fase de clasificación · 15 Facultades`;
+      
+      // Combine all teams
+      ['A', 'B', 'C'].forEach(k => {
+        disc.groups[k].teams.forEach(t => teamsToRender.push({ ...t, groupOrigin: `Grupo ${k}` }));
+      });
+      // Sort by PTS desc, GD desc, GF desc
+      teamsToRender.sort((a, b) => b.pts - a.pts || parseInt(b.gd) - parseInt(a.gd) || b.gf - a.gf);
+    } else {
+      const gData = disc.groups[groupKey];
+      if (!gData) return;
+      titleEl.innerText = gData.title;
+      subtitleEl.innerText = gData.venue;
+      teamsToRender = gData.teams;
+    }
+
+    // Apply Filter
+    const query = filterText.trim().toLowerCase();
+    const filtered = teamsToRender.filter(t => 
+      t.name.toLowerCase().includes(query) || 
+      t.code.toLowerCase().includes(query) ||
+      (t.campus && t.campus.toLowerCase().includes(query))
+    );
+
+    tableBody.innerHTML = '';
+
+    if (filtered.length === 0) {
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="12" class="py-12 text-center text-secondary font-body-md bg-surface-container-low/20">
+            <span class="material-symbols-outlined text-secondary text-4xl block mb-2 opacity-50">search_off</span>
+            No se encontraron facultades con el criterio "<strong>${filterText}</strong>".
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
+    filtered.forEach((team, index) => {
+      const pos = index + 1;
+      const isTopTwo = pos <= 2;
+      const tr = document.createElement('tr');
+      
+      let rowBgClass = 'hover:bg-surface-container-low transition-colors group cursor-pointer';
+      if (isTopTwo) {
+        rowBgClass = pos === 1 
+          ? 'bg-tertiary-container/10 transition-colors group cursor-pointer hover:bg-tertiary-container/15'
+          : 'bg-tertiary-container/5 transition-colors group cursor-pointer hover:bg-tertiary-container/10';
+      }
+
+      tr.className = rowBgClass;
+      tr.onclick = () => showTeamModal(team.id);
+
+      // Pos badge
+      let posBadge = `<span class="font-label-md text-label-md font-bold text-secondary">${pos}</span>`;
+      let indicator = '';
+      if (isTopTwo) {
+        indicator = `<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-10 rounded-r-full bg-tertiary"></div>`;
+        posBadge = `<span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center justify-center font-extrabold shadow-sm">${pos}</span>`;
+      }
+
+      // Status pill
+      let statusPill = `<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">${team.statusText}</span>`;
+      if (team.status === 'q' || isTopTwo) {
+        statusPill = `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/15 text-tertiary font-label-sm text-label-sm font-bold shadow-sm"><span class="material-symbols-outlined text-[14px]">stars</span> Clasificado Cuartos</span>`;
+      } else if (team.status === 'e') {
+        statusPill = `<span class="inline-flex items-center px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Eliminado</span>`;
+      }
+
+      // Difference styling
+      let gdColor = 'text-on-surface';
+      if (String(team.gd).startsWith('+')) gdColor = 'text-tertiary';
+      else if (String(team.gd).startsWith('-')) gdColor = 'text-error';
+
+      // Form badges
+      const formBadges = team.form.map(f => {
+        if (f === 'V') return `<span class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[11px] font-bold flex items-center justify-center">V</span>`;
+        if (f === 'E') return `<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-label-sm text-[11px] font-bold flex items-center justify-center">E</span>`;
+        return `<span class="w-6 h-6 rounded-full bg-error text-on-error font-label-sm text-[11px] font-bold flex items-center justify-center">D</span>`;
+      }).join('');
+
+      tr.innerHTML = `
+        <td class="py-4 px-3 text-center relative">
+          ${indicator}
+          <div class="flex items-center justify-center">${posBadge}</div>
+        </td>
+        <td class="py-4 px-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm font-black ${isTopTwo ? 'text-primary' : 'text-on-surface'} shadow-inner flex-shrink-0">
+              ${team.code}
+            </div>
+            <div>
+              <div class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors flex items-center gap-1.5">
+                <span>${team.name}</span>
+                ${pos === 1 ? `<span class="material-symbols-outlined text-[16px] text-tertiary" title="Líder Invicto">verified</span>` : ''}
+                ${team.groupOrigin ? `<span class="text-xs px-2 py-0.5 rounded-full bg-surface-container text-secondary">${team.groupOrigin}</span>` : ''}
+              </div>
+              <div class="font-body-sm text-body-sm text-secondary">${team.campus || 'Campus Central'}</div>
+            </div>
+          </div>
+        </td>
+        <td class="py-4 px-2 text-center font-semibold text-on-surface">${team.pj}</td>
+        <td class="py-4 px-2 text-center text-on-surface">${team.pg}</td>
+        <td class="py-4 px-2 text-center text-on-surface">${team.pe}</td>
+        <td class="py-4 px-2 text-center text-on-surface">${team.pp}</td>
+        <td class="py-4 px-2 text-center font-medium text-on-surface">${team.gf}</td>
+        <td class="py-4 px-2 text-center font-medium text-on-surface">${team.gc}</td>
+        <td class="py-4 px-2 text-center font-bold ${gdColor}">${team.gd}</td>
+        <td class="py-4 px-3 text-center font-headline-sm text-headline-sm font-extrabold text-on-surface">${team.pts}</td>
+        <td class="py-4 px-3 text-center">
+          <div class="flex items-center justify-center gap-1">${formBadges}</div>
+        </td>
+        <td class="py-4 px-4 text-right">${statusPill}</td>
+      `;
+      tableBody.appendChild(tr);
+    });
+
+    // Update Spotlight Match Card
+    updateSpotlightCard(groupKey);
+  }
+
+  // Update Spotlight Card
+  function updateSpotlightCard(groupKey) {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    const targetGroup = groupKey === 'ALL' ? 'C' : groupKey;
+    const gData = disc.groups[targetGroup];
+    if (!gData || !gData.spotlight) return;
+
+    const sp = gData.spotlight;
+    document.getElementById('spotlight-badge').textContent = sp.badge;
+    document.getElementById('spotlight-teamA-badge').textContent = sp.teamA.code;
+    document.getElementById('spotlight-teamA-name').textContent = sp.teamA.name;
+    document.getElementById('spotlight-teamA-desc').textContent = sp.teamA.desc;
+
+    document.getElementById('spotlight-teamB-badge').textContent = sp.teamB.code;
+    document.getElementById('spotlight-teamB-name').textContent = sp.teamB.name;
+    document.getElementById('spotlight-teamB-desc').textContent = sp.teamB.desc;
+
+    document.getElementById('spotlight-time').textContent = sp.time;
+    document.getElementById('spotlight-place').textContent = sp.place;
+  }
+
+  // Group Tabs Switching
+  document.querySelectorAll('.group-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetGrp = tab.getAttribute('data-group');
+      currentGroup = targetGrp;
+
+      // Update active card styling
+      document.querySelectorAll('.group-tab').forEach(t => {
+        t.classList.remove('active-group', 'border-primary');
+        t.classList.add('border-transparent');
+        const titleSpan = t.querySelector('.group-title');
+        if (titleSpan) {
+          titleSpan.classList.remove('text-primary');
+          titleSpan.classList.add('text-on-surface');
+        }
+      });
+
+      tab.classList.add('active-group', 'border-primary');
+      tab.classList.remove('border-transparent');
+      const curTitle = tab.querySelector('.group-title');
+      if (curTitle) {
+        curTitle.classList.remove('text-on-surface');
+        curTitle.classList.add('text-primary');
+      }
+
+      const searchVal = document.getElementById('faculty-search').value;
+      renderTable(currentGroup, searchVal);
+    });
+  });
+
+  // Discipline Tabs Switching
+  document.querySelectorAll('.discipline-tab').forEach(tabBtn => {
+    tabBtn.addEventListener('click', () => {
+      currentDiscipline = tabBtn.getAttribute('data-discipline');
+      
+      // Update styling
+      document.querySelectorAll('.discipline-tab').forEach(b => {
+        b.className = 'discipline-tab px-5 py-2.5 rounded-xl bg-transparent text-secondary hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 transition-all cursor-pointer';
+        const tag = b.querySelector('.tag-masc');
+        if (tag) tag.remove();
+      });
+
+      tabBtn.className = 'discipline-tab px-5 py-2.5 rounded-xl bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center gap-2 shadow-sm transition-all cursor-pointer';
+      
+      // Add masculine tag badge if football
+      if (currentDiscipline === 'futbol' && !tabBtn.querySelector('.tag-masc')) {
+        const badge = document.createElement('span');
+        badge.className = 'text-xs px-2 py-0.5 rounded-full bg-primary text-on-primary ml-1 tag-masc';
+        badge.textContent = 'Masculino';
+        tabBtn.appendChild(badge);
+      }
+
+      updateGroupCardsMetrics();
+      const searchVal = document.getElementById('faculty-search').value;
+      renderTable(currentGroup, searchVal);
+
+      showNotification(`Disciplina cambiada a ${tournamentDB.disciplines[currentDiscipline].name}`, 'info');
+    });
+  });
+
+  // Real-time Search Filter
+  const searchInput = document.getElementById('faculty-search');
+  const clearBtn = document.getElementById('clear-search');
+
+  searchInput.addEventListener('input', (e) => {
+    const val = e.target.value;
+    if (val.length > 0) clearBtn.classList.remove('hidden');
+    else clearBtn.classList.add('hidden');
+    renderTable(currentGroup, val);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.classList.add('hidden');
+    renderTable(currentGroup, '');
+    searchInput.focus();
+  });
+
+  // Recalculate Button Action
+  const recalcBtn = document.getElementById('btn-recalculate');
+  const syncIcon = document.getElementById('sync-icon');
+
+  recalcBtn.addEventListener('click', () => {
+    syncIcon.classList.add('animate-spin');
+    recalcBtn.disabled = true;
+
+    setTimeout(() => {
+      syncIcon.classList.remove('animate-spin');
+      recalcBtn.disabled = false;
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('sync-time').textContent = `Sincronizado: ${timeStr}`;
+      
+      showNotification('Puntos y goles recalculados con las actas arbitrales oficiales.', 'success');
+    }, 750);
+  });
+
+  // Export Menu Toggle
+  const exportBtn = document.getElementById('btn-export');
+  const exportMenu = document.getElementById('export-menu');
+
+  exportBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    exportMenu.classList.toggle('hidden');
+  });
+
+  window.addEventListener('click', () => {
+    if (!exportMenu.classList.contains('hidden')) exportMenu.classList.add('hidden');
+  });
+
+  function handleExportClick(format) {
+    exportMenu.classList.add('hidden');
+    const groupName = currentGroup === 'ALL' ? 'General' : `Grupo ${currentGroup}`;
+    showNotification(`Tabla de Posiciones (${groupName}) descargada con éxito en ${format}.`, 'success');
+  }
+
+  // Modal Functions
+  function showTeamModal(teamId) {
+    const disc = tournamentDB.disciplines[currentDiscipline];
+    let selected = null;
+
+    ['A', 'B', 'C'].forEach(g => {
+      const match = disc.groups[g].teams.find(t => t.id === teamId);
+      if (match) selected = match;
+    });
+
+    if (!selected) return;
+
+    document.getElementById('modal-team-badge').innerText = selected.code;
+    document.getElementById('modal-team-name').innerText = selected.name;
+    document.getElementById('modal-team-status').innerText = `${selected.statusText} · ${selected.pts} Puntos · GD: ${selected.gd}`;
+
+    const matchesContainer = document.getElementById('modal-matches');
+    matchesContainer.innerHTML = '';
+    
+    if (selected.matches && selected.matches.length > 0) {
+      selected.matches.forEach(m => {
+        const div = document.createElement('div');
+        div.className = 'p-3 rounded-xl bg-surface-container flex items-center justify-between';
+        div.innerHTML = `
+          <div>
+            <span class="text-xs text-secondary font-bold uppercase">${m.date}</span>
+            <span class="block text-on-surface font-bold">vs. ${m.opponent}</span>
+          </div>
+          <span class="font-bold text-on-surface bg-surface-container-lowest px-3 py-1 rounded-lg shadow-sm">${m.result}</span>
+        `;
+        matchesContainer.appendChild(div);
+      });
+    } else {
+      matchesContainer.innerHTML = '<p class="text-secondary text-sm">No hay registros de partidos anteriores disponibles.</p>';
+    }
+
+    document.getElementById('team-modal').classList.remove('hidden');
+  }
+
+  function closeTeamModal() {
+    document.getElementById('team-modal').classList.add('hidden');
+  }
+
+  // Close modal on escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTeamModal();
+  });
+
+  // Initial render (starts at Grupo C as in screenshot)
+  updateGroupCardsMetrics();
+  renderTable('C');
+</script></body></html>

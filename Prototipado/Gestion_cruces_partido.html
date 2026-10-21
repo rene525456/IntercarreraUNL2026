@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }
+  .pulse-ring {
+    animation: ringPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes ringPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .4; }
+  }
+  .highlight-card {
+    transition: all 0.3s ease;
+  }
+  .flash-highlight {
+    animation: flashBorder 1.5s ease;
+  }
+  @keyframes flashBorder {
+    0% { transform: scale(0.99); box-shadow: 0 0 0 4px #d3002d; }
+    50% { transform: scale(1.01); box-shadow: 0 0 0 6px #d3002d; }
+    100% { transform: scale(1); box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
+  }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#f8f9ff", "outline": "#916e6d", "secondary-fixed": "#dae2fd", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed": "#131b2e", "primary-fixed": "#ffdad8", "primary": "#a50021", "on-tertiary-container": "#8fffc9", "on-secondary-container": "#5c647a", "on-error": "#ffffff", "inverse-surface": "#213145", "inverse-primary": "#ffb3b1", "tertiary-fixed": "#6ffbbe", "secondary-container": "#dae2fd", "on-primary-fixed-variant": "#92001c", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#410007", "outline-variant": "#e6bdbb", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "surface-container-low": "#eff4ff", "secondary-fixed-dim": "#bec6e0", "on-primary-container": "#ffe3e1", "secondary": "#565e74", "error": "#ba1a1a", "surface": "#f8f9ff", "surface-tint": "#bf0028", "tertiary": "#005d3e", "tertiary-container": "#007852", "tertiary-fixed-dim": "#4edea3", "on-tertiary-fixed-variant": "#005236", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "on-surface-variant": "#5d3f3e", "on-secondary-fixed-variant": "#3f465c", "on-surface": "#0b1c30", "on-background": "#0b1c30", "on-tertiary-fixed": "#002113", "on-secondary": "#ffffff", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#ffb3b1", "surface-variant": "#d3e4fe", "surface-container": "#e5eeff", "primary-container": "#d3002d", "on-error-container": "#93000a", "background": "#f8f9ff", "surface-container-high": "#dce9ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-md": "1.5rem", "margin-lg": "3rem", "space-xl": "2.5rem", "space-md": "1rem", "margin": "1rem", "gutter-lg": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-md": "1.5rem", "gutter": "1rem", "space-lg": "1.5rem" }, "fontFamily": { "label-sm": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ] }, "fontSize": { "label-sm": [ "11px", { "lineHeight": "14px", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "fontWeight": "800" } ], "label-md": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "fontWeight": "800" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-inverse-surface text-inverse-on-surface px-5 py-3.5 rounded-2xl shadow-xl border border-surface-container-highest/20" id="toastNotification">
+<div class="w-8 h-8 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0" id="toastIconWrap">
+<span class="material-symbols-outlined text-[20px]" id="toastIcon">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg font-bold text-white text-[14px]" id="toastTitle">Operación completada</span>
+<span class="text-[12px] text-secondary-fixed" id="toastMessage">El calendario se ha actualizado.</span>
+</div>
+<button class="ml-2 text-secondary-fixed hover:text-white p-1" id="toastCloseBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- MODAL GENÉRICO / DETALLE DE ACTA / ÁRBITRO -->
+<div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden items-center justify-center p-4" id="actionModal">
+<div class="bg-surface-container-lowest rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-surface-container transform transition-all scale-95 duration-200" id="modalCard">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-primary flex items-center justify-center" id="modalIconBox">
+<span class="material-symbols-outlined text-[20px]" id="modalIcon">article</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface" id="modalTitle">Detalle del Partido</h3>
+<p class="text-secondary text-[12px]" id="modalSub">Acta y seguimiento oficial</p>
+</div>
+</div>
+<button class="text-secondary hover:text-on-surface p-1 rounded-lg" id="modalCloseBtn">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="py-4 text-body-sm text-secondary space-y-3" id="modalBody">
+<!-- Dynamic body -->
+</div>
+<div class="flex justify-end gap-2 pt-3 border-t border-surface-container">
+<button class="px-5 py-2.5 rounded-xl bg-primary-container text-on-primary font-bold hover:bg-primary transition-all text-label-md" id="modalActionBtn">
+        Entendido
+      </button>
+</div>
+</div>
+</div>
+<aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="p-space-lg flex items-center gap-space-md"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[24px]">emoji_events</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-white leading-tight">Interfacultades</span><span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Torneo Deportivo 2025</span></div></div><div class="px-space-lg pb-space-sm"><div class="py-space-xs px-space-sm bg-inverse-surface/80 rounded-lg inline-flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span><span class="font-label-sm text-label-sm tracking-wide text-secondary-fixed uppercase">ADMINISTRADOR DEL TORNEO</span></div></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-md" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm rounded-xl"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-secondary-fixed hover:bg-surface-container-highest/20 hover:text-white transition-colors" data-path="resumen" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Resumen</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-secondary-fixed hover:bg-surface-container-highest/20 hover:text-white transition-colors" data-path="grupos-y-sorteo" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-label-lg text-label-lg">Grupos y Sorteo</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl bg-primary-container text-on-primary font-bold shadow-sm transition-colors" data-path="calendario" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-lg text-label-lg">Calendario</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-secondary-fixed hover:bg-surface-container-highest/20 hover:text-white transition-colors" data-path="clasificaciones" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span><span class="font-label-lg text-label-lg">Clasificaciones</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-secondary-fixed hover:bg-surface-container-highest/20 hover:text-white transition-colors" data-path="disciplinas" href="#"><span class="material-symbols-outlined text-[20px]">sports_soccer</span><span class="font-label-lg text-label-lg">Disciplinas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-secondary-fixed hover:bg-surface-container-highest/20 hover:text-white transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-lg text-label-lg">Configuración</span></a></nav></div><div class="p-space-md bg-inverse-surface/40 mx-space-md mb-space-lg rounded-xl"><div class="flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">shield_person</span></div><div class="flex flex-col"><span class="font-label-lg text-label-lg font-bold text-white leading-tight">Admin General</span><span class="font-label-sm text-label-sm text-secondary-fixed">admin@deportes.edu.ec</span></div></div><button class="text-secondary-fixed hover:text-white transition-colors" onclick="showToast('Sesión de administrador', 'Operando en modo supervisor general')" title="Cerrar sesión"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></aside>
+<div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-secondary"><span class="font-label-md text-label-md">Edición 2025</span><span class="text-outline-variant">/</span><span class="font-label-md text-label-md text-primary font-bold">Fase Clasificatoria</span></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs bg-error-container text-primary rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm font-bold">En Vivo</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-secondary text-[20px]">search</span><input class="w-64 pl-10 pr-4 py-1.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-primary/20" id="globalSearchInput" placeholder="Buscar equipo, atleta o fecha..." type="text"/></div><button class="relative p-space-xs text-secondary hover:text-on-surface transition-colors" onclick="showToast('Notificaciones', 'Tienes 2 cruces pendientes de confirmación arbitral')"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-primary-container rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer" onclick="showToast('Perfil de Administrador', 'Director Técnico FEDUP - Liga Universitaria')"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Banner / Breadcrumb & Header Hero -->
+<div class="px-gutter-lg pt-space-lg pb-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">ADMINISTRADOR DEL TORNEO</span>
+<span class="text-outline-variant font-label-sm">/</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">FASE DE COMPETENCIA</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Gestión de Cruces y Partidos</h1>
+<p class="font-body-md text-body-md text-secondary mt-space-xs max-w-3xl">
+          Programa y administra los enfrentamientos del torneo interfacultades, asignando sedes, fechas y horarios oficiales con detección automática de solapamientos.
+        </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-space-sm self-start md:self-auto shrink-0">
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-space-xs font-label-lg text-label-lg shadow-sm" id="btnAutoGenerate">
+<span class="material-symbols-outlined text-[20px] text-primary">auto_mode</span>
+<span>Generar calendario automático</span>
+</button>
+<button class="px-space-md py-2.5 rounded-xl bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-space-xs font-label-lg text-label-lg shadow-md hover:shadow-lg" id="btnOpenModal">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Programar nuevo cruce</span>
+</button>
+</div>
+</div>
+<!-- Mode Selector & Discipline Tabs Bar -->
+<div class="mt-space-lg flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-sm rounded-2xl shadow-sm">
+<!-- Disciplinas Selector -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 lg:pb-0" id="disciplineFilter">
+<button class="discipline-tab px-space-md py-2 rounded-xl font-label-md text-label-md flex items-center gap-space-xs transition-all bg-inverse-surface text-inverse-on-surface shadow-sm cursor-pointer" data-discipline="futbol">
+<span class="material-symbols-outlined text-[18px]">sports_soccer</span>
+<span>Fútbol 9</span>
+<span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container-highest/30 text-surface-bright font-label-sm text-label-sm" id="badgeCountFutbol">18</span>
+</button>
+<button class="discipline-tab px-space-md py-2 rounded-xl font-label-md text-label-md flex items-center gap-space-xs transition-all text-secondary hover:bg-surface-container-low cursor-pointer" data-discipline="baloncesto">
+<span class="material-symbols-outlined text-[18px]">sports_basketball</span>
+<span>Baloncesto</span>
+<span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm" id="badgeCountBaloncesto">12</span>
+</button>
+<button class="discipline-tab px-space-md py-2 rounded-xl font-label-md text-label-md flex items-center gap-space-xs transition-all text-secondary hover:bg-surface-container-low cursor-pointer" data-discipline="ecuavoley">
+<span class="material-symbols-outlined text-[18px]">sports_volleyball</span>
+<span>Ecuavoley</span>
+<span class="ml-1 px-1.5 py-0.2 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm" id="badgeCountEcuavoley">14</span>
+</button>
+</div>
+<!-- Segmented Mode Switcher & View Switcher -->
+<div class="flex items-center gap-space-md">
+<!-- Tournament Phase Switch (Fase de Grupos vs Eliminatorias) -->
+<div class="flex p-1 bg-surface-container-low rounded-xl">
+<button class="phase-btn px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all font-bold bg-surface-container-lowest text-primary shadow-sm flex items-center gap-space-xs cursor-pointer" id="tabFaseGrupos">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span>Fase de Grupos</span>
+</button>
+<button class="phase-btn px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-all font-semibold text-secondary hover:text-on-surface flex items-center gap-space-xs cursor-pointer" id="tabEliminatorias">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+<span>Eliminatorias directas (Playoffs)</span>
+</button>
+</div>
+<!-- View Display Mode (Toggle List vs Bracket) -->
+<div class="hidden sm:flex items-center gap-1 bg-surface-container-low p-1 rounded-xl" id="viewDisplayToggle">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-xs transition-all" id="btnViewTable" title="Vista Tabla / Lista">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface transition-all" id="btnViewBracket" title="Vista Gráfica Llaves">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CONFLICT VALIDATION ALERT BANNER -->
+<div class="px-gutter-lg mb-space-md" id="conflictAlertContainer">
+<div class="bg-error-container/70 rounded-2xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm transition-all" id="conflictAlert">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-error-container">Conflicto de programación detectado</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm">Solapamiento</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container/90 mt-0.5" id="conflictAlertText">
+            Un equipo no puede tener dos enfrentamientos en la misma fecha: <span class="font-bold underline">Ingeniería Civil</span> ya tiene un partido asignado el <span class="font-semibold">24/10/2025</span> a las <span class="font-semibold">10:00</span> en Cancha Principal. Corrige el horario o fecha para guardar.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-auto">
+<button class="px-space-md py-2 rounded-xl bg-error text-on-error hover:bg-error/90 font-label-md text-label-md transition-all shadow-sm flex items-center gap-1 cursor-pointer" id="btnReviewConflict">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>Revisar conflicto</span>
+</button>
+<button class="p-2 text-on-error-container hover:bg-error-container rounded-xl transition-colors cursor-pointer" id="dismissAlert" title="Ocultar advertencia">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN DASHBOARD GRID -->
+<div class="px-gutter-lg grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<!-- LEFT / MAIN VIEW CONTAINER (8 Cols on XL) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- SECTION A: FASE DE GRUPOS (TABLA DE PARTIDOS PROGRAMADOS) -->
+<div class="flex flex-col gap-space-md" id="sectionFaseGrupos">
+<!-- Sub-header & Filter toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="phaseHeaderTitle">Partidos Programados</span>
+<button class="px-2.5 py-1 bg-surface-container hover:bg-surface-container-high transition-colors text-secondary rounded-lg font-label-md text-label-md cursor-pointer flex items-center gap-1" id="btnJornadasFilter">
+<span id="jornadaFilterLabel">Jornadas 1 a 3</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Status Chips Filter -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0" id="statusFilterBar">
+<button class="status-chip px-3 py-1.5 rounded-lg font-label-sm text-label-sm bg-primary-container text-on-primary font-bold shadow-xs transition-all cursor-pointer" data-status="all">Todos (<span id="countAll">16</span>)</button>
+<button class="status-chip px-3 py-1.5 rounded-lg font-label-sm text-label-sm bg-surface-container-low text-secondary hover:text-on-surface transition-all cursor-pointer" data-status="programado">Programados (<span id="countProgramados">10</span>)</button>
+<button class="status-chip px-3 py-1.5 rounded-lg font-label-sm text-label-sm bg-surface-container-low text-secondary hover:text-on-surface flex items-center gap-1 transition-all cursor-pointer" data-status="en-juego">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              En Juego (<span id="countEnJuego">2</span>)
+            </button>
+<button class="status-chip px-3 py-1.5 rounded-lg font-label-sm text-label-sm bg-surface-container-low text-secondary hover:text-on-surface transition-all cursor-pointer" data-status="finalizado">Finalizados (<span id="countFinalizados">4</span>)</button>
+</div>
+</div>
+<!-- Match Cards Dynamic Layout List -->
+<div class="flex flex-col gap-space-sm" id="matchesContainer">
+<!-- Match Item 1: EN JUEGO -->
+<div class="match-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-date="2025-10-24" data-discipline="futbol" data-id="CR-104" data-status="en-juego" data-teama="Ingeniería Civil" data-teamb="Medicina" data-time="10:00">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-surface-container-low text-center shrink-0">
+<span class="font-label-sm text-label-sm text-secondary font-bold">#CR-104</span>
+<span class="font-label-md text-label-md text-primary font-bold mt-0.5">GRP A</span>
+<span class="font-body-sm text-[10px] text-secondary">Jornada 2</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    En Juego (2T 18')
+                  </span>
+<span class="text-secondary font-body-sm text-body-sm sport-name-tag">• Fútbol 9 Masculino</span>
+</div>
+<!-- Versus Teams -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary text-label-sm">IC</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Ingeniería Civil</span>
+</div>
+<div class="px-2.5 py-1 bg-surface-container-high rounded-lg font-headline-sm text-headline-sm font-bold text-primary">
+                    2 - 1
+                  </div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Medicina</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-secondary text-label-sm">MED</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stadium</span>
+                    Cancha Central Sintética
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    Hoy, 10:00 AM
+                  </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<button class="btn-live-acta p-2 text-primary hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer" title="Acta Arbitral en Vivo">
+<span class="material-symbols-outlined text-[20px]">sports_score</span>
+</button>
+<button class="btn-edit-match p-2 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer" title="Editar Cruce">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="btn-match-more p-2 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer" title="Opciones">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Match Item 2: PROGRAMADO (CON NOTA DE CONFLICTO) -->
+<div class="match-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-gradient-to-r from-error-container/20 to-transparent border border-error/30" data-date="2025-10-24" data-discipline="futbol" data-id="CR-108" data-status="programado" data-teama="Ingeniería Civil" data-teamb="Jurisprudencia" data-time="10:30" id="matchCard108">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-error-container/50 text-center shrink-0" id="badge108">
+<span class="font-label-sm text-label-sm text-error font-bold">#CR-108</span>
+<span class="font-label-md text-label-md text-error font-bold mt-0.5">GRP A</span>
+<span class="font-body-sm text-[10px] text-error" id="badge108Subtitle">Conflicto</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1" id="statusPills108">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm">Programado</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold flex items-center gap-1" id="conflictFlag108">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+                    Doble Horario Detectado
+                  </span>
+</div>
+<!-- Versus Teams -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary text-label-sm">IC</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Ingeniería Civil</span>
+</div>
+<span class="text-secondary font-label-sm text-label-sm font-bold">VS</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Jurisprudencia</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-secondary text-label-sm">JUR</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm mt-1" id="timeVenueDetails108">
+<span class="flex items-center gap-1 text-error font-semibold" id="timeText108">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                    24 Oct 2025 - 10:30 AM (Solapado con #CR-104)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                    Cancha Sintética 2
+                  </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<button class="px-space-md py-1.5 rounded-xl bg-error text-on-error hover:bg-error/90 font-label-sm text-label-sm font-bold shadow-sm flex items-center gap-1 cursor-pointer transition-all" id="btnRescheduleCard">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+                Reagendar
+              </button>
+</div>
+</div>
+<!-- Match Item 3: PROGRAMADO NORMAL -->
+<div class="match-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-date="2025-10-24" data-discipline="futbol" data-id="CR-105" data-status="programado" data-teama="Ciencias Administrativas" data-teamb="Arquitectura" data-time="14:00">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-surface-container-low text-center shrink-0">
+<span class="font-label-sm text-label-sm text-secondary font-bold">#CR-105</span>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-0.5">GRP B</span>
+<span class="font-body-sm text-[10px] text-secondary">Jornada 2</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-medium">Programado</span>
+<span class="text-secondary font-body-sm text-body-sm sport-name-tag">• Fútbol 9 Masculino</span>
+</div>
+<!-- Versus Teams -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-secondary text-label-sm">FCA</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Ciencias Admin.</span>
+</div>
+<span class="text-secondary font-label-sm text-label-sm font-bold">VS</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Arquitectura</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-secondary text-label-sm">ARQ</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stadium</span>
+                    Coliseo Polideportivo
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    24 Oct 2025 - 14:00 PM
+                  </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<button class="btn-referee px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-colors" title="Designar Árbitro">
+<span class="material-symbols-outlined text-[16px]">sports</span>
+                Árbitro: Pendiente
+              </button>
+<button class="btn-edit-match p-2 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer" title="Editar Cruce">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Match Item 4: FINALIZADO -->
+<div class="match-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md opacity-90" data-date="2025-10-22" data-discipline="futbol" data-id="CR-101" data-status="finalizado" data-teama="Economía" data-teamb="Ingeniería Civil" data-time="09:00">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-surface-container-low text-center shrink-0">
+<span class="font-label-sm text-label-sm text-secondary font-bold">#CR-101</span>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-0.5">GRP A</span>
+<span class="font-body-sm text-[10px] text-secondary">Jornada 1</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">Finalizado</span>
+<span class="text-secondary font-body-sm text-body-sm">• 22 Oct 2025</span>
+</div>
+<!-- Versus Teams -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-secondary text-label-sm">FCE</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">Economía</span>
+</div>
+<div class="px-2.5 py-1 bg-surface-container rounded-lg font-headline-sm text-headline-sm font-bold text-on-surface">
+                    0 - 3
+                  </div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary team-name">Ingeniería Civil</span>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-sm">IC</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                    Acta aprobada por Juez Arbitral M. Cárdenas
+                  </span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+<button class="btn-official-acta px-space-md py-1.5 rounded-xl bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                Ver Acta Oficial
+              </button>
+</div>
+</div>
+</div>
+<!-- Empty state for search/filters if needed -->
+<div class="hidden bg-surface-container-lowest p-space-xl rounded-2xl text-center flex-col items-center justify-center py-12" id="noMatchesNotice">
+<span class="material-symbols-outlined text-secondary text-[48px] mb-2">sports_score</span>
+<h4 class="font-headline-sm font-bold text-on-surface">No se encontraron partidos</h4>
+<p class="text-secondary text-body-sm mt-1">Prueba cambiando los filtros o el término de búsqueda.</p>
+<button class="mt-4 px-4 py-2 bg-surface-container-low hover:bg-surface-container text-primary font-bold rounded-xl text-label-md" id="btnResetFilters">Restablecer filtros</button>
+</div>
+</div>
+<!-- SECTION B: CUADRO DE ELIMINATORIAS (BRACKET PREVIEW) - TOGGLEABLE -->
+<div class="hidden flex-col gap-space-md" id="sectionEliminatorias">
+<!-- Bracket Header Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">account_tree</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Cuadro de Llaves y Eliminatorias Directas</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Ronda clasificatoria a partido único. Los ganadores avanzan automáticamente a la siguiente ronda.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full font-label-sm text-label-sm font-bold flex items-center gap-1" id="disciplineBracketTag">
+<span class="material-symbols-outlined text-[16px]">emoji_events</span>
+              Fútbol 9 - Fase Final 2025
+            </span>
+</div>
+</div>
+<!-- VISUAL BRACKET CONTAINER -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm overflow-x-auto">
+<div class="min-w-[760px] grid grid-cols-3 gap-space-lg relative py-space-md">
+<!-- COLUMN 1: CUARTOS DE FINAL -->
+<div class="flex flex-col justify-around gap-space-lg">
+<div class="text-center pb-2">
+<span class="font-label-lg text-label-lg font-bold text-secondary uppercase tracking-wider">Cuartos de Final</span>
+<p class="font-body-sm text-[12px] text-secondary">26 Oct 2025</p>
+</div>
+<!-- Match QF 1 -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-xs relative flex flex-col gap-1 border-l-4 border-primary hover:shadow-md transition-shadow cursor-pointer" onclick="openBracketDetail('QF-01', 'Ingeniería Civil', 'Medicina', '3 - 1', 'Finalizado', 'Cancha Central')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>QF-01 • Cancha Central</span>
+<span class="text-primary font-bold">10:00</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[10px] flex items-center justify-center font-bold">1A</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Ingeniería Civil</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">3</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-secondary text-[10px] flex items-center justify-center font-bold">2B</span>
+<span class="font-label-md text-label-md text-secondary">Medicina</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">1</span>
+</div>
+</div>
+<!-- Match QF 2 -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-xs relative flex flex-col gap-1 border-l-4 border-secondary hover:shadow-md transition-shadow cursor-pointer" onclick="openBracketDetail('QF-02', 'Jurisprudencia', 'Arquitectura', '0 - 2', 'Finalizado', 'Cancha Central')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>QF-02 • Cancha Central</span>
+<span class="text-secondary font-bold">12:00</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-secondary text-[10px] flex items-center justify-center font-bold">1C</span>
+<span class="font-label-md text-label-md text-secondary">Jurisprudencia</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">0</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[10px] flex items-center justify-center font-bold">2D</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Arquitectura</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">2</span>
+</div>
+</div>
+<!-- Match QF 3 -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-xs relative flex flex-col gap-1 border-l-4 border-secondary hover:shadow-md transition-shadow cursor-pointer" onclick="openBracketDetail('QF-03', 'Ciencias Admin.', 'Economía', '4 - 2', 'Finalizado', 'Cancha 2')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>QF-03 • Cancha 2</span>
+<span class="text-secondary font-bold">14:00</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-secondary text-[10px] flex items-center justify-center font-bold">1B</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Ciencias Admin.</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">4</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-secondary text-[10px] flex items-center justify-center font-bold">2A</span>
+<span class="font-label-md text-label-md text-secondary">Economía</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">2</span>
+</div>
+</div>
+<!-- Match QF 4 -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-xs relative flex flex-col gap-1 border-l-4 border-secondary hover:shadow-md transition-shadow cursor-pointer" onclick="openBracketDetail('QF-04', 'Ingeniería Química', 'Comunicación', '1 (4) - 1 (2)', 'Penales', 'Cancha 2')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>QF-04 • Cancha 2</span>
+<span class="text-secondary font-bold">16:00</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-secondary text-[10px] flex items-center justify-center font-bold">1D</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Ingeniería Química</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">1 (4)</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-secondary text-[10px] flex items-center justify-center font-bold">2C</span>
+<span class="font-label-md text-label-md text-secondary">Comunicación</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">1 (2)</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 2: SEMIFINALES -->
+<div class="flex flex-col justify-around gap-space-xl my-auto py-space-lg">
+<div class="text-center pb-2">
+<span class="font-label-lg text-label-lg font-bold text-secondary uppercase tracking-wider">Semifinales</span>
+<p class="font-body-sm text-[12px] text-secondary">28 Oct 2025</p>
+</div>
+<!-- Match SF 1 -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-sm relative flex flex-col gap-1 border-l-4 border-primary hover:shadow-md transition-shadow cursor-pointer" onclick="openBracketDetail('SF-01', 'Ingeniería Civil', 'Arquitectura', '1 - 0', 'En Juego (2T)', 'Cancha Central')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>SF-01 • Cancha Central</span>
+<span class="text-primary font-bold">10:30</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">sports_soccer</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Ingeniería Civil</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-primary font-label-sm text-label-sm font-bold animate-pulse">En Juego (1-0)</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">sports_soccer</span>
+<span class="font-label-md text-label-md text-secondary">Arquitectura</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">0</span>
+</div>
+</div>
+<!-- Match SF 2 -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-sm relative flex flex-col gap-1 border-l-4 border-secondary hover:shadow-md transition-shadow cursor-pointer" onclick="openBracketDetail('SF-02', 'Ciencias Admin.', 'Ingeniería Química', 'VS', 'Por Jugar', 'Cancha Central')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>SF-02 • Cancha Central</span>
+<span class="text-secondary font-bold">14:30</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">sports_soccer</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Ciencias Admin.</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Por jugar</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-lg flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">sports_soccer</span>
+<span class="font-label-md text-label-md text-secondary">Ingeniería Química</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Por jugar</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: GRAN FINAL & TERCER LUGAR -->
+<div class="flex flex-col justify-center gap-space-lg my-auto">
+<div class="text-center pb-2">
+<span class="font-label-lg text-label-lg font-bold text-primary uppercase tracking-wider flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[20px] text-primary">emoji_events</span>
+                  Gran Final
+                </span>
+<p class="font-body-sm text-[12px] text-secondary">31 Oct 2025 • Estadio Universitario</p>
+</div>
+<!-- Match Final -->
+<div class="bracket-match-card bg-gradient-to-b from-primary-fixed/30 to-surface-container-lowest p-space-md rounded-2xl shadow-md border-2 border-primary/20 flex flex-col gap-space-sm hover:shadow-lg transition-all cursor-pointer" onclick="openBracketDetail('FINAL', 'Ganador SF1 (Virtual IC)', 'Ganador SF2', 'Por Definir', 'Programado', 'Estadio Universitario')">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold">FINAL DE ORO</span>
+<span class="font-label-md text-label-md font-bold text-primary">15:00 Oficial</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-sm">IC</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Ganador SF1</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">TBD</span>
+</div>
+<div class="text-center font-label-sm text-label-sm font-bold text-secondary tracking-widest">VS</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container text-secondary flex items-center justify-center font-bold text-label-sm">?</div>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">Ganador SF2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">TBD</span>
+</div>
+<div class="pt-1 flex items-center justify-center gap-1 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+                  Trofeo Interfacultades 2025
+                </div>
+</div>
+<!-- Match 3rd Place -->
+<div class="bracket-match-card bg-surface-container-low p-space-sm rounded-xl shadow-xs flex flex-col gap-1 hover:shadow-sm transition-shadow cursor-pointer" onclick="openBracketDetail('3ER PUESTO', 'Perdedor SF1', 'Perdedor SF2', 'Por Definir', 'Programado', 'Cancha Central')">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary px-1">
+<span>Tercer Lugar • 31 Oct - 11:00</span>
+<span class="text-secondary font-bold">Bronce</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Perdedor SF1</span>
+<span class="font-bold">vs</span>
+<span>Perdedor SF2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Metrics & Venue Schedule Preview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">stadium</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="metricVenues">3 Sedes</span>
+<p class="font-body-sm text-body-sm text-secondary" id="metricVenuesSub">Césped, Coliseo, Cancha 2</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="metricFaculties">8 Facultades</span>
+<p class="font-body-sm text-body-sm text-secondary">Habilitadas con cédula y carnet</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">gavel</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="metricReferees">6 Árbitros</span>
+<p class="font-body-sm text-body-sm text-secondary">Colegiados FEDUP asignados</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN / CREATION PANEL (4 Cols on XL) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Panel de Programación / Formulario -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-md sticky top-20 transition-all duration-300" id="matchFormPanel">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_task</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Programar Partido</h2>
+<span class="font-label-sm text-label-sm text-secondary">Nuevo cruce oficial</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary">Edición 2025</span>
+</div>
+<!-- Interactive Form -->
+<form class="mt-space-md flex flex-col gap-space-md" id="matchForm">
+<!-- Selección de Disciplina & Fase -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Disciplina</label>
+<select class="w-full bg-surface-container-low px-3 py-2 rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer" id="selectSport">
+<option value="futbol">Fútbol 9</option>
+<option value="baloncesto">Baloncesto</option>
+<option value="ecuavoley">Ecuavoley</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Fase / Jornada</label>
+<select class="w-full bg-surface-container-low px-3 py-2 rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer" id="selectPhase">
+<option value="J1-A">Jornada 1 - Grupo A</option>
+<option selected="" value="J2-A">Jornada 2 - Grupo A</option>
+<option value="J1-B">Jornada 1 - Grupo B</option>
+<option value="J2-B">Jornada 2 - Grupo B</option>
+<option value="QF">Cuartos de Final</option>
+<option value="SF">Semifinales</option>
+<option value="FIN">Gran Final</option>
+</select>
+</div>
+</div>
+<!-- Equipo A vs Equipo B -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Emparejamiento de Facultades</span>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-1">Equipo A (Local)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-primary text-[18px]">shield</span>
+<select class="w-full pl-9 pr-3 py-2 bg-surface-container-lowest rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer" id="teamASelect">
+<option selected="" value="Ingeniería Civil">Ingeniería Civil</option>
+<option value="Medicina">Medicina</option>
+<option value="Jurisprudencia">Jurisprudencia</option>
+<option value="Ciencias Administrativas">Ciencias Administrativas</option>
+<option value="Arquitectura">Arquitectura</option>
+<option value="Economía">Economía</option>
+<option value="Ingeniería Química">Ingeniería Química</option>
+<option value="Comunicación">Comunicación</option>
+</select>
+</div>
+</div>
+<div class="flex items-center justify-center my-0.5">
+<button class="px-2 py-0.5 rounded-full bg-surface-container hover:bg-surface-container-high text-secondary font-label-sm text-[10px] font-bold flex items-center gap-1 transition-all cursor-pointer" id="btnSwapTeams" title="Invertir localía" type="button">
+<span>VS</span>
+<span class="material-symbols-outlined text-[12px]">swap_vert</span>
+</button>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-1">Equipo B (Visitante)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[18px]">shield</span>
+<select class="w-full pl-9 pr-3 py-2 bg-surface-container-lowest rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer" id="teamBSelect">
+<option value="Ingeniería Civil">Ingeniería Civil</option>
+<option value="Medicina">Medicina</option>
+<option selected="" value="Jurisprudencia">Jurisprudencia</option>
+<option value="Ciencias Administrativas">Ciencias Administrativas</option>
+<option value="Arquitectura">Arquitectura</option>
+<option value="Economía">Economía</option>
+<option value="Ingeniería Química">Ingeniería Química</option>
+<option value="Comunicación">Comunicación</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Sede / Cancha -->
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Cancha / Sede Oficial</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[18px]">stadium</span>
+<select class="w-full pl-9 pr-3 py-2 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer" id="venueSelect">
+<option value="Cancha Central Sintética">Cancha Central de Césped Sintético</option>
+<option selected="" value="Cancha Sintética 2">Cancha Sintética 2</option>
+<option value="Coliseo Polideportivo Universitario">Coliseo Polideportivo Universitario</option>
+<option value="Pista Atlética Los Chasquis">Pista Atlética Los Chasquis</option>
+</select>
+</div>
+</div>
+<!-- Fecha y Horario -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Fecha</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[18px]">calendar_today</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20" id="matchDate" type="date" value="2025-10-24"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Hora Inicio</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[18px]">schedule</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20" id="matchTime" type="time" value="10:30"/>
+</div>
+</div>
+</div>
+<!-- Selector de Estado Inicial -->
+<div>
+<label class="block font-label-md text-label-md text-secondary mb-1">Estado de Partido</label>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-1 rounded-xl" id="statusRadioGroup">
+<label class="status-option-btn flex items-center justify-center py-1.5 rounded-lg text-center cursor-pointer transition-all bg-surface-container-lowest text-on-surface shadow-xs font-label-sm text-label-sm">
+<input checked="" class="hidden" name="matchStatus" type="radio" value="programado"/>
+<span>Programado</span>
+</label>
+<label class="status-option-btn flex items-center justify-center py-1.5 rounded-lg text-center cursor-pointer transition-all text-secondary font-label-sm text-label-sm">
+<input class="hidden" name="matchStatus" type="radio" value="en-juego"/>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  En Juego
+                </span>
+</label>
+<label class="status-option-btn flex items-center justify-center py-1.5 rounded-lg text-center cursor-pointer transition-all text-secondary font-label-sm text-label-sm">
+<input class="hidden" name="matchStatus" type="radio" value="finalizado"/>
+<span>Finalizado</span>
+</label>
+</div>
+</div>
+<!-- Dynamic Conflict Feedback (Inside Form) -->
+<div class="p-space-sm rounded-xl bg-error-container text-on-error-container text-body-sm font-body-sm flex items-center gap-2" id="formConflictNotice">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">report</span>
+<span id="formConflictMsg">Atención: <strong>Ingeniería Civil</strong> ya cuenta con partido activo a las 10:00 del mismo día.</span>
+</div>
+<!-- Form Action Buttons -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="w-1/3 py-2.5 rounded-xl bg-surface-container-low text-secondary hover:text-on-surface hover:bg-surface-container transition-all font-label-lg text-label-lg text-center cursor-pointer" id="btnCancelForm" type="button">
+              Limpiar
+            </button>
+<button class="w-2/3 py-2.5 rounded-xl bg-primary-container text-on-primary hover:bg-primary transition-all font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg text-center flex items-center justify-center gap-1 cursor-pointer" id="btnSubmitMatch" type="submit">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Guardar Cruce</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Quick Tournament Regulations Pill Card -->
+<div class="bg-surface-container-low p-space-md rounded-2xl flex items-start gap-space-md">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0">rule</span>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Reglamento Técnico FEDUP</span>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            Tiempo de tolerancia máximo de 15 minutos. El descanso entre partidos consecutivos para un mismo plantel no debe ser inferior a 3 horas calendario.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main></div>
+<!-- CLIENT JAVASCRIPT LOGIC -->
+<script>
+  // STATE MANAGEMENT
+  const state = {
+    currentPhase: 'grupos', // 'grupos' | 'eliminatorias'
+    currentDiscipline: 'futbol', // 'futbol' | 'baloncesto' | 'ecuavoley'
+    currentStatusFilter: 'all',
+    searchQuery: '',
+    hasConflict: true
+  };
+
+  // DISCIPLINE DATA PROFILE
+  const disciplineProfiles = {
+    futbol: {
+      name: 'Fútbol 9',
+      totalCount: 18,
+      programados: 10,
+      enJuego: 2,
+      finalizados: 6,
+      sedes: '3 Sedes',
+      sedesDesc: 'Césped Sintético, Coliseo, Cancha 2',
+      arbitros: '6 Árbitros FEDUP'
+    },
+    baloncesto: {
+      name: 'Baloncesto',
+      totalCount: 12,
+      programados: 7,
+      enJuego: 1,
+      finalizados: 4,
+      sedes: '2 Coliseos',
+      sedesDesc: 'Coliseo Mayor, Polideportivo B',
+      arbitros: '4 Jueces FIBA'
+    },
+    ecuavoley: {
+      name: 'Ecuavoley',
+      totalCount: 14,
+      programados: 9,
+      enJuego: 1,
+      finalizados: 4,
+      sedes: '3 Canchas',
+      sedesDesc: 'Canchas Techadas de Los Chasquis',
+      arbitros: '5 Jueces Nacionales'
+    }
+  };
+
+  // TOAST UTILITY
+  let toastTimer = null;
+  function showToast(title, message, icon = 'check_circle', isError = false) {
+    const toast = document.getElementById('toastNotification');
+    const titleEl = document.getElementById('toastTitle');
+    const msgEl = document.getElementById('toastMessage');
+    const iconEl = document.getElementById('toastIcon');
+    const iconWrap = document.getElementById('toastIconWrap');
+
+    titleEl.textContent = title;
+    msgEl.textContent = message;
+    iconEl.textContent = icon;
+
+    if (isError) {
+      iconWrap.className = 'w-8 h-8 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0';
+    } else {
+      iconWrap.className = 'w-8 h-8 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0';
+    }
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      hideToast();
+    }, 4500);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toastNotification');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+  }
+
+  document.getElementById('toastCloseBtn').addEventListener('click', hideToast);
+
+  // MODAL UTILITY
+  function openModal(title, subtitle, contentHtml, icon = 'info', actionText = 'Entendido', onAction = null) {
+    const modal = document.getElementById('actionModal');
+    const card = document.getElementById('modalCard');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalSub').textContent = subtitle;
+    document.getElementById('modalIcon').textContent = icon;
+    document.getElementById('modalBody').innerHTML = contentHtml;
+    const actionBtn = document.getElementById('modalActionBtn');
+    actionBtn.textContent = actionText;
+
+    actionBtn.onclick = () => {
+      closeModal();
+      if (onAction) onAction();
+    };
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    setTimeout(() => {
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }, 10);
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('actionModal');
+    const card = document.getElementById('modalCard');
+    card.classList.remove('scale-100');
+    card.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }, 150);
+  }
+
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.getElementById('actionModal').addEventListener('click', (e) => {
+    if (e.target.id === 'actionModal') closeModal();
+  });
+
+  // INITIALIZATION ON DOM READY
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabFaseGrupos = document.getElementById('tabFaseGrupos');
+    const tabEliminatorias = document.getElementById('tabEliminatorias');
+    const sectionFaseGrupos = document.getElementById('sectionFaseGrupos');
+    const sectionEliminatorias = document.getElementById('sectionEliminatorias');
+    const btnViewTable = document.getElementById('btnViewTable');
+    const btnViewBracket = document.getElementById('btnViewBracket');
+    const conflictAlert = document.getElementById('conflictAlert');
+    const conflictAlertContainer = document.getElementById('conflictAlertContainer');
+    const dismissAlert = document.getElementById('dismissAlert');
+    const btnReviewConflict = document.getElementById('btnReviewConflict');
+    const btnRescheduleCard = document.getElementById('btnRescheduleCard');
+    const teamASelect = document.getElementById('teamASelect');
+    const teamBSelect = document.getElementById('teamBSelect');
+    const matchTime = document.getElementById('matchTime');
+    const matchDate = document.getElementById('matchDate');
+    const formConflictNotice = document.getElementById('formConflictNotice');
+    const formConflictMsg = document.getElementById('formConflictMsg');
+    const disciplineTabs = document.querySelectorAll('.discipline-tab');
+    const statusChips = document.querySelectorAll('.status-chip');
+    const statusRadioButtons = document.querySelectorAll('input[name="matchStatus"]');
+    const globalSearchInput = document.getElementById('globalSearchInput');
+    const matchForm = document.getElementById('matchForm');
+    const btnAuto = document.getElementById('btnAutoGenerate');
+    const btnOpenModal = document.getElementById('btnOpenModal');
+    const btnCancelForm = document.getElementById('btnCancelForm');
+    const btnSwapTeams = document.getElementById('btnSwapTeams');
+    const btnJornadasFilter = document.getElementById('btnJornadasFilter');
+
+    // 1. SWITCH ENTRE FASE DE GRUPOS Y ELIMINATORIAS
+    function switchPhase(phase) {
+      state.currentPhase = phase;
+      if (phase === 'eliminatorias') {
+        tabEliminatorias.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        tabEliminatorias.classList.remove('text-secondary', 'font-semibold');
+        tabFaseGrupos.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        tabFaseGrupos.classList.add('text-secondary', 'font-semibold');
+
+        sectionFaseGrupos.classList.add('hidden');
+        sectionEliminatorias.classList.remove('hidden');
+        sectionEliminatorias.classList.add('flex');
+
+        btnViewBracket.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        btnViewBracket.classList.remove('text-secondary');
+        btnViewTable.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        btnViewTable.classList.add('text-secondary');
+
+        showToast('Vista de Cuadro', 'Mostrando llaves y eliminatorias directas (Playoffs)');
+      } else {
+        tabFaseGrupos.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        tabFaseGrupos.classList.remove('text-secondary', 'font-semibold');
+        tabEliminatorias.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        tabEliminatorias.classList.add('text-secondary', 'font-semibold');
+
+        sectionEliminatorias.classList.add('hidden');
+        sectionEliminatorias.classList.remove('flex');
+        sectionFaseGrupos.classList.remove('hidden');
+
+        btnViewTable.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        btnViewTable.classList.remove('text-secondary');
+        btnViewBracket.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        btnViewBracket.classList.add('text-secondary');
+
+        showToast('Vista de Grupos', 'Mostrando tabla de partidos por jornadas');
+      }
+    }
+
+    tabFaseGrupos.addEventListener('click', () => switchPhase('grupos'));
+    tabEliminatorias.addEventListener('click', () => switchPhase('eliminatorias'));
+    btnViewTable.addEventListener('click', () => switchPhase('grupos'));
+    btnViewBracket.addEventListener('click', () => switchPhase('eliminatorias'));
+
+    // 2. DISCIPLINAS INTERACTIVAS
+    disciplineTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const discKey = tab.getAttribute('data-discipline');
+        state.currentDiscipline = discKey;
+
+        // UI tabs state
+        disciplineTabs.forEach(t => {
+          t.classList.remove('bg-inverse-surface', 'text-inverse-on-surface', 'shadow-sm');
+          t.classList.add('text-secondary', 'hover:bg-surface-container-low');
+          const badge = t.querySelector('span:last-child');
+          if (badge) {
+            badge.classList.remove('bg-surface-container-highest/30', 'text-surface-bright');
+            badge.classList.add('bg-surface-container-low', 'text-secondary');
+          }
+        });
+
+        tab.classList.remove('text-secondary', 'hover:bg-surface-container-low');
+        tab.classList.add('bg-inverse-surface', 'text-inverse-on-surface', 'shadow-sm');
+        const activeBadge = tab.querySelector('span:last-child');
+        if (activeBadge) {
+          activeBadge.classList.remove('bg-surface-container-low', 'text-secondary');
+          activeBadge.classList.add('bg-surface-container-highest/30', 'text-surface-bright');
+        }
+
+        // Update form discipline select
+        const selectSport = document.getElementById('selectSport');
+        if (selectSport) selectSport.value = discKey;
+
+        // Update bracket discipline title
+        const discData = disciplineProfiles[discKey];
+        const bracketTag = document.getElementById('disciplineBracketTag');
+        if (bracketTag) bracketTag.innerHTML = `<span class="material-symbols-outlined text-[16px]">emoji_events</span> ${discData.name} - Fase Final 2025`;
+
+        // Update metrics
+        document.getElementById('metricVenues').textContent = discData.sedes;
+        document.getElementById('metricVenuesSub').textContent = discData.sedesDesc;
+        document.getElementById('metricReferees').textContent = discData.arbitros;
+
+        // Update counts in status bar
+        document.getElementById('countAll').textContent = discData.totalCount;
+        document.getElementById('countProgramados').textContent = discData.programados;
+        document.getElementById('countEnJuego').textContent = discData.enJuego;
+        document.getElementById('countFinalizados').textContent = discData.finalizados;
+
+        // Filter cards matching discipline (or adapt labels)
+        document.querySelectorAll('.match-card .sport-name-tag').forEach(tag => {
+          tag.textContent = `• ${discData.name} Masculino`;
+        });
+
+        filterMatches();
+        showToast('Disciplina: ' + discData.name, `${discData.totalCount} partidos registrados en ${discData.sedes}`);
+      });
+    });
+
+    // 3. FILTROS DE ESTADO DE PARTIDO
+    statusChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        statusChips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-xs');
+          c.classList.add('bg-surface-container-low', 'text-secondary');
+        });
+        chip.classList.remove('bg-surface-container-low', 'text-secondary');
+        chip.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-xs');
+
+        state.currentStatusFilter = chip.getAttribute('data-status');
+        filterMatches();
+      });
+    });
+
+    // JORNADAS TOGGLE CYCLE
+    let currentJornadaIndex = 0;
+    const jornadasLabels = ['Jornadas 1 a 3', 'Solo Jornada 1', 'Solo Jornada 2', 'Solo Jornada 3'];
+    btnJornadasFilter.addEventListener('click', () => {
+      currentJornadaIndex = (currentJornadaIndex + 1) % jornadasLabels.length;
+      document.getElementById('jornadaFilterLabel').textContent = jornadasLabels[currentJornadaIndex];
+      showToast('Filtro de Calendario', `Mostrando: ${jornadasLabels[currentJornadaIndex]}`);
+    });
+
+    // 4. REAL-TIME CONFLICT CHECKER
+    function checkConflict() {
+      const teamA = teamASelect.value;
+      const teamB = teamBSelect.value;
+      const dateVal = matchDate.value;
+      const timeVal = matchTime.value;
+
+      // Conflict rule: Ingeniería Civil el 2025-10-24 entre 10:00 y 11:30
+      const isCivilPlaying = (teamA === 'Ingeniería Civil' || teamB === 'Ingeniería Civil');
+      const isSameDate = (dateVal === '2025-10-24');
+      const isOverlappingTime = (timeVal >= '10:00' && timeVal <= '11:30');
+
+      if (teamA === teamB) {
+        formConflictNotice.classList.remove('hidden');
+        formConflictNotice.classList.add('flex');
+        formConflictMsg.innerHTML = `<strong>Error de selección:</strong> Un equipo no puede enfrentarse a sí mismo (${teamA}).`;
+        return 'self_match';
+      }
+
+      if (isCivilPlaying && isSameDate && isOverlappingTime) {
+        formConflictNotice.classList.remove('hidden');
+        formConflictNotice.classList.add('flex');
+        formConflictMsg.innerHTML = `Atención: <strong>Ingeniería Civil</strong> ya cuenta con partido activo a las 10:00 del mismo día.`;
+        if (state.hasConflict && conflictAlertContainer) {
+          conflictAlertContainer.classList.remove('hidden');
+        }
+        return 'overlap';
+      } else {
+        formConflictNotice.classList.add('hidden');
+        formConflictNotice.classList.remove('flex');
+        return 'none';
+      }
+    }
+
+    teamASelect.addEventListener('change', checkConflict);
+    teamBSelect.addEventListener('change', checkConflict);
+    matchDate.addEventListener('change', checkConflict);
+    matchTime.addEventListener('input', checkConflict);
+
+    // Swap teams button
+    btnSwapTeams.addEventListener('click', () => {
+      const temp = teamASelect.value;
+      teamASelect.value = teamBSelect.value;
+      teamBSelect.value = temp;
+      checkConflict();
+      showToast('Localía invertida', `${teamASelect.value} ahora es Local`);
+    });
+
+    // Solución automática del conflicto
+    function resolveConflictAuto() {
+      matchTime.value = '14:30';
+      state.hasConflict = false;
+      checkConflict();
+
+      // Update the conflict card UI (#CR-108)
+      const card108 = document.getElementById('matchCard108');
+      const badge108 = document.getElementById('badge108');
+      const badgeSub = document.getElementById('badge108Subtitle');
+      const conflictFlag = document.getElementById('conflictFlag108');
+      const timeVenue = document.getElementById('timeVenueDetails108');
+      const btnReschedule = document.getElementById('btnRescheduleCard');
+
+      if (card108) {
+        card108.classList.remove('from-error-container/20', 'border-error/30');
+        card108.classList.add('border-tertiary/30');
+        card108.classList.add('flash-highlight');
+      }
+      if (badge108) {
+        badge108.className = 'flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-surface-container-low text-center shrink-0';
+        badge108.querySelector('span:nth-child(1)').className = 'font-label-sm text-label-sm text-secondary font-bold';
+        badge108.querySelector('span:nth-child(2)').className = 'font-label-md text-label-md text-on-surface font-bold mt-0.5';
+      }
+      if (badgeSub) {
+        badgeSub.className = 'font-body-sm text-[10px] text-tertiary font-bold';
+        badgeSub.textContent = 'Reagendado';
+      }
+      if (conflictFlag) {
+        conflictFlag.className = 'px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1';
+        conflictFlag.innerHTML = `<span class="material-symbols-outlined text-[13px]">check</span> Horario 14:30 Validad`;
+      }
+      if (timeVenue) {
+        timeVenue.innerHTML = `
+          <span class="flex items-center gap-1 text-tertiary font-semibold">
+            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+            24 Oct 2025 - 14:30 PM (Sin solapamientos)
+          </span>
+          <span class="flex items-center gap-1 text-secondary font-body-sm">
+            <span class="material-symbols-outlined text-[16px]">location_on</span>
+            Cancha Sintética 2
+          </span>
+        `;
+      }
+      if (btnReschedule) {
+        btnReschedule.className = 'px-space-md py-1.5 rounded-xl bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1';
+        btnReschedule.innerHTML = `<span class="material-symbols-outlined text-[16px]">verified</span> Confirmado`;
+      }
+
+      // Hide main banner with smooth transition
+      if (conflictAlertContainer) {
+        conflictAlertContainer.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+        setTimeout(() => {
+          conflictAlertContainer.classList.add('hidden');
+          conflictAlertContainer.classList.remove('opacity-0');
+        }, 300);
+      }
+
+      showToast('Horario resuelto', 'Conflicto subsanado para Ingeniería Civil: Asignado 14:30 PM');
+    }
+
+    if (btnReviewConflict) btnReviewConflict.addEventListener('click', resolveConflictAuto);
+    if (btnRescheduleCard) btnRescheduleCard.addEventListener('click', resolveConflictAuto);
+
+    dismissAlert.addEventListener('click', () => {
+      conflictAlertContainer.classList.add('hidden');
+      showToast('Aviso cerrado', 'Advertencia ignorada por el administrador');
+    });
+
+    // 5. STATUS RADIO BUTTONS IN FORM
+    statusRadioButtons.forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.querySelectorAll('.status-option-btn').forEach(btn => {
+          btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs', 'text-primary', 'text-tertiary');
+          btn.classList.add('text-secondary');
+        });
+        const parent = radio.closest('label');
+        parent.classList.remove('text-secondary');
+        parent.classList.add('bg-surface-container-lowest', 'shadow-xs');
+        if (radio.value === 'en-juego') parent.classList.add('text-primary');
+        else if (radio.value === 'finalizado') parent.classList.add('text-tertiary');
+        else parent.classList.add('text-on-surface');
+      });
+    });
+
+    // 6. GUARDAR NUEVO CRUCE
+    matchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const conflictStatus = checkConflict();
+
+      if (conflictStatus === 'self_match') {
+        showToast('Error de cruce', 'Selecciona dos facultades distintas', 'error', true);
+        return;
+      }
+      if (conflictStatus === 'overlap') {
+        showToast('Conflicto activo', 'Existe un solapamiento horario para Ingeniería Civil. Reagenda a otro horario.', 'warning', true);
+        return;
+      }
+
+      const teamA = teamASelect.value;
+      const teamB = teamBSelect.value;
+      const venue = document.getElementById('venueSelect').value;
+      const date = matchDate.value;
+      const time = matchTime.value;
+      const sport = document.getElementById('selectSport').value;
+      const phase = document.getElementById('selectPhase').value;
+      const status = document.querySelector('input[name="matchStatus"]:checked').value;
+
+      // Initials helper
+      const getInitials = (str) => str.split(' ').map(w => w[0]).join('').substring(0, 3).toUpperCase();
+      const nextId = 'CR-' + Math.floor(110 + Math.random() * 80);
+
+      // Status pill html
+      let statusHtml = '';
+      if (status === 'en-juego') {
+        statusHtml = `<span class="px-2 py-0.5 rounded-full bg-error-container text-primary font-label-sm text-label-sm font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> En Juego</span>`;
+      } else if (status === 'finalizado') {
+        statusHtml = `<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">Finalizado</span>`;
+      } else {
+        statusHtml = `<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-medium">Programado</span>`;
+      }
+
+      // Create new match card DOM element
+      const newCard = document.createElement('div');
+      newCard.className = 'match-card bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-md flash-highlight';
+      newCard.setAttribute('data-id', nextId);
+      newCard.setAttribute('data-status', status);
+      newCard.setAttribute('data-discipline', sport);
+      newCard.setAttribute('data-teama', teamA);
+      newCard.setAttribute('data-teamb', teamB);
+      newCard.setAttribute('data-date', date);
+      newCard.setAttribute('data-time', time);
+
+      newCard.innerHTML = `
+        <div class="flex items-center gap-space-md">
+          <div class="flex flex-col items-center justify-center w-16 h-16 rounded-xl bg-surface-container-low text-center shrink-0">
+            <span class="font-label-sm text-label-sm text-secondary font-bold">#${nextId}</span>
+            <span class="font-label-md text-label-md text-primary font-bold mt-0.5">${phase.includes('FIN') ? 'FINAL' : phase.includes('QF') ? 'QF' : 'GRP'}</span>
+            <span class="font-body-sm text-[10px] text-secondary">Oficial</span>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-space-xs mb-1">
+              ${statusHtml}
+              <span class="text-secondary font-body-sm text-body-sm sport-name-tag">• ${disciplineProfiles[sport].name}</span>
+            </div>
+            <!-- Versus Teams -->
+            <div class="flex items-center gap-space-md">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-sm">${getInitials(teamA)}</div>
+                <span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">${teamA}</span>
+              </div>
+              <span class="text-secondary font-label-sm text-label-sm font-bold">VS</span>
+              <div class="flex items-center gap-2">
+                <span class="font-headline-sm text-headline-sm font-bold text-on-surface team-name">${teamB}</span>
+                <div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-secondary text-label-sm">${getInitials(teamB)}</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm mt-1">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">stadium</span>
+                ${venue}
+              </span>
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">schedule</span>
+                ${date} - ${time}
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-space-xs self-end md:self-center shrink-0">
+          <button class="btn-referee px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-colors" title="Designar Árbitro">
+            <span class="material-symbols-outlined text-[16px]">sports</span>
+            Árbitro: Pendiente
+          </button>
+          <button class="btn-edit-match p-2 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer" title="Editar Cruce">
+            <span class="material-symbols-outlined text-[20px]">edit</span>
+          </button>
+        </div>
+      `;
+
+      const matchesContainer = document.getElementById('matchesContainer');
+      matchesContainer.insertBefore(newCard, matchesContainer.firstChild);
+
+      // Attach events to new buttons
+      attachCardActions(newCard);
+
+      // Increment counters
+      const countAll = document.getElementById('countAll');
+      const countProgramados = document.getElementById('countProgramados');
+      countAll.textContent = parseInt(countAll.textContent) + 1;
+      if (status === 'programado') {
+        countProgramados.textContent = parseInt(countProgramados.textContent) + 1;
+      }
+
+      showToast('Cruce programado con éxito', `${teamA} vs ${teamB} guardado en ${venue}`);
+
+      // Reset conflict highlight if applied
+      formConflictNotice.classList.add('hidden');
+    });
+
+    // 7. BOTÓN "+ PROGRAMAR NUEVO CRUCE" Y GENERADOR AUTOMÁTICO
+    btnOpenModal.addEventListener('click', () => {
+      const panel = document.getElementById('matchFormPanel');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      panel.classList.add('ring-4', 'ring-primary-container/40');
+      setTimeout(() => {
+        panel.classList.remove('ring-4', 'ring-primary-container/40');
+      }, 1200);
+      teamASelect.focus();
+      showToast('Formulario activo', 'Listo para configurar un nuevo cruce oficial', 'add_task');
+    });
+
+    btnCancelForm.addEventListener('click', () => {
+      matchForm.reset();
+      checkConflict();
+      showToast('Formulario reiniciado', 'Valores restaurados por defecto', 'restart_alt');
+    });
+
+    // Botón generar fixture automático
+    btnAuto.addEventListener('click', () => {
+      openModal(
+        'Generador Automático de Calendario',
+        'Algoritmo de balanceo de sedes y localías FEDUP',
+        `
+        <div class="space-y-3">
+          <p class="text-on-surface font-body-md">¿Deseas generar el fixture oficial para la disciplina <strong>${disciplineProfiles[state.currentDiscipline].name}</strong>?</p>
+          <div class="bg-surface-container-low p-3 rounded-xl space-y-1.5 text-[13px]">
+            <div class="flex items-center gap-2 text-tertiary font-bold">
+              <span class="material-symbols-outlined text-[18px]">verified</span>
+              Detección y prevención activa de solapamientos horarios.
+            </div>
+            <div class="flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+              Descanso garantizado mínimo de 3 horas por equipo.
+            </div>
+            <div class="flex items-center gap-2 text-on-surface">
+              <span class="material-symbols-outlined text-[18px] text-primary">stadium</span>
+              Distribución equitativa en Cancha Central, Cancha 2 y Coliseo.
+            </div>
+          </div>
+        </div>
+        `,
+        'auto_mode',
+        'Ejecutar Generación',
+        () => {
+          showToast('Fixture generado con éxito', '12 partidos programados sin solapamientos en 3 sedes');
+        }
+      );
+    });
+
+    // 8. BUSCADOR GLOBAL REACTIVO
+    globalSearchInput.addEventListener('input', (e) => {
+      state.searchQuery = e.target.value.toLowerCase().trim();
+      filterMatches();
+    });
+
+    // FILTER LOGIC
+    function filterMatches() {
+      const cards = document.querySelectorAll('#matchesContainer .match-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const status = card.getAttribute('data-status');
+        const teamA = (card.getAttribute('data-teama') || '').toLowerCase();
+        const teamB = (card.getAttribute('data-teamb') || '').toLowerCase();
+        const cardText = card.textContent.toLowerCase();
+
+        const matchesStatus = (state.currentStatusFilter === 'all' || status === state.currentStatusFilter);
+        const matchesSearch = (state.searchQuery === '' || teamA.includes(state.searchQuery) || teamB.includes(state.searchQuery) || cardText.includes(state.searchQuery));
+
+        if (matchesStatus && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noMatches = document.getElementById('noMatchesNotice');
+      if (visibleCount === 0) {
+        noMatches.classList.remove('hidden');
+        noMatches.classList.add('flex');
+      } else {
+        noMatches.classList.add('hidden');
+        noMatches.classList.remove('flex');
+      }
+    }
+
+    document.getElementById('btnResetFilters').addEventListener('click', () => {
+      state.searchQuery = '';
+      globalSearchInput.value = '';
+      state.currentStatusFilter = 'all';
+      statusChips.forEach(c => {
+        c.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold');
+        c.classList.add('bg-surface-container-low', 'text-secondary');
+      });
+      statusChips[0].classList.add('bg-primary-container', 'text-on-primary', 'font-bold');
+      filterMatches();
+      showToast('Filtros reiniciados', 'Mostrando todos los partidos');
+    });
+
+    // ATTACH ACTION BUTTONS TO CARDS
+    function attachCardActions(container = document) {
+      // Live acta button
+      container.querySelectorAll('.btn-live-acta').forEach(btn => {
+        btn.onclick = () => {
+          const card = btn.closest('.match-card');
+          const id = card.getAttribute('data-id');
+          openModal(
+            `Acta Arbitral en Vivo #${id}`,
+            'Fútbol 9 - Segundo Tiempo (18\')',
+            `
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-3 bg-error-container/40 rounded-xl">
+                <span class="font-bold text-primary">Ingeniería Civil 2</span>
+                <span class="font-bold text-on-surface">-</span>
+                <span class="font-bold text-secondary">1 Medicina</span>
+              </div>
+              <p class="text-body-sm text-secondary">Goles: M. Romero (IC 12\'), C. Vega (IC 34\'), D. Paz (MED 48\'). Tarjetas amarillas: 2 (1 IC, 1 MED).</p>
+              <div class="flex items-center gap-2 text-[12px] text-tertiary font-bold">
+                <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                Transmisión en directo sincronizada con mesa de control
+              </div>
+            </div>
+            `,
+            'sports_score'
+          );
+        };
+      });
+
+      // Edit match
+      container.querySelectorAll('.btn-edit-match').forEach(btn => {
+        btn.onclick = () => {
+          const card = btn.closest('.match-card');
+          const id = card.getAttribute('data-id');
+          const teamA = card.getAttribute('data-teama');
+          const teamB = card.getAttribute('data-teamb');
+          const date = card.getAttribute('data-date');
+          const time = card.getAttribute('data-time');
+
+          teamASelect.value = teamA || 'Ingeniería Civil';
+          teamBSelect.value = teamB || 'Medicina';
+          if (date) matchDate.value = date;
+          if (time) matchTime.value = time;
+
+          const panel = document.getElementById('matchFormPanel');
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          panel.classList.add('ring-4', 'ring-primary-container/40');
+          setTimeout(() => panel.classList.remove('ring-4', 'ring-primary-container/40'), 1200);
+
+          showToast('Cruce cargado al formulario', `Editando cruce #${id} en el panel derecho`, 'edit');
+        };
+      });
+
+      // Official acta finished
+      container.querySelectorAll('.btn-official-acta').forEach(btn => {
+        btn.onclick = () => {
+          openModal(
+            'Acta Oficial de Juego #CR-101',
+            'Economía 0 - 3 Ingeniería Civil',
+            `
+            <div class="space-y-3">
+              <div class="p-3 bg-surface-container-low rounded-xl">
+                <div class="flex justify-between text-body-sm font-bold text-on-surface">
+                  <span>Resultado Final Reglamentario</span>
+                  <span class="text-primary font-headline-sm">0 - 3</span>
+                </div>
+                <p class="text-[12px] text-secondary mt-1">Fecha oficial: 22 de Octubre de 2025 • Cancha Sintética Central</p>
+              </div>
+              <div class="text-[13px] text-secondary space-y-1">
+                <p>• Juez Arbitral Principal: <strong>Lic. Marco Cárdenas (FEDUP)</strong></p>
+                <p>• Planillero Oficial: <strong>Sofía Benavides</strong></p>
+                <p>• Incidencias disciplinarias: Sin expulsiones registradas.</p>
+              </div>
+              <div class="p-2 bg-tertiary-fixed/30 rounded-lg text-tertiary font-bold text-[12px] flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                Firma digital aprobada y registrada en el sistema de cómputo.
+              </div>
+            </div>
+            `,
+            'verified'
+          );
+        };
+      });
+
+      // Assign Referee button
+      container.querySelectorAll('.btn-referee').forEach(btn => {
+        btn.onclick = () => {
+          openModal(
+            'Designación de Terna Arbitral',
+            'Comisión Técnica FEDUP',
+            `
+            <div class="space-y-3">
+              <label class="block text-label-md font-bold text-on-surface">Seleccionar Árbitro Federado:</label>
+              <select id="refereeSelectInput" class="w-full p-2.5 bg-surface-container-low rounded-xl text-on-surface text-body-sm">
+                <option value="Lic. Roberto Macías">Lic. Roberto Macías (Federación Árbitros del Guayas)</option>
+                <option value="Dra. Andrea Morán">Dra. Andrea Morán (Asociación Pichincha)</option>
+                <option value="Ing. Xavier Delgado">Ing. Xavier Delgado (Colegio Nacional)</option>
+              </select>
+            </div>
+            `,
+            'sports',
+            'Confirmar Árbitro',
+            () => {
+              btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">verified</span> Árbitro: R. Macías`;
+              btn.classList.add('bg-tertiary-fixed/40', 'text-on-tertiary-fixed-variant');
+              showToast('Árbitro asignado', 'Lic. Roberto Macías ha sido notificado');
+            }
+          );
+        };
+      });
+
+      // Context menu simulation
+      container.querySelectorAll('.btn-match-more').forEach(btn => {
+        btn.onclick = () => {
+          showToast('Opciones de cruce', 'Generar informe PDF, suspender partido o reasignar cancha');
+        };
+      });
+    }
+
+    // Attach to initial elements
+    attachCardActions();
+
+    // EXPOSE BRACKET MODAL FUNCTION
+    window.openBracketDetail = function(code, teamA, teamB, score, status, venue) {
+      openModal(
+        `Llave Eliminatoria ${code}`,
+        `${disciplineProfiles[state.currentDiscipline].name} • Torneo 2025`,
+        `
+        <div class="space-y-3">
+          <div class="bg-surface-container-low p-4 rounded-2xl flex items-center justify-between">
+            <span class="font-headline-sm font-bold text-on-surface">${teamA}</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-xl font-bold text-primary text-headline-sm">${score}</span>
+            <span class="font-headline-sm font-bold text-on-surface">${teamB}</span>
+          </div>
+          <div class="text-[13px] text-secondary space-y-1">
+            <p>• Estado: <strong>${status}</strong></p>
+            <p>• Sede asignada: <strong>${venue}</strong></p>
+            <p>• Regla: Partido único eliminatorio con definición por tiros desde el punto penal en caso de empate.</p>
+          </div>
+        </div>
+        `,
+        'account_tree'
+      );
+    };
+
+  });
+</script>
+</body></html>
